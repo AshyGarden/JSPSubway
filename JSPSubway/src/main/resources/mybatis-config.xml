@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    
+<configuration>
+
+	<settings>	
+		<setting name="jdbcTypeForNull" value="NULL"/> <!-- NULL값지정 -->
+		<setting name="defaultStatementTimeout" value="3000"/> <!-- value ms 이내에 DB에서 응답이 오지않는다면 타임아웃 설정 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/><!-- UnderScore -> CamleCase로 자동변환 -->
+		<!-- reg_date -> regDate -->
+	</settings>
+	
+	<typeAliases>
+   <!-- <typeAlias type="com.spring.myweb.command.FreeBoardVO" alias="board"/>
+		<typeAlias type="com.spring.myweb.command.UserVO" alias="user"/>
+		<typeAlias type="com.spring.myweb.command.ReplyVO" alias="reply"/> -->
+	</typeAliases>
+</configuration>
