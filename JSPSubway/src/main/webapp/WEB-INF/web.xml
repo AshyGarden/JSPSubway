@@ -6,7 +6,7 @@
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/db-config.xml</param-value>
+		<param-value>/WEB-INF/config/db-config.xml</param-value>
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -22,8 +22,8 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
 				/WEB-INF/config/servlet-config.xml
-				<!-- /WEB-INF/config/servlet-context.xml -->
-				<!-- /WEB-INF/config/servlet-context.xml -->
+				/WEB-INF/config/email-config.xml
+				/WEB-INF/config/interceptor-config.xml				
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
