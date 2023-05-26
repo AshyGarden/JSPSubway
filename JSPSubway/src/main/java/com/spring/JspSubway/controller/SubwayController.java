@@ -2,8 +2,11 @@ package com.spring.JspSubway.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring.JspSubway.common.StationVO;
 import com.spring.JspSubway.subway.service.ISubwayService;
 
 @Controller
@@ -13,8 +16,16 @@ public class SubwayController {
 	@Autowired
 	private ISubwayService service;
 	
+	@GetMapping("/line2")
+	public void getStation() {
+		
+	}
 	
-	
-	
+	//역 상세정보 페이지 열어주는 메서드
+	@PostMapping("/station/{sno}")
+	public String regist(int sno) {
+		service.getStation(sno);
+		return "station/{sno}";
+	}
 
 }
