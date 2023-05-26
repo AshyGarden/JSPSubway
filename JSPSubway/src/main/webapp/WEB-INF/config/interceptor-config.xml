@@ -8,9 +8,9 @@
 	<!-- namespace 탭에서 mvc기능추가 -->
 	<!-- web.xml파일에 추가 -->
 	
-	<!-- <bean id="userLoginSuccessHandler" class="com.spring.myweb.util.interceptor.UserLoginSuccessHandler"/>
-	<bean id="userAuth" class="com.spring.myweb.util.interceptor.UserAuthHandler"></bean>
-	<mvc:interceptors>
+	<bean id="userLoginSuccessHandler" class="com.spring.JspSubway.util.interceptor.UserLoginSuccessHandler"/>
+	<bean id="userAuth" class="com.spring.JspSubway.util.interceptor.UserAuthHandler"></bean>
+	<!-- <mvc:interceptors>
 		로그인 이후에 실행되는 postHandler를 어떤 url에 동작하게 할지 세팅
 		<mvc:interceptor>
 			<mvc:mapping path="/user/userLogin"/>
@@ -24,7 +24,7 @@
 			<mvc:mapping path="/freeboard/content/**"/>
 			<ref bean="userAuth"/>			
 		</mvc:interceptor>
-	</mvc:interceptors>
-		 -->
+	</mvc:interceptors> -->
+		
 	
 </beans>
