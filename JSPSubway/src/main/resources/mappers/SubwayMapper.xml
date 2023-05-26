@@ -6,18 +6,22 @@
 	
 	<!-- mysql은 CONCAT변수가 가변인수 -->
 	<sql id="search">
-		<if test="condition == 'title'">
-			WHERE title LIKE CONCAT('%', #{keyword},'%')
+		<if test="condition == 'ec'">
+			WHERE ec LIKE CONCAT('%', #{keyword},'%')
 		</if>
-		<if test="condition == 'writer'">
-			WHERE writer LIKE CONCAT('%', #{keyword},'%')
+		<if test="condition == 'wcio'">
+			WHERE wcio LIKE CONCAT('%', #{keyword},'%')
 		</if>
-		<if test="condition == 'content'">
-			WHERE content LIKE CONCAT('%', #{keyword},'%')
+		<if test="condition == 'ods'">
+			WHERE ods LIKE CONCAT('%', #{keyword},'%')
 		</if>
-		<if test="condition == 'titleContent'">
-			WHERE title LIKE CONCAT('%', #{keyword},'%')
-			OR content LIKE CONCAT('%', #{keyword},'%')
+		<if test="condition == 'cf'">
+			WHERE cf LIKE CONCAT('%', #{keyword},'%')
+		</if>
+		
+		<if test="condition == 'manyQs'">
+			WHERE ec LIKE CONCAT('%', #{keyword},'%')
+			OR wcio LIKE CONCAT('%', #{keyword},'%')
 		</if>
 	</sql>
 	
