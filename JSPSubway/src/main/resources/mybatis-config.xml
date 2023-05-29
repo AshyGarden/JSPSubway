@@ -12,9 +12,9 @@
 	</settings>
 	
 	<typeAliases>
-  		<typeAlias type="com.spring.myweb.command.SubwayVO" alias="subway"/>
-		<typeAlias type="com.spring.myweb.command.StationVO" alias="station"/> 		
-		<typeAlias type="com.spring.myweb.command.UserVO" alias="user"/>
+  		<typeAlias type="com.spring.JspSubway.command.SubwayVO" alias="subway"/>
+		<typeAlias type="com.spring.JspSubway.command.StationVO" alias="station"/> 		
+		<!-- <typeAlias type="com.spring.JspSubway.command.UserVO" alias="user"/>  -->
 <!-- 	<typeAlias type="com.spring.myweb.command.PlaceBoardVO" alias="place"/> -->	
 	</typeAliases>
 </configuration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.spring.JspSubway.subway.mapper.IStationMapper">
+	
+	<sql id="switchSt">
+		<if test="condition == 'before'"> <!-- 이전역 -->
+			WHERE sno = #{sno}+1
+		</if>
+		<if test="condition == 'after'"> <!-- 다음역 -->
+			WHERE sno = #{sno}+1
+		</if>
+		
+		<if test="condition == 'firstSt'"> <!-- 예외처리1-2호선 시작역 시청역(201)->pointer247로 -->
+			WHERE sno = #{2470}
+		</if>
+		<if test="condition == 'lastSt'"> <!-- 예외처리2-2호선 마지막역 충정로(247)->pointer201로-->
+			WHERE sno = #{2010}
+		</if>
+	</sql>
+	
+	<select id="getStationInfo"> <!-- 역 정보 가져오기 -->
+		SELECT * FROM station
+		WHERE sno = #{sno}
+	</select>
+	
+	<select id="otherStation"> <!-- 버튼으로 역이동 -->
+		SELECT * FROM station
+		<include refid="switchSt" />
+	</select>
+	
+</mapper>   

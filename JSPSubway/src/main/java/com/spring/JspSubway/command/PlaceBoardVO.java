@@ -1,8 +1,8 @@
-use jspsubway;
+package com.spring.JspSubway.command;
 
-SELECT * FROM placeboard;
+import java.time.LocalDateTime;
 
-#장소 게시판
+/*
 CREATE TABLE placeboard (
     bno INT PRIMARY KEY AUTO_INCREMENT,
     user_id VARCHAR(100),
@@ -23,5 +23,20 @@ CREATE TABLE placeboard (
     write_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     update_date DATETIME DEFAULT NULL
 );
+ */
+public class PlaceBoardVO {
+	
+	private int bno;
+	private String userId;
+	private int sno;
+	private String title;
+	private String content;
+	private String addrBasic;
+	private String addrDetail;
+	private String addZipNum;
+	private String placeUrl;
+	
+	private LocalDateTime writeDate;
+	private LocalDateTime updateDate;
 
-DROP TABLE placeboard;
+}
