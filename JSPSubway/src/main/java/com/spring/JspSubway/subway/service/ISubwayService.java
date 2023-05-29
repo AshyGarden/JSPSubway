@@ -2,7 +2,7 @@ package com.spring.JspSubway.subway.service;
 
 import java.util.List;
 
-import com.spring.JspSubway.common.SubwayVO;
+import com.spring.JspSubway.command.SubwayVO;
 
 public interface ISubwayService {
 	

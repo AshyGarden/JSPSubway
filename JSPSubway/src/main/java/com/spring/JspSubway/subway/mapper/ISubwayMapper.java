@@ -2,7 +2,7 @@ package com.spring.JspSubway.subway.mapper;
 
 import java.util.List;
 
-import com.spring.JspSubway.common.SubwayVO;
+import com.spring.JspSubway.command.SubwayVO;
 
 public interface ISubwayMapper {
 	

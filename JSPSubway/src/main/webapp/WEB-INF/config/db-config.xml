@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	 <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
@@ -35,6 +37,7 @@
         이미 xml 파일에는 해당 파일이 어떤 스페이스를 구현하는 구현체인지는 명시되어 있습니다.
         그 인터페이스가 존재하는 패키지의 경로를 탐색하라는 태그입니다.
      -->
-  <!--  <mybatis-spring:scan base-package="com.spring.myweb.freeboard.mapper"/>  -->
-    	
+ 	 <mybatis-spring:scan base-package="com.spring.JspSubway.subway.mapper"/>  
+ 	 <mybatis-spring:scan base-package="com.spring.JspSubway.station.mapper"/>  
+    
 </beans>

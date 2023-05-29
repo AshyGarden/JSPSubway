@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.spring.myweb.subway.mapper.IStationMapper">
+<mapper namespace="com.spring.JspSubway.subway.mapper.IStationMapper">
 	
 	<sql id="switchSt">
 		<if test="condition == 'before'"> <!-- 이전역 -->
