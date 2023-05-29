@@ -4,14 +4,14 @@ SELECT * FROM placeboard;
 
 #장소 게시판
 CREATE TABLE placeboard (
-    bno VARCHAR(100) PRIMARY KEY AUTO_INCREMENT,
+    bno INT PRIMARY KEY AUTO_INCREMENT,
     user_id VARCHAR(100),
     FOREIGN KEY (user_id)
         REFERENCES users (user_id)
         ON DELETE CASCADE,
     station_num INT,
     FOREIGN KEY (station_num)
-        REFERENCES subway (station_num)
+        REFERENCES subwayline2 (station_num)
         ON DELETE CASCADE,
     title VARCHAR(500) NOT NULL,
     content VARCHAR(5000),
