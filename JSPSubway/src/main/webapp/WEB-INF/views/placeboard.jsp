@@ -104,7 +104,7 @@
                             </a>
                         </li>
                     </c:if>
-                    <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}"></c:forEach>
+                    <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
                         <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" href="#">1</a></li>
                     </c:forEach>
                     <c:if test="${pc.next}">
