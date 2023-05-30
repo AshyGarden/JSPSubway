@@ -4,7 +4,8 @@
 <html>
 <head>
 	<title>detail</title>
-    <link href="${pageContext.request.contextPath }/css/user.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/user.css" rel="stylesheet">
 </head>
 <body>
 
