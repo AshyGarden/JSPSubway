@@ -1,21 +1,16 @@
 @import url(./setting.css);
 
 
+/* !!!!!!!!!! 빨간색 견본!!! 후에 삭제해주십셔 */
+.red-background{
+    background-color: #d84936 !important;
+}
+.red-typo{
+    color: #d84936 !important;
+}
+/* !!!!!!!!!! 삭제 잊지말기~~~~~~~~~~~~~~~~~~~~~ */
 
 
-h1{
-    margin: 0;
-}
-h2{
-    /* font-family: 'GongGothicMedium'; */
-    font-size: 30px;
-    font-weight: 700;
-}
-
-body{
-    overflow: hidden; 
-    /* 스크롤 제거 */
-}
 
 
 .wrapper{
@@ -33,34 +28,9 @@ body{
     justify-content: left;
     align-items: center;
 }
-
-
-
-.wrapper section{
-    margin-right: 3%;
-    margin-left: 4%;
-    /* background-color: #00A84D; */
+body{
+    overflow: scroll; 
 }
-.wrapper section:nth-last-child(){
-    margin-right: 0%;
-}
-
-.fixed-gradation{ /* 좌우 검은 */
-    position: fixed;
-    right: 0;
-    background-image: url(https://w7.pngwing.com/pngs/857/567/png-transparent-black-white-gradient.png);
-    background-size: contain;
-    width: 15%;
-    height: 100vh;
-    z-index: 5;
-}
-.fixed-gradation.fixedR{
-    rotate: 180deg;
-    right: auto;
-    left: 0;
-}
-
-
 
 
 /* 

@@ -9,9 +9,7 @@
 <title>2호선 알리미</title>
 	
 	<!-- css 연결 -->
-	<link href="${pageContext.request.contextPath}/css/setting.css" rel="stylesheet">
 	
-	<!-- <link href="${pageContext.request.contextPath}/css/user.css" rel="stylesheet"> -->
 	 
 	<!-- bootstrap 5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 

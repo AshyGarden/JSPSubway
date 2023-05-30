@@ -59,7 +59,7 @@
         
                 <!-- Grid column -->
                 <div class="col-md-1 mx-auto mb-md-0 mb-2">
-                    <h6 class="text-uppercase fw-bold">게시판</h6>
+                    <h6 class="text-uppercase fw-bold" onclick="location.href='#'">게시판</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto"/>
                 </div>
                 <!-- Grid column -->
