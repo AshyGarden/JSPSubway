@@ -1,8 +1,21 @@
-@charset "UTF-8";
-
 @import url(./setting.css);
 
 
+
+/* !!!!!!!!!! 빨간색 견본!!! 후에 삭제해주십셔 */
+.red-background{
+    background-color: #d84936 !important;
+}
+.red-typo{
+    color: #d84936 !important;
+}
+/* !!!!!!!!!! 삭제 잊지말기~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+h1{
+    margin: 0;
+}
 h2{
     /* font-family: 'GongGothicMedium'; */
     font-size: 30px;
@@ -10,11 +23,11 @@ h2{
 }
 
 body{
-    background-color: rgb(194, 194, 194);
-    
-    /* 스크롤 제거 */
     overflow: hidden; 
+    /* 스크롤 제거 */
 }
+
+
 .wrapper{
     width: 80%;
     height: 100vh;
@@ -22,6 +35,7 @@ body{
     margin: 0 auto;
 
     background-color: rgb(255, 255, 255);
+    
     padding: 30px;
     box-sizing: border-box;
 
@@ -29,8 +43,11 @@ body{
     justify-content: left;
     align-items: center;
 }
+
 .wrapper section{
     margin-right: 3%;
+    margin-left: 4%;
+    /* background-color: #00A84D; */
 }
 .wrapper section:nth-last-child(){
     margin-right: 0%;
@@ -50,6 +67,7 @@ body{
     right: auto;
     left: 0;
 }
+
 
 
     /* !!!!!!! START LEFT !!!!!!! */
@@ -356,131 +374,7 @@ section#right .right-board > div > a > .content p{ /* 본문 */
 
 
 
-/* 
-    일정 이상 스크롤되면 left의 width 값 min으로 고정 
-    (메인 역 하나만 보이게) 
-    일정 이상 스크롤 되면 클래스 추가해서 scale 조정
-*/
 
-
-
-
-
-/* //////////////////////////////////////////////// */
-/* 
-    아이디 중복확인, 비번, 비번확인, 이름, 이메일 +확인버튼?
-*/
-
-input{
-    all: unset;
-}
-select{
-    font: unset;
-    border: none;
-}
-button{
-    font: unset;
-    all: unset;
-    display: inline-block;
-}
-button:active{
-    background-color: #00A84D;
-}
-
-
-.wrapper.user-join{
-    /* font-family: 'HANAMDAUM'; */
-    font-family: 'GongGothicMedium';
-}
-.wrapper.user-join form{
-    letter-spacing: 0.04em;
-    width: 1500px;
-}
-.wrapper.user-join input,
-.wrapper.user-join select{
-    margin: 20px 0px 10px;
-    
-    background-color: #e6e6e6;
-    text-indent: 15px;
-    padding: 10px 10px 10px 0;
-    border-radius: 5px;
-    width: 250px;
-    transition: 0.6s;
-}
-.wrapper.user-join input[name="userEmail1"]{
-    width: 220px;
-}
-.wrapper.user-join select{
-    width: 200px;
-    border-right: 10px solid #e6e6e6;
-}
-
-.wrapper.user-join p{
-    font-size: 13px;
-    text-indent: 8px;
-    color: #00A84D;
-}
-
-.wrapper.user-join input:focus{
-    background-color: #00A84D;
-    width: 400px;
-    color: #ffffff;
-}
-.wrapper.user-join input[name="userEmail1"]:focus{
-    width: 300px;
-}
-.wrapper.user-join input:focus::placeholder{
-    color: #ffffff;
-}
-.wrapper.user-join button{
-    color: rgb(78, 78, 78);
-    font-size: 15px;
-
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px gray;
-    background-color: #ffffff;
-
-    margin-left: 10px;
-    padding: 0 15px;
-    transition: 0.1s;
-}
-.wrapper.user-join button:active{
-    background-color: #eeeeee;
-}
-
-/* 회원가입 로고 */
-.user-join .title{ 
-    min-width: 50px;  min-height: 50px;
-    width: 50px;  height: 50px;
-    
-    background-color: white;
-    border: 15px inset #00A84D;
-    box-shadow: 4px 4px 1px #156d28;
-    border-radius: 50%;
-    margin: 0 30px 0 20px;
-}
-.user-join .title h1{
-    color: #000000;
-    font-size: 20px; 
-    font-weight: 700;
-    text-align: center;
-    
-    margin: 25px 0 15px;
-    transform: translate(0, -50%);
-}
-
-#joinBtn{
-    width: 100%;
-    height: 50px;
-    background-color: #00A84D;
-    text-align: center;
-
-    position: fixed;
-    left: 0;
-    bottom: 0;
-}
 
 
 
