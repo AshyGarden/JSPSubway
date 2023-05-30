@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="com.spring.JSPSubway.user.mapper.ISubwayUserMapper">
+
+	<resultMap type="user" id="userMap">
+		<result property="userId" column="user_id" />
+		<result property="userPw" column="user_pw" />
+		<result property="userName" column="user_name" />
+		<result property="userEmail1" column="user_email1" />
+		<result property="userEmail2" column="user_email2" />
+		<collection property="userList" resultMap="userList" />
+	</resultMap>
+
+
+	<insert id="join">
+	CREATE TABLE users (
+		user_id VARCHAR(100) PRIMARY KEY,
+		user_pw VARCHAR(100) NOT NULL,
+		user_name VARCHAR(100) NOT NULL,
+		user_email1 VARCHAR(50),
+		user_email2 VARCHAR(50));
+	</insert>
+	
+	<select id="login" resultType="string">
+		SELECT user_pw FROM users
+		WHERE user_id=#{id}
+	</select>
+	
+</mapper>
