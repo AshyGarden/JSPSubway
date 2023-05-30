@@ -2,6 +2,8 @@ use jspsubway;
 
 SELECT * FROM placeboard;
 
+
+
 #장소 게시판
 CREATE TABLE placeboard (
     bno INT PRIMARY KEY AUTO_INCREMENT,

@@ -1,0 +1,283 @@
+@import url(./setting.css);
+
+
+
+
+h1{
+    margin: 0;
+}
+h2{
+    /* font-family: 'GongGothicMedium'; */
+    font-size: 30px;
+    font-weight: 700;
+}
+
+body{
+    overflow: hidden; 
+    /* 스크롤 제거 */
+}
+
+
+.wrapper{
+    width: 80%;
+    height: 100vh;
+    min-width: 800px;
+    margin: 0 auto;
+
+    background-color: rgb(255, 255, 255);
+    
+    padding: 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+
+.wrapper section{
+    margin-right: 3%;
+    margin-left: 4%;
+    /* background-color: #00A84D; */
+}
+.wrapper section:nth-last-child(){
+    margin-right: 0%;
+}
+
+.fixed-gradation{ /* 좌우 검은 */
+    position: fixed;
+    right: 0;
+    background-image: url(https://w7.pngwing.com/pngs/857/567/png-transparent-black-white-gradient.png);
+    background-size: contain;
+    width: 15%;
+    height: 100vh;
+    z-index: 5;
+}
+.fixed-gradation.fixedR{
+    rotate: 180deg;
+    right: auto;
+    left: 0;
+}
+
+
+
+
+/* 
+    일정 이상 스크롤되면 left의 width 값 min으로 고정 
+    (메인 역 하나만 보이게) 
+    일정 이상 스크롤 되면 클래스 추가해서 scale 조정
+*/
+
+
+/* //////////////////////////////////////////////// */
+
+input{
+    all: unset;
+}
+select{
+    font: unset;
+    border: none;
+}
+button{
+    font: unset;
+    all: unset;
+    display: inline-block;
+}
+button:active{
+    background-color: #00A84D;
+}
+
+
+
+.wrapper.login{
+	font-family: 'GongGothicMedium';
+}
+.wrapper.user-join{
+    font-family: 'GongGothicMedium';
+    padding-bottom: 150px;
+    display: block;
+}
+.wrapper.user-join section{
+    display: flex;
+    margin-top: 80px;
+    position: relative;
+}
+.login .title,
+.user-join .title{
+    border-bottom: 2px solid #303030;
+}
+.login .title h1,
+.user-join .title h1{
+	margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    color: #808080;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+
+
+.wrapper.user-join form{
+    letter-spacing: 0.04em;
+    width: 1000px;
+    position: relative;
+}
+.wrapper.login form input[type="submit"]{
+    background-color: #00A84D;
+    width: 100px;
+    color: white;
+    font-weight: 700;
+}
+.wrapper.login input,
+.wrapper.user-join input,
+.wrapper.user-join select{
+    margin: 30px 0px 8px;
+    
+    width: 250px;
+    padding: 9px 10px 9px 0;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+
+    text-indent: 15px;
+    transition: 0.6s;
+}
+.wrapper.user-join form input[name=userId]{
+    /* 맨 위 인풋에만 마진 적용 줄이기 */
+    margin-top: 15px; 
+}
+.wrapper.user-join input[name="userEmail1"]{
+    width: 230px;
+}
+.wrapper.user-join select{
+    width: 200px;
+    border-right: 10px solid #e6e6e6;
+}
+
+.wrapper.user-join p{
+    font-size: 13px;
+    text-indent: 8px;
+    color: #00A84D;
+}
+
+.wrapper.user-join input:focus{
+    background-color: #00A84D;
+    width: 400px;
+    color: #ffffff;
+}
+.wrapper.user-join input[name="userEmail1"]:focus{
+    width: 280px;
+}
+.wrapper.user-join input:focus::placeholder{
+    color: #ffffff;
+}
+.wrapper.user-join button{
+    color: rgb(78, 78, 78);
+    font-size: 15px;
+
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #ffffff;
+
+    margin-left: 10px;
+    padding: 0 15px;
+    transition: 0.1s;
+}
+.wrapper.user-join button:active{
+    background-color: #eeeeee;
+}
+
+
+/* 회원가입 로고 */
+.user-join .simbol-line{
+    width: 2px;
+    height: 520px;
+    border: 1.5px solid #aaaaaa;
+    margin: 30px 50px 0px 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.user-join .simbol-line2{
+    width: 30%;
+    height: 2px;
+    margin-left: 30px;
+    position: absolute;
+    bottom: 0px;
+    
+    border: 1px solid #bebebe;
+    
+}
+
+.user-join .simbol{ 
+    min-width: 50px;  min-height: 50px;
+    width: 50px;  height: 50px;
+    
+    background-color: white;
+    border: 15px inset #00A84D;
+    box-shadow: 4px 4px 1px #156d28;
+    border-radius: 50%;
+    margin:  30px 0 20px;
+
+    z-index: 1;
+    position: absolute;
+    transform: translate(-52%, -100%);
+}
+.user-join .green-circle{ 
+    min-width: 20px;  min-height: 20px;
+    width: 20px;  height: 20px;
+    background-color: #00A84D;
+    /* 조건 틀리면 빨간색으로 바뀌어도 좋을듯 */
+    border-radius: 50%;
+    
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+.user-join .simbol-line .green-circle:nth-of-type(6) {
+    width: 0px; height: 0px;
+    min-width: 0; min-height: 0;
+
+    margin-top: 70px;
+    border-radius: 0%;
+    background-color: #adadad;
+}
+
+
+
+#joinBtn{
+    width: 150px;
+    height: 30px;
+    color: white;
+    background-color: #00A84D;
+    border-radius: 10px;
+    
+    text-align: center;
+
+    margin-left: 250px;
+    transform: translate(-50%, 0);
+    position: absolute;
+
+}
+
+
+
+/*/ ////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
