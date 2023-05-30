@@ -28,4 +28,11 @@
 		WHERE user_id=#{id}
 	</select>
 	
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*)
+		FROM users
+		WHERE user_id = #{id}
+	</select>
+	
+	
 </mapper>
