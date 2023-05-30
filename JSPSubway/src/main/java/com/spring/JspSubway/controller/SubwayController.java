@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.subway.service.ISubwayService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/subway")
+@Slf4j
 public class SubwayController {
 	
 	@Autowired
