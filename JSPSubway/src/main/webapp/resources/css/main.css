@@ -1,0 +1,380 @@
+@import url(./setting.css);
+
+
+
+/* !!!!!!!!!! 빨간색 견본!!! 후에 삭제해주십셔 */
+.red-background{
+    background-color: #d84936 !important;
+}
+.red-typo{
+    color: #d84936 !important;
+}
+/* !!!!!!!!!! 삭제 잊지말기~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+h1{
+    margin: 0;
+}
+h2{
+    /* font-family: 'GongGothicMedium'; */
+    font-size: 30px;
+    font-weight: 700;
+}
+
+body{
+    overflow: hidden; 
+    /* 스크롤 제거 */
+}
+
+
+.wrapper{
+    width: 80%;
+    height: 100vh;
+    min-width: 800px;
+    margin: 0 auto;
+
+    background-color: rgb(255, 255, 255);
+    
+    padding: 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.wrapper section{
+    margin-right: 3%;
+    margin-left: 4%;
+    /* background-color: #00A84D; */
+}
+.wrapper section:nth-last-child(){
+    margin-right: 0%;
+}
+
+.fixed-gradation{ /* 좌우 검은 */
+    position: fixed;
+    right: 0;
+    background-image: url(https://w7.pngwing.com/pngs/857/567/png-transparent-black-white-gradient.png);
+    background-size: contain;
+    width: 15%;
+    height: 100vh;
+    z-index: 5;
+}
+.fixed-gradation.fixedR{
+    rotate: 180deg;
+    right: auto;
+    left: 0;
+}
+
+
+
+    /* !!!!!!! START LEFT !!!!!!! */
+section#left{
+    background-color: #025f16;
+    /* ! 이미지는 확인을 위해 임의로 넣음. */
+    background-image: url(https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/220718/smap_sg_all.png);
+    background-size: 500%;
+    background-position: center;
+    background-blend-mode: luminosity;
+    
+    /* width: 36%; */
+    min-width: 600px;
+    width: 1000px;
+    height: 600px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    font-family: 'HANAMDAUM';
+}
+section#left::before{ 
+    content: '';
+
+    background-color: #00A84D;
+    width: 100%;
+    height: 110px;
+    box-shadow: 0px 7px 1px rgba(6, 94, 14, 0.9);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+}
+section#left .left-map{ 
+    background-color: white;
+    border: 20px inset #00A84D;
+    box-shadow: 5px 5px 1px #156d28;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    z-index: 1;
+
+    margin: 0 auto
+}
+
+/* 양 옆 작은 원 */
+section#left .serve-map{ 
+    border: 5px solid #00A84D;
+    height: 130px;
+    width: 130px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+section#left .mapL{ /* 작은 원 위치조절 */
+    margin-left: -270px;
+}
+section#left .mapR{
+    margin-left: 270px;
+}
+
+/* 999 ~~역 문구 */
+section#left .station{ 
+    margin-top: 45%;
+    /* position: absolute로 주면 줄개행이 돼서 마진 줬습니다... :( */
+    transform: translate(0, -50%);
+    text-align: center;
+    font-size: 30px; 
+}
+
+section#left .station h1{
+    font-size: 38px;
+    font-weight: 700;
+    margin: 5px 0 15px;
+}
+section#left .station h3{
+    color: #156d28;
+}
+section#left .serve-map .station h3{
+    font-size: 20px; 
+}
+section#left .serve-map .station h1{
+    font-size: 23px;
+    font-weight: 600;
+}
+/* END LEFT */
+
+
+
+    /* !!!!!!! START Center !!!!!!! */
+section#center{
+    /* background-color: lightblue; */
+    box-shadow: 3px 3px 15px #9aa19b;
+    border-radius: 20px;
+
+    /* width: 24%; */
+    min-width: 400px;
+    width: 600px;
+    min-height: 600px;
+    height: 70%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+section#center .center-details {
+    /* background-color: #00A84D; */
+    margin: 20px;
+    width: 100%;
+    padding-bottom: 50px;
+    height: fit-content;
+
+}
+section#center .center-details h2{
+    text-align: center;
+    font-size: 13px;
+
+    width: fit-content;
+    border: 1px solid rgb(165, 165, 165);
+    margin: 30px auto 30px;
+    padding: 2px;
+}
+
+/* 역이름 */
+section#center .center-details .main-station{ 
+    display: flex;
+    margin: 30px 0 35px 10%;
+}
+section#center .center-details .main-station h3{
+    margin-left: 20px;
+    line-height: 0.45;
+    font-size: 30px;
+    font-weight: 700;
+}
+section#center .center-details .main-station svg{
+    scale: 2.0;
+}
+
+/* 영문명 한자 일본어 */
+section#center .center-details .other-name{ 
+    font-size: 12px;
+    font-style: italic;
+    color: rgb(168, 168, 168);
+    
+    text-align: right;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+
+/* 기타 등등 */
+section#center .details { 
+    /* background-color: #9b9b9b; */
+    margin-top: 30px;
+    font-size: 15px;
+}
+section#center .details h5{
+    /* min-width: fit-content; */
+    width: 80%;
+    background-color: #e0e7f3;
+    padding: 5px 0;
+    margin: 0 auto;
+
+    font-size: 18px;
+}
+section#center .details > * {
+    margin: 30px 0;
+    text-align: center;
+}
+section#center .details > * > strong {
+    color: aliceblue;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 4px #0c0c0c;
+}
+section#center .details .cross-platform{
+    margin: 10px auto;
+}
+section#center .details .cross-platform > *{
+    margin-bottom: 5px;
+}
+section#center .details .cross-img > i:nth-of-type(n+2) {
+    /* 환승역 아이콘 간격 조정 */
+    margin-left: 5%;
+}
+section#center .details .exit-LR h5 span{
+    
+    /* box-shadow: 0 0 5px #474747; */
+    background-color: #e3e8f0;
+    border-radius: 4px;
+    padding: 1px 11px 1px;
+    margin: 0 6px;
+
+    color: rgb(39, 39, 39);
+    font-size: 0.95em;
+    opacity: 1;
+}
+section#center .details .exit-LR h5 span.left{ /* 크기 맞추기 */
+    padding: 1px 18px 1px; 
+}
+section#center .details .exit-LR h5 span.selete{ 
+    background-color: #ffffff;
+    border: 1px groove #ffffff;
+    /* box-shadow: 0 0 5px #808080; */
+    opacity: 1;
+
+    font-weight: 500;
+}
+
+
+/* 첫차, 막차 조정 */
+section#center .center-details table{ 
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+section#center .center-details table tr:nth-of-type(1){ 
+    border-bottom: 1px solid #000000;
+}
+section#center .center-details table tr > *{
+    padding: 5px 10px;
+}
+section#center .center-details table tr th{ 
+    font-weight: 700;
+}
+/* END Center */
+
+
+
+    /* !!!!!!! START RIGHT !!!!!!!*/
+section#right{
+    background-color: rgb(231, 244, 248);
+    /* width: 24%; */
+    min-width: 500px;
+    width: 800px;
+    min-height: 600px;
+    height: 70%;
+
+    overflow: hidden;
+}
+section#right .right-board{
+    width: 100%;
+    margin: 10px;
+}
+section#right .right-board h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+section#right .right-board>div{
+    border: 2px solid #000000;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    width: 95%;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+section#right .right-board>div:nth-last-of-type() {
+    margin-bottom: 0px;
+}
+section#right .right-board > div > a{
+    display: flex;
+}
+
+section#right .right-board > div > a > h1{
+    background-color: rgb(208, 241, 241);
+    font-size: 40px;
+    font-weight: 700;
+}
+section#right .right-board > div > a > .content{
+    margin-left: 15px;
+}
+section#right .right-board > div > a > .content h4{ /* 제목 */
+    background-color: #d4fae6;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-indent: 10px;
+}
+section#right .right-board > div > a > .content h3{ /* 작성자 */
+    background-color: #f1e0ed;
+    font-size: 15px;
+    text-indent: 5px;
+}
+section#right .right-board > div > a > .content p{ /* 본문 */
+    background-color: rgb(228, 206, 202);
+    margin-top: 10px;
+    font-size: 15px;
+    text-indent: 10px;
+    
+}
+/* END RIGHT */
+
+
+
+
+
+
+
+
+
