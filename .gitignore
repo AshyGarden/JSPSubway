@@ -1,6 +1,6 @@
-Created by https://www.toptal.com/developers/gitignore/api/java,eclipse
-Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
-Eclipse
+# Created by https://www.toptal.com/developers/gitignore/api/java,eclipse
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
+### Eclipse ###
 .metadata
 bin/
 tmp/
@@ -20,73 +20,73 @@ properties/
 *.properties
 /MANIFEST.MF
 
-External tool builders
+# External tool builders
 .externalToolBuilders/
 
-Locally stored "Eclipse launch configurations"
+# Locally stored "Eclipse launch configurations"
 *.launch
 
-PyDev specific (Python IDE for Eclipse)
+# PyDev specific (Python IDE for Eclipse)
 *.pydevproject
 
-CDT-specific (C/C++ Development Tooling)
+# CDT-specific (C/C++ Development Tooling)
 .cproject
 
-CDT- autotools
+#CDT- autotools
 .autotools
 
-Java annotation processor (APT)
+# Java annotation processor (APT)
 .factorypath
 
-PDT-specific (PHP Development Tools)
+# PDT-specific (PHP Development Tools)
 .buildpath
 
-sbteclipse plugin
+# sbteclipse plugin
 .target
 
-Tern plugin
+# Tern plugin
 .tern-project
 
-TeXlipse plugin
+# TeXlipse plugin
 .texlipse
 
-STS (Spring Tool Suite)
+# STS (Spring Tool Suite)
 .springBeans
 
-Code Recommenders
+# Code Recommenders
 .recommenders/
 
-Annotation Processing
+# Annotation Processing
 .apt_generated/
 .apt_generated_test/
 
-Scala IDE specific (Scala & Java development for Eclipse)
+# Scala IDE specific (Scala & Java development for Eclipse)
 .cache-main
 .scala_dependencies
 .worksheet
 
-Uncomment this line if you wish to ignore the project description file.
-Typically, this file would be tracked if it contains build/dependency configurations:
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
 
-Eclipse Patch
-Spring Boot Tooling
+### Eclipse Patch ###
+# Spring Boot Tooling
 .sts4-cache/
 
-Java
+### Java ###
 Compiled class file
 *.class
 
-Log file
+# Log file
 *.log
 
-BlueJ files
+# BlueJ files
 *.ctxt
 
-Mobile Tools for Java (J2ME)
+# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-Package Files
+# Package Files
 *.jar
 *.war
 *.nar
@@ -95,8 +95,8 @@ Package Files
 *.tar.gz
 .rar
 
-virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid
 replay_pid*
 
-End of https://www.toptal.com/developers/gitignore/api/java,eclipse
+# End of https://www.toptal.com/developers/gitignore/api/java,eclipse
