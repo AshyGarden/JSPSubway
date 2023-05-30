@@ -34,6 +34,8 @@ body{
     align-items: center;
 }
 
+
+
 .wrapper section{
     margin-right: 3%;
     margin-left: 4%;
@@ -88,7 +90,9 @@ button:active{
 
 
 
-
+.wrapper.login{
+	font-family: 'GongGothicMedium';
+}
 .wrapper.user-join{
     font-family: 'GongGothicMedium';
     padding-bottom: 150px;
@@ -99,9 +103,11 @@ button:active{
     margin-top: 80px;
     position: relative;
 }
+.login .title,
 .user-join .title{
     border-bottom: 2px solid #303030;
 }
+.login .title h1,
 .user-join .title h1{
 	margin-top: 20px;
     margin-left: 30px;
@@ -118,6 +124,13 @@ button:active{
     width: 1000px;
     position: relative;
 }
+.wrapper.login form input[type="submit"]{
+    background-color: #00A84D;
+    width: 100px;
+    color: white;
+    font-weight: 700;
+}
+.wrapper.login input,
 .wrapper.user-join input,
 .wrapper.user-join select{
     margin: 30px 0px 8px;

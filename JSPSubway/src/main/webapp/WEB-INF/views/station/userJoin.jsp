@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<html>
+<head>
+	<title>Join</title>
+    <link href="${pageContext.request.contextPath }/css/user.css" rel="stylesheet">
+</head>  
+<body>
 
 <%@ include file="../../include/header.jsp" %>
     
@@ -53,3 +60,7 @@
     </div>
 
 <%@ include file="../../include/footer.jsp" %>
+
+
+</body>
+</html>
