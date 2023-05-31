@@ -24,36 +24,23 @@
 	
 	<!-- 아이콘 사이트 fontawesome css: https://fontawesome.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	
 
 </head>
 <body>
 
-	 <!-- header -->
-	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/Seoul_Metro_Line_2.svg"/></a> 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </div>
-        <div>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        로그인
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">회원가입</a></li>
-                        <li><a class="dropdown-item" href="#">로그인</a></li>
-                        <li><a class="dropdown-item" href="#">로그아웃</a></li>
-                    </ul>
-                    </li>
+	<!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid"><img src="./img/Seoul_Metro_Line_2.svg" height="50px" width="50px" /> <a class="navbar-brand name" href="#">&nbsp 2<span class="go">호선</span></a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#"><span class="home">Home</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">로그인</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">로그아웃</a> </li>
                 </ul>
+                <div class="btn btn-dark">회원가입</div>
             </div>
-        </div>  
-      </nav>
+        </div>
+    </nav>
 
 
 </body>
