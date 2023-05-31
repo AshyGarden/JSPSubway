@@ -16,7 +16,7 @@ import com.spring.JspSubway.user.service.ISubwayUserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping
+@RequestMapping("/user")
 @Slf4j
 public class SubwayUserController {
 

@@ -16,12 +16,11 @@ public class StationController {
 		log.info("station info");
 	}
 	
-	
-	
 	@GetMapping("/userJoin")
 	public void join() {
 		log.info("회원가입 페이지 GET 요청(jsp시험용)");
 	}
+	
 	@GetMapping("/login")
 	public void	login() {
 		log.info("회원가입 페이지 GET 요청(jsp시험용)");
