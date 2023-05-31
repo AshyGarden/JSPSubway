@@ -12,5 +12,4 @@ public interface ISubwayUserService {
 
 	// 아이디 중복 확인
 	int idCheck(String id);
-	
 }

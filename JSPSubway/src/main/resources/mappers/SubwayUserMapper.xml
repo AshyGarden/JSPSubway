@@ -15,12 +15,9 @@
 
 
 	<insert id="join">
-	CREATE TABLE users (
-		user_id VARCHAR(100) PRIMARY KEY,
-		user_pw VARCHAR(100) NOT NULL,
-		user_name VARCHAR(100) NOT NULL,
-		user_email1 VARCHAR(50),
-		user_email2 VARCHAR(50));
+		INSERT INTO users
+		(user_id, user_pw, user_name, user_email1, user_email2)
+		VALUES(#{userId}, #{userPw}, #{userName}, #{userEmail1}, #{userEmail2});
 	</insert>
 	
 	<select id="login" resultType="string">
@@ -33,6 +30,5 @@
 		FROM users
 		WHERE user_id = #{id}
 	</select>
-	
 	
 </mapper>

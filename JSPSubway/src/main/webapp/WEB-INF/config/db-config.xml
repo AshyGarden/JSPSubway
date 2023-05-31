@@ -40,6 +40,6 @@
  	 <mybatis-spring:scan base-package="com.spring.JspSubway.subway.mapper"/>  
  	 <mybatis-spring:scan base-package="com.spring.JspSubway.station.mapper"/>  
  	 <mybatis-spring:scan base-package="com.spring.JspSubway.placeboard.mapper"/>  
-<!--  	 <mybatis-spring:scan base-package="com.spring.JspSubway.user.mapper"/>  --> 
+ 	 <mybatis-spring:scan base-package="com.spring.JspSubway.user.mapper"/>  
     
 </beans>
