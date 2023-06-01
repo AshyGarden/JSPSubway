@@ -97,7 +97,7 @@
                     </c:if>
                 </ul>
                 <div class="cbtn">
-                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/##/##'">글쓰기</button>
+                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">글쓰기</button>
                 </div>
             </nav>
 

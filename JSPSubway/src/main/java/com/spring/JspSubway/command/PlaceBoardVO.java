@@ -33,7 +33,7 @@ public class PlaceBoardVO {
 	private String content;
 	private String addrBasic;
 	private String addrDetail;
-	private String addZipNum;
+	private String addrZipNum;
 	private String placeUrl;
 	
 	private LocalDateTime writeDate;
