@@ -57,6 +57,7 @@ public class SubwayUserController {
 		return "redirect:/user/userLogin";
 	}
 	
+
 	// 로그인 페이지로 이동 요청
 	@GetMapping("/userLogin")
 	public void login() {}

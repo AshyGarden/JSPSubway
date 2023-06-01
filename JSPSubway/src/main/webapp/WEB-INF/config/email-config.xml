@@ -9,15 +9,15 @@
 		<property name="port" value="465"/> -->
 		<!-- smtp.naver.com 465  -->
 
-		<property name="host" value="smtp.gmail.com"/> <!-- smtp.gmail.com -->
-		<property name="port" value="587"/><!--  587  -->
+		<property name="host" value="smtp.naver.com"/> <!-- smtp.gmail.com -->
+		<property name="port" value="465"/><!-- naver : 465, gmail : 587 -->
 		<property name="username" value="${email.account}"/>
 		<property name="password" value="${email.password}"/>
 		
 		<property name="javaMailProperties">
 			<props>
- 				<prop key="mail.smtp.starttls.enable">true</prop> <!-- google -->
-                <!-- <prop key="mail.smtp.ssl.enable">true</prop> naver  -->
+ 				<!-- <prop key="mail.smtp.starttls.enable">true</prop> google -->
+                <prop key="mail.smtp.ssl.enable">true</prop> <!-- naver  -->
                 <prop key="mail.smtp.auth">true </prop>
                 <prop key="mail.transport.protocol">smtp</prop>
                 <prop key="mail.debug">true</prop>
