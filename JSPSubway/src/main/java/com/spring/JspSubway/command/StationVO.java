@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /*
- #¿ª Á¤º¸
+ #
 CREATE TABLE station (
     station_name VARCHAR(100) PRIMARY KEY,
     station_num INT,
@@ -17,7 +17,7 @@ CREATE TABLE station (
     exit_count INT NOT NULL,
     watercloset_inout BOOLEAN DEFAULT TRUE, #true = inside
     open_doorside BOOLEAN DEFAULT TRUE, #true = left
-    cross_platform INT NOT NULL, #ÀÚ·Â ÃâÀÔ°¡´É 2, È¯½Â¿ªÅëÇØ °¡´É 1, ºÒ°¡´É 0
+    cross_platform INT NOT NULL, #ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ 2, È¯ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1, ï¿½Ò°ï¿½ï¿½ï¿½ 0
     first_subway_time DATETIME NOT NULL,
     last_subway_time DATETIME NOT NULL
 );
@@ -28,13 +28,13 @@ CREATE TABLE station (
 @Getter @Setter @ToString
 public class StationVO {
 	
-	private String sname;     //Station name-¿ªÀÌ¸§
-	private int sno;          //Station number -¿ª¹øÈ£-fk
-	private int ec;           //Exit count - Ãâ±¸°¹¼ö
-	private boolean wcio;     //watercloset inout - È­Àå½Ç À§Ä¡(¿ª»ç ¾ÈÂÊ-true/°³Âû±¸¹Û(¿ª»ç¹Û)-false)
-	private boolean ods;      //opendoorside - ¹®ÀÌ ¿­¸®´Â À§Ä¡ (¿ÞÂÊtrue/¿À¸¥Á· false)
-	private int cf;           //crossplatform - (ÀÚ·ÂÀ¸·Î ¹Ý´ë ½Â°­Àå°¡´É 2, È¯½Â¿ª ¶Ç´Â ´Ù¸¥ ¹æ½ÄÀ¸·Î °¡´É 1, °³Âû±¸ Á¦¿Ü ºÒ°¡´É 0)
-	private LocalDateTime fs; //first subway - Ã¹Â÷½Ã°£
-	private LocalDateTime ls; //last subway - ¸·Â÷½Ã°£
+	private String sname;     //Station name-
+	private int sno;          //Station number -
+	private int ec;           //Exit count -
+	private boolean wcio;     //watercloset inout - 
+	private boolean ods;      //opendoorside - 
+	private int cf;           //crossplatform - 
+	private LocalDateTime fs; //first subway -
+	private LocalDateTime ls; //last subway - 
 
 }

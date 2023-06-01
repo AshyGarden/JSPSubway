@@ -9,10 +9,7 @@
 <title>2호선 알리미</title>
 	
 	<!-- css 연결 -->
-	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/setting.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/css/user.css" rel="stylesheet">
-	
 	
 	<!-- 파비콘 -->
 	<link rel="icon" href="#">

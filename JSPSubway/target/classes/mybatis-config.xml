@@ -15,6 +15,10 @@
   		<typeAlias type="com.spring.JspSubway.command.SubwayVO" alias="subway"/>
 		<typeAlias type="com.spring.JspSubway.command.StationVO" alias="station"/> 		
 		<typeAlias type="com.spring.JspSubway.command.UserVO" alias="user"/>
+<<<<<<< HEAD
+		<typeAlias type="com.spring.JspSubway.command.PlaceBoardVO" alias="place"/>
+=======
 <!-- 	<typeAlias type="com.spring.myweb.command.PlaceBoardVO" alias="place"/> -->	
+>>>>>>> 7bb5122179654b5c7cdd1c89660dce8a426d67aa
 	</typeAliases>
 </configuration>

@@ -57,12 +57,19 @@ public class SubwayUserController {
 		return "redirect:/user/userLogin";
 	}
 	
+<<<<<<< HEAD
+	//로그인 페이지로 이동
+	@GetMapping("/login")
+	public void login() {}
+	
+	//로그인 요청
+=======
 	// 로그인 페이지로 이동 요청
 	@GetMapping("/userLogin")
 	public void login() {}
 	
 	// 로그인 요청
-	@PostMapping ("/userLogin")
+	@PostMapping("/userLogin")
 	public void login(String userId, String userPw, Model model) {
 		log.info("나는 SubwayUserController의 login이다!");
 		model.addAttribute("user", userService.login(userId,userPw));
