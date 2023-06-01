@@ -76,7 +76,7 @@
 
         const userId = document.getElementById('userId').value;
         if(userId === '') {
-            alert('아이디를 적으세요,')
+            alert('아이디를 적으세요.')
             return;
         }
         if(!idFlag) {
@@ -92,7 +92,6 @@
             },
             body : userId
         };
-
         // 비동기 요청 보내기
         fetch('${pageContext.request.contextPath}/user/idCheck', reqObj)
             .then(res => res.text())

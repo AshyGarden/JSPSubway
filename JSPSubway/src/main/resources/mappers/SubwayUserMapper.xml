@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper	namespace="com.spring.JSPSubway.user.mapper.ISubwayUserMapper">
+<mapper	namespace="com.spring.JspSubway.user.mapper.ISubwayUserMapper">
 
 	<resultMap type="user" id="userMap">
 		<result property="userId" column="user_id" />
@@ -10,7 +10,7 @@
 		<result property="userName" column="user_name" />
 		<result property="userEmail1" column="user_email1" />
 		<result property="userEmail2" column="user_email2" />
-		<collection property="userList" resultMap="userList" />
+		
 	</resultMap>
 
 
@@ -22,13 +22,12 @@
 	
 	<select id="login" resultType="string">
 		SELECT user_pw FROM users
-		WHERE user_id=#{id}
+		WHERE user_id=#{userId}
 	</select>
 	
 	<select id="idCheck" resultType="int">
-		SELECT COUNT(*)
-		FROM users
-		WHERE user_id = #{id}
+		SELECT COUNT(*) FROM users
+		WHERE user_id = #{userId}
 	</select>
 	
 </mapper>
