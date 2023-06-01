@@ -7,14 +7,14 @@ CHANGE COLUMN `station_code` `station_code` INT NULL DEFAULT NULL ;
 ALTER TABLE `jspsubway`.`subwayline2` 
 DROP COLUMN `외부코드`,
 DROP COLUMN `호선`,
-ADD COLUMN `transferline1` VARCHAR(50) NULL DEFAULT '\"\"' AFTER `station_name_jpn`,
-ADD COLUMN `transferline2` VARCHAR(50) NULL DEFAULT '\"\"' AFTER `transferline1`,
+ADD COLUMN `transferline1` VARCHAR(50) NULL AFTER `station_name_jpn`,
+ADD COLUMN `transferline2` VARCHAR(50) NULL AFTER `transferline1`,
 CHANGE COLUMN `전철역코드` `station_code` BIGINT NULL DEFAULT NULL ,
 CHANGE COLUMN `전철역명` `station_name` TEXT NULL DEFAULT NULL ,
 CHANGE COLUMN `전철명명(영문)` `station_name_eng` TEXT NULL DEFAULT NULL ,
 CHANGE COLUMN `전철명명(중문)` `station_name_chn` TEXT NULL DEFAULT NULL ,
-CHANGE COLUMN `전철명명(일문)` `station_name_jpn` TEXT NULL DEFAULT NULL ,
-ADD COLUMN `transferline3` VARCHAR(50) NULL DEFAULT NULL AFTER `transferline2`;
+CHANGE COLUMN `전철명명(일문)` `station_name_jpn` TEXT NULL DEFAULT NULL ;
+
 
 ALTER TABLE `jspsubway`.`subwayline2` 
 CHANGE COLUMN `station_code` `station_code` BIGINT NULL ,
@@ -23,8 +23,8 @@ CHANGE COLUMN `station_name_eng` `station_name_eng` TEXT NULL ,
 CHANGE COLUMN `station_name_chn` `station_name_chn` TEXT NULL ,
 CHANGE COLUMN `station_name_jpn` `station_name_jpn` TEXT NULL ,
 CHANGE COLUMN `transferline1` `transferline1` VARCHAR(50) NULL ,
-CHANGE COLUMN `transferline2` `transferline2` VARCHAR(50) NULL ;
-
+CHANGE COLUMN `transferline2` `transferline2` VARCHAR(50) NULL ,
+CHANGE COLUMN `transferline3` `transferline3` VARCHAR(50) NULL ;
 
 #용답 - 신답 - 용두 - 신설동
 #도림천 - 양천구청 - 신정네거리 - 까치산
@@ -46,7 +46,7 @@ UPDATE subwayline2 SET station_code = 247 WHERE station_name = "신설동";
 UPDATE subwayline2 SET station_code = 2010, transferline1 = 1 WHERE station_name = "시청"; 
 UPDATE subwayline2 SET station_code = 2020 WHERE station_name = "을지로입구";
 UPDATE subwayline2 SET station_code = 2030, transferline1 = 3 WHERE station_name = "을지로3가";
-UPDATE subwayline2 SET station_code = 2040, transferline1 = 5 WHERE station_name = "을지로3가";
+UPDATE subwayline2 SET station_code = 2040, transferline1 = 5 WHERE station_name = "을지로4가";
 UPDATE subwayline2 SET station_code = 2050, transferline1 = 4, transferline2 = 5 WHERE station_code = 205; #동대문역사문화공원역
 UPDATE subwayline2 SET station_code = 2060, transferline1 = 6 WHERE station_name = "신당";
 UPDATE subwayline2 SET station_code = 2070 WHERE station_name = "상왕십리";
@@ -88,3 +88,16 @@ UPDATE subwayline2 SET station_code = 2400 WHERE station_name = "신촌";
 UPDATE subwayline2 SET station_code = 2410 WHERE station_name = "이대";
 UPDATE subwayline2 SET station_code = 2420 WHERE station_name = "아현";
 UPDATE subwayline2 SET station_code = 2430, transferline1 = 5 WHERE station_name = "충정로";
+
+UPDATE subwayline2 SET station_code = 2111 WHERE station_name = "용답";
+UPDATE subwayline2 SET station_code = 2112 WHERE station_name = "신답";
+UPDATE subwayline2 SET station_code = 2113 WHERE station_name = "용두";
+UPDATE subwayline2 SET station_code = 2114, transferline1 = 1, transferline1 = 14 WHERE station_name = "신설동";
+
+UPDATE subwayline2 SET station_code = 2341 WHERE station_name = "도림천";
+UPDATE subwayline2 SET station_code = 2342 WHERE station_name = "양천구청";
+UPDATE subwayline2 SET station_code = 2343 WHERE station_name = "신정네거리";
+UPDATE subwayline2 SET station_code = 2344, transferline1 = 5 WHERE station_name = "까치산";
+
+
+

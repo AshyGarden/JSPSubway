@@ -27,7 +27,7 @@
 	<!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <img src="./img/Seoul_Metro_Line_2.svg" height="50px" width="50px" /> <a class="navbar-brand name" href="${pageContext.request.contextPath}/">&nbsp 
+            <img src="${pageContext.request.contextPath}/img/Seoul_Metro_Line_2.svg" height="50px" width="50px" /> <a class="navbar-brand name" href="${pageContext.request.contextPath}/">&nbsp 
             2<span class="go">호선</span></a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
