@@ -24,7 +24,7 @@ public class SubwayController {
 //		
 //	}
 //	
-//	//역 상세정보 페이지 열어주는 메서드
+//	//
 //	@PostMapping("/station/{sno}")
 //	public String regist(int sno) {
 //		subwayService.getStation(sno);

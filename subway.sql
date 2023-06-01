@@ -9,4 +9,4 @@ CREATE TABLE subwayline2 (
     transfer_line2 INT
 );
 
-DROP TABLE subway;
+DROP TABLE subwayline2;

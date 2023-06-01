@@ -4,10 +4,10 @@ import com.spring.JspSubway.command.StationVO;
 
 public interface IStationMapper {
 	
-	//¿ªÁ¤º¸ °¡Á®¿À±â
+	//
 	StationVO getStationInfo(int sno);
 
-	//´Ù¸¥¿ªº¸±â
+	//ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	void otherStation(int sno);
 	
 }
