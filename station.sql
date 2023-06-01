@@ -22,4 +22,3 @@ CREATE TABLE station (
 #SELECT * FROM station
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
 
-DROP TABLE station;

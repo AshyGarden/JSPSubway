@@ -43,7 +43,7 @@
 				<div class="card" lc-helper="video-bg">
 					<video class="min-vh-100" autoplay preload muted loop playsinline style="object-fit: cover; object-position: 50% 50%;">
 						<!-- adjust object-position to tweak cropping on mobile -->
-						<source src="./img/2linevideo_Trim.mp4" type="video/mp4">
+						<source src="${pageContext.request.contextPath}/img/2linevideo_Trim.mp4" type="video/mp4">
 					</video>
 				</div>
 			</div>

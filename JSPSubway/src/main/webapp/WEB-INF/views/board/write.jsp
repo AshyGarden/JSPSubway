@@ -41,36 +41,47 @@
     <div class="wrapper">
 
         <div class="col-xs-12 col-8 section-inner">
-            <div class="mb-4">
-                <label class="form-label">작성자</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" readonly>
-            </div>
-            <div class="mb-4">
-                <label class="form-label">제목</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
-            </div>
-            <div class="mb-4">
-                <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="내용을 입력해주세요."></textarea>
-            </div>
-            <div class="mb-4">
-                <label class="form-label">우편번호</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="addrZipNum" id="addrZipNum" value="" placeholder="우편번호" readonly>
-                    <button class="btn btn-outline-secondary" type="button" id="addBtn" onclick="searchAddress()">주소찾기</button>
+            <form action="${pageContext.request.contextPath}/board/placeboard" method="post">
+                <div class="mb-3">
+                    <label class="form-label" disabled>작성자</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" readonly>
                 </div>
-            </div>
-            <div class="mb-4">
-                <label class="form-label">주소</label>
-                <input class="form-control input-sm add" name="addrBasic" id="addrBasic" value="" placeholder="기본주소" readonly>
-            </div>                                                
-            <label class="form-label">사진등록</label><br>
-            <div class="input-group mb-4">
-                <input type="file" class="form-control" name="file" id="file">
-                <label class="input-group-text" for="file">Upload</label>
-            </div>
-                <button type="button" class="btn btn-outline-success" id="uploadBtn">등록하기</button>
-                <button type="button" class="btn btn-outline-success" id="uploadBtn">목록</button>
+                <div class="mb-3">
+                    <label class="form-label">제목</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="내용을 입력해주세요."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">주소</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="addrZipNum" id="addrZipNum" value="" placeholder="우편번호(주소찾기를 클릭하여 검색하세요.)" readonly>
+                        <button class="btn btn-outline-secondary" type="button" id="addBtn" onclick="searchAddress()">주소찾기</button>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <input class="form-control input-sm add" name="addrBasic" id="addrBasic" value="" placeholder="기본주소" readonly>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control input-sm add" name="addrDetail" id="addrDetail" value="" placeholder="상세주소">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">관련 링크</label>
+                    <input class="form-control input-sm add" name="placeUrl" id="placeUrl" value="" placeholder="관련 링크를 등록해주세요">
+                </div>                                                
+                <label class="form-label">사진등록</label><br>
+                <div class="input-group mb-4">
+                    <input type="file" class="form-control" name="file" id="file">
+                    <label class="input-group-text" for="file">Upload</label>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-success" id="registBtn">등록하기</button>
+                    <button type="button" class="btn btn-outline-success" id="listBtn" 
+                    onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">목록</button>
+                </div>
+            </form>
         </div>
 
     </div>
