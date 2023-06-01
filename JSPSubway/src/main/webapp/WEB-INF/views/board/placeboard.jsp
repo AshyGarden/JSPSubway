@@ -97,7 +97,7 @@
                     </c:if>
                 </ul>
                 <div class="cbtn">
-                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/##/##'">글쓰기</button>
+                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">글쓰기</button>
                 </div>
             </nav>
 
@@ -111,15 +111,67 @@
         <div id="contentDiv">
 
         </div>
-
+    
     </div>
 	
+<!-- 모달 -->
+    <div class="modal fade" id="detailModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body row">
+                    <div class="modal-img col-sm-8 col-xs-6" >
+                        <img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
+                    </div>
+                    <div class="modal-con col-sm-4 col-xs-6">
+                        <div class="modal-inner">
+                            <div class="profile">
+                                <img src="${pageContext.request.contextPath}/img/profile.png">
+                            </div>
+                            <div class="title">
+                                <p id="writer">작성자</p>
+                                <p id="title-inner">제목</p>
+                                <small id="regdate">21시간전</small><br>
+                            </div>
+                            <div class="content-inner">
+                                <p id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate elit libero, quis mattis enim tincidunt non. Mauris consequat ante vel urna posuere consequat. </p>
+                                <span>관련링크</span><br>
+                                <a id="placeUrl" href=""><small>링크가 나오는 칸이야</small></a>
+                            </div>
+                            <div class="addr-inner">
+                                <br><span>주소</span><br>
+                                <span id="addrNum"><small>우편번호가 나오는 칸이야</small></span><br>
+                                <span id="addrBasic"><small>기본주소가 나오는 칸이야</small></span>
+                                <span id="addrDetail"><small>상세주소가 나오는 칸이야</small></span>
+                            </div>
+                            <div class="link-inner">
+                                <!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp" %>
 	
 	
-	<!-- Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script>
+
+
+//상세보기 처리(모달창 열어주기)
+document.getElementById('title').addEventListener('click', (e) => {
+    console.log('제목클릭');
+    e.preventDefault(); //a의 고유 기능 중지
+    $('#snsModal').modal('show');
+});
+
+</script>
 </body>
 </html>
