@@ -72,7 +72,7 @@
           <!-- Grid column -->
           <div class="col-3 text-center mx-auto mb-md-0 mb-0">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">게시판</h6>
+            <a href="#"><h6 class="text-uppercase fw-bold">게시판</h6></a>
             <hr class="mb-4 mt-0 d-inline-block mx-auto"/>
           </div>
           <!-- Grid column -->

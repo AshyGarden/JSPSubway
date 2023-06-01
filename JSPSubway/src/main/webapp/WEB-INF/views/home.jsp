@@ -25,7 +25,7 @@
 			<button type="button"> userJoin </button>
 		</a> <br>
 		로그인 : 
-		<a href="${pageContext.request.contextPath}/user/login">
+		<a href="${pageContext.request.contextPath}/user/userLogin">
 			<button type="button"> login </button>
 		</a> <br>
 		<hr>

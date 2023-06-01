@@ -27,7 +27,7 @@
 	<!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <img src="./img/Seoul_Metro_Line_2.svg" height="50px" width="50px" /> <a class="navbar-brand name" href="${pageContext.request.contextPath}/">&nbsp 
+            <img src="${pageContext.request.contextPath}/img/Seoul_Metro_Line_2.svg" height="50px" width="50px" /> <a class="navbar-brand name" href="${pageContext.request.contextPath}/">&nbsp 
             2<span class="go">호선</span></a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"> <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/"><span class="home">Home</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/login">로그인</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="#">로그아웃</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/userLogin">로그인</a> </li>
+                    <c:if test="true"> <!-- 로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
+                        <li class="nav-item"> <a class="nav-link" href="#">로그아웃</a> </li>
+                    </c:if>
                 </ul>
-                <div class="btn btn-dark">회원가입</div>
+                <c:if test="true"> <!-- 로그인 상태가 아닐 경우에만 출력 (백핸드 후 수정) -->
+                    <a href="${pageContext.request.contextPath}/user/userJoin"><div class="btn btn-dark">회원가입</div></a>
+                </c:if>
             </div>
         </div>
     </nav>
