@@ -4,17 +4,17 @@
 <html>
 <head>
 	<title>detail</title>
-    <link href="${pageContext.request.contextPath }/css/user.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/detail.css" rel="stylesheet">
 </head>
 <body>
 
 <%@ include file="../../include/header.jsp" %>
+
     
-    
+    <div class="fixed-gradation fixedR"></div>
+    <div class="fixed-gradation fixedL"></div>
     <div class="wrapper">
 
-        <!-- <div class="fixed-gradation fixedR"></div>
-        <div class="fixed-gradation fixedL"></div> -->
 
         <section id="left">
             <div class="left-map serve-map mapL">
@@ -137,15 +137,11 @@
                 </div> 
             </div>
         </section> <!-- END Right -->
-
-
-
-
-
     </div>
-</body>
 
+<%@ include file="../../include/footer.jsp" %>
 
+    
 
     <script> //가로 스크롤 자바스크립트
 
@@ -157,16 +153,16 @@
 
             if (offset < 0) {
                 offset = 0;
-            } else if (offset > 10000 - window.innerWidth) {
-                offset = 10000 - window.innerWidth;
+            } else if (offset > 2000 - window.innerWidth) {
+                offset = 2000 - window.innerWidth;
             }
             
-            wrapper.style.transform = `translateX(-${offset}px`;
+            wrapper.style.transform = 'translateX(-'+offset+'px';
         });
 
     </script>
 
 
 
-
+</body>
 </html>
