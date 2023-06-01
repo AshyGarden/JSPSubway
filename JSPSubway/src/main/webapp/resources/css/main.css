@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@import url(./setting.css);
+
+
+/* user의 form 기초 설정값 */
+input, select{
+    font: unset;
+    border: none;
+    background-color: #f1f1f1;
+}
+button{
+    all: unset;
+    display: inline-block;
+    background-color: #f1f1f1;
+}
+
+
+/* input type=radio 설정 START*/
+.condition input[type="radio"]{
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+}
+.condition input[type="radio"]:checked {
+    border: 0.4em solid #00A84D;
+}
+.condition input[type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted #00A84D;
+}
+.condition input[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+}
+.condition input[type="radio"] {  /* 애니메이션 */
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    transition: border 0.3s ease-in-out;
+}
+/* input type=radio 설정 END!!!  */
+
+
+/* 
+h2{
+    font-size: 30px;
+    font-weight: 700;
+} */
+
+
+
+.wrapper .main{
+    width: 80%;
+    min-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+
+    background-color: white;
+    
+    padding: 30px;
+    box-sizing: border-box;
+
+}
+
+
+/* !!!!!!!!!!!!!!! section 조건창 START */
+section.condition{
+    margin-top: 40px;
+    height: fit-content;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: 17px;
+    font-family: 'GongGothicMedium';
+}
+section.condition:nth-child(){
+    margin: 0 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: cadetblue;
+}
+
+
+
+/* 환승역 선택란 */
+.cross-platform{
+    
+}
+.cross-platform select{
+    width: 148px;
+    padding: 6px 7px 6px 0;
+    border-radius: 5px;
+
+    text-indent: 3px;
+    border-right: 10px solid #f1f1f1;
+    transition: 0.6s;
+}
+.cross-platform select:focus{
+    width: 180px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+/* 문 열리는 방향 선택
+    개찰구 전 역내 화장실 유무 */
+.open-doorside{
+    font-family: 'HANAMDAUM';
+}
+
+.open-doorside > div,
+.watercloset-inout > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 6px;
+    border-radius: 8px;
+    border: 3px outset #f1f1f1;
+
+    background-color: #f1f1f1;
+    box-shadow: -2px 2px 2px gray;
+    transition: 0.6s;
+}
+
+.condition .key-button{
+    width: fit-content;
+    height: 20px;
+    border-radius: 10px;
+    padding: 0px 5px 0 2px;
+}
+
+/* 문 열리는 방향 */
+.condition label{
+    padding: 2px;
+}
+.condition label:hover{
+    cursor: pointer;
+}
+
+.watercloset-inout > div{
+    cursor: pointer;
+    height: 37.25px;
+}
+.watercloset-inout > div > span{
+    line-height: 26px;
+}
+
+
+/* 역 이름 검색기능 */
+.station-search input[type="text"]{
+    width: 160px;
+    padding: 6px 7px 6px 0;
+    border-radius: 5px;
+
+    text-indent: 8px;
+    border-right: 10px solid #f1f1f1;
+    transition: 0.6s;
+}
+.station-search input[type="text"]:focus{
+    width: 180px;
+    background-color: #e6e6e6;
+    border-color: #e6e6e6;
+}
+.station-search input[type="submit"]{
+    color: rgb(78, 78, 78);
+    border: 1px solid gray;
+    padding: 0 15px;
+    height: 28px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px gray;
+
+    margin-left: 5px;
+    transition: 0.1s;
+}
+.station-search input[type="submit"]:active{
+    background-color: #e7e7e7;
+}
+
+/* !!!!!!!!!!!!!!! section 조건창 END */
+
+
+
+
+
+
+
+section.metro-maps{
+    height: 100%;
+    background-color: tomato;
+}

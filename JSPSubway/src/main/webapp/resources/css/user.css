@@ -50,7 +50,6 @@ select{
     border: none;
 }
 button{
-    font: unset;
     all: unset;
     display: inline-block;
 }
@@ -92,6 +91,7 @@ button:active{
 .wrapper.user-join form{
     letter-spacing: 0.04em;
     width: 1000px;
+    min-width: 700px;
     position: relative;
 }
 .wrapper.login form input[type="submit"]{
@@ -100,6 +100,12 @@ button:active{
     color: white;
     font-weight: 700;
 }
+.wrapper.login form input[type="submit"]:hover{
+    background-color: #156d28;
+    box-shadow: 0px 0px 5px #00A84D;
+    border: #ffffff;
+}
+
 .wrapper.login input,
 .wrapper.user-join input,
 .wrapper.user-join select{

@@ -32,7 +32,11 @@
 		상세보기 페이지 : 
 		<a href="${pageContext.request.contextPath}/station/detail">
 			<button type="button"> detail </button>
-		</a>
+		</a> <br>
+		메인 페이지(진짜 홈) : 
+		<a href="${pageContext.request.contextPath}/station/main">
+			<button type="button"> Main </button>
+		</a> 
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 
