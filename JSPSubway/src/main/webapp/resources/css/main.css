@@ -90,9 +90,9 @@ section.condition:nth-child(){
 
 
 /* 환승역 선택란 */
-.cross-platform{
+/* .cross-platform{
     
-}
+} */
 .cross-platform select{
     width: 148px;
     padding: 6px 7px 6px 0;

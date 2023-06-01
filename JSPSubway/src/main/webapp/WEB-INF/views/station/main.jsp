@@ -74,5 +74,17 @@
 <%@ include file="../../include/footer.jsp" %>
 
 
+	<!-- <script>
+		// 문 열리는 방향 L/R의 체크해제 기능 추가
+		document.querySelector('.condition .open-doorside > div').addEventListener('click', function(e){
+			if(!e.target.matches('label *') && !e.target.matches('label')){ 
+				console.log('클릭이 가능한 범위가 아님!');
+				return;
+			}
+			console.log('클릭한 범위: '+e.target);
+		})
+	</script> -->
+
+
 </body>
 </html>
