@@ -23,6 +23,7 @@ public class SubwayUserController {
 
 	@Autowired
 	private ISubwayUserService userService;
+	@Autowired
 	private MailSenderService mailService;
 	
 	// 회원가입 페이지로 이동
@@ -48,8 +49,9 @@ public class SubwayUserController {
 	}
 	
 	// 회원 가입 처리
-	@GetMapping("join")
+	@PostMapping("join")
 	public String join(UserVO vo, RedirectAttributes ra) {
+		log.info("param : {}",vo.toString());
 		userService.join(vo);
 		ra.addFlashAttribute("msg", "joinSuccess");  // userLogin.jsp의 script에 작성할거임
 		return "redirect:/user/userLogin";
@@ -60,7 +62,7 @@ public class SubwayUserController {
 	public void login() {}
 	
 	// 로그인 요청
-	@PostMapping("/userLogin")
+	@PostMapping ("/userLogin")
 	public void login(String userId, String userPw, Model model) {
 		log.info("나는 SubwayUserController의 login이다!");
 		model.addAttribute("user", userService.login(userId,userPw));

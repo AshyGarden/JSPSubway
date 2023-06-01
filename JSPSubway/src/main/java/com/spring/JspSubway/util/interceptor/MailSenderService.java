@@ -30,7 +30,6 @@ public class MailSenderService {
 	// 회원가입 시 사용할 이메일 양식
 	public String joinEmail(String email) {
 		authNum = makeRandomNumber();
-		
 		String setFrom = ""; // email-config에 설정한 발신용 이메일 주소
 		String toMail = email;
 		String title = "회원가입 인증 이메일입니다.";
