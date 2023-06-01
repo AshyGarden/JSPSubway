@@ -21,18 +21,22 @@
 		<hr>
 		
 		회원가입 : 
-		<a href="${pageContext.request.contextPath}/station/userJoin">
+		<a href="${pageContext.request.contextPath}/user/userJoin">
 			<button type="button"> userJoin </button>
 		</a> <br>
 		로그인 : 
-		<a href="${pageContext.request.contextPath}/station/login">
+		<a href="${pageContext.request.contextPath}/user/login">
 			<button type="button"> login </button>
 		</a> <br>
 		<hr>
 		상세보기 페이지 : 
 		<a href="${pageContext.request.contextPath}/station/detail">
 			<button type="button"> detail </button>
-		</a>
+		</a> <br>
+		메인 페이지(진짜 홈) : 
+		<a href="${pageContext.request.contextPath}/station/main">
+			<button type="button"> Main </button>
+		</a> 
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 
