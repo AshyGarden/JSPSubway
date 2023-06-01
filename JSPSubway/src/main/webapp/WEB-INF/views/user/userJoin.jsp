@@ -27,7 +27,7 @@
                 <div class="green-circle last-cirecle"> </div>
             </div>
 
-            <form action="${pageContext.request.contextPath}/uesr/join" method="post" id="joinForm" name="joinForm">
+            <form action="${pageContext.request.contextPath}/user/join" method="post" id="joinForm" name="joinForm">
                 <input type="text" name="userId" id="userId" placeholder="아이디 (영문포함 4~12자 이상)">
                 <button type="button" class="btn btn-primary" id="idCheckBtn">중복확인</button>
                 <span id="msgId"></span>
@@ -45,10 +45,10 @@
                 <!--<p>이름은 2자리 이상, 12자리 이하여야 합니다.</p>-->
 
                 <input type="text" name="userEmail1" id="userEmail1" placeholder="이메일">
-                <select name="userEmail2" id="user-email2" >
-                    <option> naver.com</option>
-                    <option> gmail.com</option>
-                    <option> daum.net</option>
+                <select name="userEmail2" id="userEmail2" >
+                    <option>@naver.com</option>
+                    <option>@gmail.com</option>
+                    <option>@daum.net</option>
                 </select>
                 <button type="button" id="mail-check-btn" class="btn btn-primary">이메일 인증</button>
                 <input type="text" class="form-control mail-check-input" placeholder="인증번호 6자리를 입력하세요" maxlength="6" disabled="disabled">
@@ -56,7 +56,7 @@
                 <!--<p>이메일 인증되었습니다.</p>-->
 
                 <br>
-                <input type="submit" id="joinBtn" value="회원가입">
+                <input type="button" id="joinBtn" value="회원가입">
 
             </form>
             <!-- <div class="simbol-line2"></div> -->
@@ -148,6 +148,7 @@
 
     // 폼 데이터 검증 (회원 가입 버튼 눌렀을 시)
     document.getElementById('joinBtn').onclick = function() {
+    	
         if(idFlag && pwFlag) {
             if(!document.getElementById('userId').getAttribute('readonly')) {
                 alert('아이디 중복체크는 필수입니다.');
@@ -169,7 +170,7 @@
                 document.joinForm.submit();
             } else return;
         } else {
-            alet('입력값을 다시 한번 확인하세요!');
+            alert('입력값을 다시 한번 확인하세요!');
         }
     }
 
