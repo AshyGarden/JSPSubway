@@ -21,11 +21,11 @@
 		<hr>
 		
 		회원가입 : 
-		<a href="${pageContext.request.contextPath}/station/userJoin">
+		<a href="${pageContext.request.contextPath}/user/userJoin">
 			<button type="button"> userJoin </button>
 		</a> <br>
 		로그인 : 
-		<a href="${pageContext.request.contextPath}/station/login">
+		<a href="${pageContext.request.contextPath}/user/userLogin">
 			<button type="button"> login </button>
 		</a> <br>
 		<hr>

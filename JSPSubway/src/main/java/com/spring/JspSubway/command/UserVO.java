@@ -5,8 +5,8 @@ import lombok.ToString;
 import lombok.Setter;
 
 /*
- #À¯Àú Á¤º¸
-CREATE TABLE users (
+ #ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+CREATE TABLE subUsers (
     user_id VARCHAR(100) PRIMARY KEY,
     user_pw VARCHAR(100) NOT NULL,
     user_name VARCHAR(100) NOT NULL,
@@ -24,4 +24,4 @@ public class UserVO {
 	private String userEmail1;
 	private String userEmail2;
 	
-}
+};
