@@ -16,60 +16,74 @@
 	
 	<!-- 아이콘 사이트 fontawesome css: https://fontawesome.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	
+    
+    <style>
+    footer {
+        background-color: #ECEFF1;
+    }
+    
+    footer hr {
+        width: 60px;
+        background-color: #00A84D;
+        height: 2px
+    }
+    
+    footer .container h6:hover {
+        color: #00A84D;
+    }
+    </style>
 
 </head>
 <body>
 
-	 <!-- footer -->
+<!-- footer -->
 
-    <footer class="text-center text-lg-start text-dark fixed-bottom">
+<footer class="text-center text-lg-start text-dark fixed-bottom">
   
-        <!-- Section: Links  -->
-        <section class="">
-          <div class="container text-center text-md-start mt-6">
-            <!-- START Grid row -->
-            <div class="row mt-5">
-
-                <!-- Grid column -->
-                <div class="col-md-1 mx-auto mb-2">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold">###</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                </div>
-                <!-- END Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-1 mx-auto mb-2">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">###</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                </div>
-                <!-- END Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-1 mx-auto mb-2">
-                    <h6 class="text-uppercase fw-bold">###</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto">
-                </div>
-                <!-- Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-1 mx-auto mb-md-0 mb-2">
-                    <h6 class="text-uppercase fw-bold" onclick="location.href='#'">게시판</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto"/>
-                </div>
-                <!-- Grid column -->
-
-            </div> 
-            <!-- END Grid row -->
-
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-lg-start mt-6 justify-content-between">
+        <!-- Grid row -->
+        <div class="row mt-4">
+          <!-- Grid column -->
+          <div class="col-3 text-center mx-auto mb-0">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">###</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto">
           </div>
-        </section>
-        <!-- Section: Links  -->
-    
-      </footer>
-      <!-- Footer -->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-3 text-center mx-auto mb-0">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">###</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto">
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-3 text-center mx-auto mb-0">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">###</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto">
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-3 text-center mx-auto mb-md-0 mb-0">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">게시판</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto"/>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+  </footer>
+  <!-- Footer -->
 
 
 </body>
