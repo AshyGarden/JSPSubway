@@ -69,8 +69,8 @@
                 <input type="file" class="form-control" name="file" id="file">
                 <label class="input-group-text" for="file">Upload</label>
             </div>
-            <button type="button" class="btn btn-outline-success" id="uploadBtn">등록하기</button>
-            <button type="button" class="btn btn-outline-success" id="uploadBtn">목록</button>
+                <button type="button" class="btn btn-outline-success" id="uploadBtn">등록하기</button>
+                <button type="button" class="btn btn-outline-success" id="uploadBtn">목록</button>
         </div>
 
     </div>
