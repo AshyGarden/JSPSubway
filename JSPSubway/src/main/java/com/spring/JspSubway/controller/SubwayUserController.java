@@ -56,14 +56,7 @@ public class SubwayUserController {
 		ra.addFlashAttribute("msg", "joinSuccess");  // userLogin.jsp의 script에 작성할거임
 		return "redirect:/user/userLogin";
 	}
-	
-<<<<<<< HEAD
-	//로그인 페이지로 이동
-	@GetMapping("/login")
-	public void login() {}
-	
-	//로그인 요청
-=======
+
 	// 로그인 페이지로 이동 요청
 	@GetMapping("/userLogin")
 	public void login() {}
