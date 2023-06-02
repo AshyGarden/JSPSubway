@@ -16,6 +16,5 @@
 		<typeAlias type="com.spring.JspSubway.command.StationVO" alias="station"/> 		
 		<typeAlias type="com.spring.JspSubway.command.UserVO" alias="user"/>
 		<typeAlias type="com.spring.JspSubway.command.PlaceBoardVO" alias="place"/>
-
 	</typeAliases>
 </configuration>
