@@ -24,7 +24,7 @@
 	<!-- write style -->
     <style>
         .wrapper .section-inner {
-            margin: 2% auto;
+            margin: 1% auto;
         }
 
         .wrapper .section-inner .btn {
@@ -44,15 +44,25 @@
             <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
                     <label class="form-label">작성자</label>
-                    <input type="text" class="form-control" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
+                    <input type="text" class="form-control" name="userId" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
+                </div>
+                <div class="form-group">
+                    <label class="mb-2" for="stationNum">역 번호</label>
+                    <div class="input-group mb-3">
+                        <select name="sno" class="form-control" id="sno">
+                            <c:forEach items="##" var="##">
+                            	<option>200</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">제목</label>
-                    <input type="text" class="form-control" id="title" placeholder="제목을 입력해주세요.">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해주세요.">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                    <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력해주세요."></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="5" placeholder="내용을 입력해주세요."></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">주소</label>
@@ -85,7 +95,6 @@
         </div>
 
     </div>
-
 
     <!-- footer -->
     <%@ include file="../../include/footer.jsp" %>

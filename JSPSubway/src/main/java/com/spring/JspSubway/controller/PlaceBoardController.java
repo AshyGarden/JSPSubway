@@ -2,6 +2,7 @@ package com.spring.JspSubway.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,8 +35,10 @@ public class PlaceBoardController {
 	//글 쓰기
 	@PostMapping("/write")
 	public String write(PlaceBoardVO vo) {
+		log.info("글정보"+vo.toString());
 		placeBoardService.write(vo);
 		return "redirect:/board/placeboard"; //placeboard로 재요청
 	}
+
 	
 }
