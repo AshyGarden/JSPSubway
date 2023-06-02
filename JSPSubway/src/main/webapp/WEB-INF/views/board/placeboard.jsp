@@ -115,14 +115,14 @@
 	
 <!-- 모달 -->
     <div class="modal fade" id="detailModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body row">
-                    <div class="modal-img col-sm-8 col-xs-6" >
-                        <img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
-                    </div>
-                    <div class="modal-con col-sm-4 col-xs-6">
-                        <div class="modal-inner">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-body row">
+					<div class="modal-img col-sm-8 col-xs-6" >
+						<img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
+					</div>
+					<div class="modal-con col-sm-4 col-xs-6">
+						<div class="modal-inner">
                             <div class="profile">
                                 <img src="${pageContext.request.contextPath}/img/profile.png">
                             </div>
@@ -145,12 +145,12 @@
                             <div class="link-inner">
                                 <!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp" %>
@@ -166,7 +166,7 @@
 document.getElementById('title').addEventListener('click', (e) => {
     console.log('제목클릭');
     e.preventDefault(); //a의 고유 기능 중지
-    $('#snsModal').modal('show');
+    $('#detailModal').modal('show');
 });
 
 </script>
