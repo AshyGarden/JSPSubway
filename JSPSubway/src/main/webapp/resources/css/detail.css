@@ -243,17 +243,17 @@ section#center .details > * > strong {
     font-size: 1.1em;
     text-shadow: 2px 2px 4px #0c0c0c;
 }
-section#center .details .cross-platform{
+section#center .cross-platform{
     margin: 10px auto;
 }
-section#center .details .cross-platform > *{
+section#center .cross-platform > *{
     margin-bottom: 5px;
 }
-section#center .details .cross-img > i:nth-of-type(n+2) {
+section#center .cross-img > i:nth-of-type(n+2) {
     /* 환승역 아이콘 간격 조정 */
     margin-left: 5%;
 }
-section#center .details .exit-LR h5 span{
+section#center .exit-LR h5 span{
     
     /* box-shadow: 0 0 5px #474747; */
     background-color: #e3e8f0;
@@ -265,10 +265,10 @@ section#center .details .exit-LR h5 span{
     font-size: 0.95em;
     opacity: 1;
 }
-section#center .details .exit-LR h5 span.left{ /* 크기 맞추기 */
+section#center .exit-LR h5 span.left{ /* 크기 맞추기 */
     padding: 1px 18px 1px; 
 }
-section#center .details .exit-LR h5 span.selete{ 
+section#center .exit-LR h5 span.selete{ 
     background-color: #ffffff;
     border: 1px groove #ffffff;
     /* box-shadow: 0 0 5px #808080; */
@@ -276,6 +276,15 @@ section#center .details .exit-LR h5 span.selete{
 
     font-weight: 500;
 }
+section#center .exit-count p#show-station-img{ 
+    /* 역 이미지 보러가기 */
+    color: #00A84D;
+    margin-top: 8px;
+    text-decoration: underline;
+    
+}
+
+
 
 
 /* 첫차, 막차 조정 */
