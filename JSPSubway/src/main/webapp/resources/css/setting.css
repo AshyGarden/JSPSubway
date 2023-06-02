@@ -53,62 +53,6 @@ body{
 }
 
 
-/* /////////////////////////////////////////// Header!!!  */
-.navbar.navbar-expand-lg.navbar-dark.bg-dark{
-    display: flex;
-}
-.navbar .navbar-brand{
-    margin-left: 15%;
-}
-.navbar .navbar-brand img {
-    height: 9%;
-    width: 9%;
-}
-.navbar .collapse {
-    padding-right: 80px;
-}
-
-.navbar .navbar-toggler {
-    float: right;
-}
-
-/* titlebox */
-.wrapper .titlebox {
-    font-size: 20px;
-    margin : 5% auto;
-    text-align: center;
-    border-bottom : 2px solid gray;
-    border-top : 2px solid gray;
-    height: 70px;
-    line-height: 70px;
-    width : 200px;
-}    
-/* /////////////// Header END */
-
-
-
-/* /////////////////////////////////////////// Footer!!!  */
-footer {
-    background-color: #ECEFF1;
-}
-
-footer hr {
-    min-width: 60px;
-    height: 2px;
-}
-footer .container h6{
-    min-width: 60px;
-    text-align: center;
-    font-weight: 500;
-    padding-bottom: 5px;
-    
-}
-
-footer .container h6:hover {
-    color: #00A84D;
-}
-/* /////////////// Footer END  */
-
 
 
 

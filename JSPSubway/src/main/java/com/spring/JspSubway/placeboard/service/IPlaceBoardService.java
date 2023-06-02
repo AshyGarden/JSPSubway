@@ -6,8 +6,8 @@ import com.spring.JspSubway.command.PlaceBoardVO;
 
 public interface IPlaceBoardService {
 		
-	//글 등록
-	void regist(PlaceBoardVO vo);
+	//글 쓰기
+	void write(PlaceBoardVO vo);
 	
 	//글 목록
 	List<PlaceBoardVO> getList();
