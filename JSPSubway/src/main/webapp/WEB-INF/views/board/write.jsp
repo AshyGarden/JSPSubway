@@ -43,7 +43,7 @@
         <div class="col-xs-12 col-8 section-inner">
             <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
-                    <label class="form-label" disabled>작성자</label>
+                    <label class="form-label">작성자</label>
                     <input type="text" class="form-control" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
                 </div>
                 <div class="mb-3">
