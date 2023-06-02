@@ -2,6 +2,18 @@
 @import url(./setting.css);
 
 
+body{
+      /* 드래그 방지 */
+      webkit-user-select:none;
+      moz-user-select:none;
+      ms-user-select:none;
+      user-select:none
+}
+
+
+
+
+
 /* user의 form 기초 설정값 */
 input, select{
     font: unset;
@@ -107,9 +119,6 @@ section.condition .watercloset-inout > h4{
 
 
 /* 환승역 선택란 */
-/* .cross-platform{
-    
-} */
 .cross-platform select{
     width: 148px;
     padding: 6px 7px 6px 0;
@@ -226,7 +235,7 @@ section.metro-maps{
 }
 
 .metro-maps #map-box{
-    width: 1100px;
+    width: 1070px;
     height: 450px;
 
     border-radius: 80px;
@@ -236,8 +245,8 @@ section.metro-maps{
     position: relative;
 }
 .metro-maps #map-box .station .st-circle{
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
     background-color: #00A84D;
     border-radius: 50%;
     margin: 0 auto;
@@ -247,32 +256,35 @@ section.metro-maps{
     width: 26px;
     height: 26px;
     background-color: rgb(255, 255, 255);
-    border: 3px solid #00A84D;
-    scale: 1.3;
-
+    border: 4px solid #00A84D;
 }
 .metro-maps #map-box .station .st-name{
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
+    font-family: 'GongGothicMedium';
+    font-weight: 400;
 }
 /* 글자역(이름) 위치 조정 (마진) */
 .metro-maps #map-box #map-top .station .st-name,
 .metro-maps #map-box #map-top-out .station .st-name,
-.metro-maps #map-box #map-left-out .station .st-name{ margin-bottom: 7px; }
+.metro-maps #map-box #map-left-out .station .st-name{ margin-bottom: 8px; }
 .metro-maps #map-box #map-bottom .station .st-name,
-.metro-maps #map-box #map-bottom-out .station .st-name{ margin-top: 7px; }
-.metro-maps #map-box #map-left .station .st-name{ margin-right: 7px; } 
+.metro-maps #map-box #map-bottom-out .station .st-name{ margin-top: 8px; }
+.metro-maps #map-box #map-left .station .st-name{ margin-right: 8px; } 
 .metro-maps #map-box #map-right .station .st-name,
-.metro-maps #map-box #map-right-out .station .st-name{ margin-left: 7px; }
+.metro-maps #map-box #map-right-out .station .st-name{ margin-left: 8px; }
 
-.metro-maps #map-box #map-left .station:nth-child(2) .st-name{ 
-	/* 신도림역 이름 오른쪽 정렬 */
+.metro-maps #map-box #map-top .station .st-name, /* 위 아래 글자 줄개행 */
+.metro-maps #map-box #map-bottom .station .st-name{ width: 67px; line-height: 1.1;} 
+
+.metro-maps #map-box #map-left .station:nth-child(2) .st-name,
+.metro-maps #map-box #map-left .station:nth-child(1) .st-name{ 
+	/* 신도림역, 대림 이름 오른쪽 정렬 */
     margin-right: 0; 
-    margin-left: 7px; 
     position: relative;
-    left: 55px;
+    left: 80px;
 } 
-
+.metro-maps #map-box #map-left .station:nth-child(1) .st-name{ left: 67px; }
 
 .metro-maps #map-box #map-top,
 .metro-maps #map-box #map-bottom{
@@ -300,10 +312,10 @@ section.metro-maps{
     top: 50%;
     transform: translate(0, -50%);
 }
-.metro-maps #map-box #map-top{ top: -9%; align-items: end; }
-.metro-maps #map-box #map-bottom{ bottom: -9%; flex-flow: row-reverse; align-items: flex-start; }
-.metro-maps #map-box #map-left{ left: -9%; flex-flow: column-reverse; align-items: flex-end; }
-.metro-maps #map-box #map-right{ right: -9%; flex-flow: column; align-items: flex-start; }
+.metro-maps #map-box #map-top{ top: -17.7%; align-items: end; }
+.metro-maps #map-box #map-bottom{ bottom: -17.6%; flex-flow: row-reverse; align-items: flex-start; }
+.metro-maps #map-box #map-left{ left: -9.4%; flex-flow: column-reverse; align-items: flex-end; }
+.metro-maps #map-box #map-right{ right: -9.5%; flex-flow: column; align-items: flex-start; }
 
 .metro-maps #map-box #map-left .station,
 .metro-maps #map-box #map-right .station{
@@ -312,29 +324,32 @@ section.metro-maps{
     align-items: center;
     justify-content: center;
 }
-
-
+/* 양끝 역 위치조정 */
+#map-box #map-top .station:nth-child(1){ position: relative; left: 10px; bottom: -3px; } 
+#map-box #map-top .station:nth-child(14){ position: relative; right: 10px; bottom: -3px; } 
+#map-box #map-bottom .station:nth-child(1){ position: relative; right: 10px; top: -3px; } 
+#map-box #map-bottom .station:nth-child(14){ position: relative; left: 10px; top: -3px; } 
+#map-box #map-left .station:nth-child(1){ position: relative; left: 6px; bottom:-2px; } 
+#map-box #map-left .station:nth-child(7){ position: relative; left: 6px; top:-2px; }
+#map-box #map-right .station:nth-child(1){ position: relative; right: 2px; top:5px; } /* 성수 */
+#map-box #map-right .station:nth-child(8){ position: relative; right: 11px; bottom:-2px; }
 
 /* 외부선로 조정 */
 .metro-maps #map-Kkachisan{
     position: absolute;
-    bottom: 107px;
+    bottom: 95px;
     left: -118px;
     transform: translate(-50%, 0%);
-    /* background-color: tomato; */
 }
 .metro-maps #map-Sinseoldong{
     position: absolute;
     right: -8px;
     top: 5px;
     transform: translate(0, -50%);
-    /* background-color: tomato; */
 }
 
-#map-box .overflow-box{ /* 역 숨기기 */
-    overflow: hidden;
-    position: relative;
-}
+/* 외부선로 역 숨기기 */
+#map-box .overflow-box{ overflow: hidden; position: relative; } 
 #map-Kkachisan .overflow-box{ width: 224px; height: 60px;}
 #map-Sinseoldong .overflow-box{ width: 120px;  height: 210px; }
 
@@ -348,7 +363,7 @@ section.metro-maps{
 
 
 
-/*  외부선로 역 위치 조정 */
+/*  외부선로 동그라미(역) 위치 조정 */
 #map-box #map-top-out,
 #map-box #map-bottom-out,
 #map-box #map-left-out,
@@ -356,7 +371,6 @@ section.metro-maps{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
     position: absolute;
 }
 #map-box #map-left-out{ /* 까치산 */
@@ -366,30 +380,57 @@ section.metro-maps{
     bottom: 38px;
 }
 #map-box #map-bottom-out{ /* 까치산쪽 역x3 */
-    width: 215px; 
+    width: 210px; 
     height: fit-content;
-    bottom: -30px;
-    left: -2px;
+    bottom: -48px;
+    left: -5px;
+    align-items: flex-start;
 }
 
 #map-box #map-right-out{ /* 신설동쪽 역x2 */
     width: fit-content; 
     height: 120px;
     top: -4px;
-    right: -40px;
+    right: -47px;
     flex-flow: column-reverse;
 }
 #map-box #map-top-out{ /* 신설동, +역1 */
     width: 170px; 
     height: fit-content;
-    top: -26px;
+    top: -33px;
     right: 6px;
+    align-items: flex-start;
 }
 
 #map-box #map-right-out .station{
     display: flex;
+    align-items: center;
 }
 
 
+/* 애니메이션 */
+.metro-maps #map-box,
+.metro-maps #map-box .station,
+.metro-maps #map-box .station .outline,
+.metro-maps #map-box .station .st-circle{ transition: 0.4s; }
+
+
+.metro-maps #map-box .station.station-hover{
+    scale: 1.4;
+    text-shadow: 1px 1px 3px rgb(185, 185, 184);
+}
+#map-top .station.station-hover{ bottom: 10px; }
+#map-bottom .station:nth-child(-n+13).station-hover{ margin-top: 7px; }
+#map-left .station:nth-child(-n+7).station-hover{ margin-right: 10px; }
+#map-right .station:nth-child(-n+7).station-hover{ left: 10px; }
+
+.metro-maps #map-box .station.station-nothover .st-circle{
+    background-color: #45f095;
+    border-color: #45f095;
+    box-shadow: 0 0 2px #45f095;
+}
+.metro-maps #map-box .station.station-nothover .st-name{
+    color: gray;
+}
 
 
