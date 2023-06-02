@@ -54,6 +54,7 @@
                     <li>한자 新道林驛</li>
                     <li>일본어 新道林驛</li>
                 </div>
+                
                 <hr>
 
                 <div class="details">
@@ -75,6 +76,7 @@
                     </div>
                     <div class="exit-count">
                         <h5>출구 개수: <strong>exit_count</strong>개</h5>
+                        <p id="show-station-img">역 이미지 보러가기</p>
                     </div>
                     <div class="exit-LR">
                         <h5>
@@ -83,7 +85,6 @@
                             <span class="left selete">LEFT</span> 출구 위치 <span class="right">RIGHT</span> 
                         </h5>
                     </div>
-
                 </div>
 
                 <table>

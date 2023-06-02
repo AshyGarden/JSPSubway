@@ -45,13 +45,6 @@ button{
 /* input type=radio 설정 END!!!  */
 
 
-/* 
-h2{
-    font-size: 30px;
-    font-weight: 700;
-} */
-
-
 
 .wrapper .main{
     width: 80%;
@@ -69,23 +62,45 @@ h2{
 
 /* !!!!!!!!!!!!!!! section 조건창 START */
 section.condition{
-    margin-top: 40px;
     height: fit-content;
-    width: 100%;
+    width: 80%;
+    margin: 40px auto 20px;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 
     font-size: 17px;
     font-family: 'GongGothicMedium';
+
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 15px;
+
 }
 section.condition:nth-child(){
-    margin: 0 20px;
+    margin: 0 15px;
     width: fit-content;
     height: fit-content;
-    background-color: cadetblue;
+    background-color: #00A84D;
+    
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
 }
+section.condition div > h4{
+    font-family: 'GongGothicMedium';
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 7px;
+}
+section.condition .watercloset-inout > h4{
+    color: #f1f1f1;
+}
+
 
 
 
@@ -115,19 +130,31 @@ section.condition:nth-child(){
 .open-doorside{
     font-family: 'HANAMDAUM';
 }
-
+.open-doorside .key-button{
+    font-size: 17px;
+}
+.watercloset-inout .key-button{
+    font-size: 14px;
+}
 .open-doorside > div,
 .watercloset-inout > div{
     width: fit-content;
     height: fit-content;
-    padding: 3px 6px;
+    padding: 3px 6px 2px;
     border-radius: 8px;
-    border: 3px outset #f1f1f1;
+    border: 2px outset #f1f1f1;
 
     background-color: #f1f1f1;
     box-shadow: -2px 2px 2px gray;
-    transition: 0.6s;
+    transition: 0.15s;
 }
+.watercloset-inout div.wc-select{ /* 버튼이 눌려있는 상태 */
+    background-color: #00A84D;
+    border-color: #12c465;
+    box-shadow: -2px 2px 4px gray;
+    color: white;
+}
+
 
 .condition .key-button{
     width: fit-content;
@@ -136,7 +163,6 @@ section.condition:nth-child(){
     padding: 0px 5px 0 2px;
 }
 
-/* 문 열리는 방향 */
 .condition label{
     padding: 2px;
 }
@@ -154,8 +180,8 @@ section.condition:nth-child(){
 
 
 /* 역 이름 검색기능 */
-.station-search input[type="text"]{
-    width: 160px;
+.station-search form input[type="text"]{
+    width: 180px;
     padding: 6px 7px 6px 0;
     border-radius: 5px;
 
@@ -163,12 +189,12 @@ section.condition:nth-child(){
     border-right: 10px solid #f1f1f1;
     transition: 0.6s;
 }
-.station-search input[type="text"]:focus{
-    width: 180px;
+.station-search form input[type="text"]:focus{
+    width: 200px;
     background-color: #e6e6e6;
     border-color: #e6e6e6;
 }
-.station-search input[type="submit"]{
+.station-search form input[type="submit"]{
     color: rgb(78, 78, 78);
     border: 1px solid gray;
     padding: 0 15px;
@@ -180,19 +206,217 @@ section.condition:nth-child(){
     margin-left: 5px;
     transition: 0.1s;
 }
-.station-search input[type="submit"]:active{
+.station-search form input[type="submit"]:active{
     background-color: #e7e7e7;
 }
 
-/* !!!!!!!!!!!!!!! section 조건창 END */
+/* !!!! section 조건창 END */
 
 
 
-
-
-
-
+/* !!!!!!!!!!!!!!! section Map start */
 section.metro-maps{
     height: 100%;
-    background-color: tomato;
+    background-color: aliceblue;
+    margin-top: 80px;
 }
+
+.metro-maps #map-box{
+    width: 1100px;
+    height: 400px;
+
+    border-radius: 60px;
+    border: 10px solid #00A84D;
+    background-color: tomato;
+    
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.metro-maps #map-box .top,
+.metro-maps #map-box .bottom{
+    width: 1000px;
+    height: fit-content;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.metro-maps #map-box .top{
+    top: -10%;
+}
+.metro-maps #map-box .bottom{
+    bottom: -10%;
+    flex-flow: row-reverse;
+}
+
+.metro-maps #map-box .left,
+.metro-maps #map-box .right{
+    width: fit-content;
+    height: 400px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.metro-maps #map-box .left{
+    left: -8.5%;
+    top: -50%;
+    transform: translate(0, -90%);
+    flex-flow: column-reverse;
+}
+.metro-maps #map-box .right{
+    flex-flow: column;
+    right: -4%;
+}
+.metro-maps #map-box .left .station,
+.metro-maps #map-box .right .station{
+    display: flex;
+    align-items: center;
+}
+.metro-maps #map-box .left .station .st-name{
+    margin-right: 6px;
+}
+.metro-maps #map-box .right .station .st-name{
+    margin-left: 6px;
+}
+
+.metro-maps #map-box .station .st-circle{
+    width: 25px;
+    height: 25px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 100;
+}
+.metro-maps #map-box .station .st-name{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+
+/* 여기부터 주석 */
+/*
+section.metro-maps .map-contain{
+    width: fit-content;
+    height: fit-content;
+
+    margin: 50px auto 0;
+    background-color: darkred;
+    display: flex;
+    flex-flow: column;
+} */
+
+/* 길이, 위치 지정 */
+/* .metros {
+    background-color: green;
+} */
+/*
+.metros.map-row{
+    width: 1000px;
+    height: 30px;
+
+    display: flex;
+}
+#map-middle .metros.map-column{
+    width: 30px;
+    height: 400px;
+}
+
+.metros#map-top,
+.metros#map-middle,
+.metros#map-bottom{
+    width: 1060px;
+    display: flex;
+    justify-content: space-between;
+}
+.metros#map-top{
+    background-color: lightgray;
+}
+.metros#map-middle{
+    background-color: gray;
+    height: fit-content;
+}
+.metros#map-bottom{
+    background-color: darkgray;
+}
+.metros.map-empty{
+    background-color: darkslateblue;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+ .metro#map-center,
+.metro#map-bottom-center{
+    width: 1000px;
+}
+
+.map-contain #map-top-center{
+    width: 1000px;
+    height: 30px;
+    
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.metros#map-center{
+    background-color: yellow;
+    width: 1000px;
+    height: 400px;
+}
+.map-contain #map-left{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.map-contain #map-left .station{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    right: 10px;
+    
+    display: flex;
+}
+
+.metro-maps .map-contain .station{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 10px;
+}
+.metro-maps .map-contain .station .st-circle{
+    width: 28px;
+    height: 28px;
+    background-color: #00A84D;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.metro-maps .map-contain .station .st-name{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.map-contain #map-left .station .st-name{
+    line-height: 28px;
+    margin-right: 5px;
+} */

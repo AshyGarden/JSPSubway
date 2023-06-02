@@ -16,6 +16,8 @@ public class StationController {
 		log.info("station info");
 	}
 	
+
+	//상세 보기 페이지로 이동
 	@GetMapping("/detail")
 	public void	detail() {
 		log.info("상세보기 페이지 GET 요청(jsp시험용)");
