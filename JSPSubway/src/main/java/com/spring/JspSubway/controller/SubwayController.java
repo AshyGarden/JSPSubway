@@ -19,16 +19,16 @@ public class SubwayController {
 	@Autowired
 	private ISubwayService subwayService;
 	
-//	@GetMapping("/line2")
-//	public void getStation() {
-//		
-//	}
-//	
-//	//
-//	@PostMapping("/station/{sno}")
-//	public String regist(int sno) {
-//		subwayService.getStation(sno);
-//		return "station/{sno}";
-//	}
+	@GetMapping("/line2")
+	public void getStation() {
+		
+	}
+	
+	
+	@PostMapping("/{sno}")
+	public String regist(int sno) {
+		subwayService.getStation(sno);
+		return "station/{sno}";
+	}
 
 }

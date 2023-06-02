@@ -9,6 +9,6 @@ CREATE TABLE users (
     user_name VARCHAR(100) NOT NULL,
     user_email1 VARCHAR(50), 
     user_email2 VARCHAR(50)
-);
+) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE users;

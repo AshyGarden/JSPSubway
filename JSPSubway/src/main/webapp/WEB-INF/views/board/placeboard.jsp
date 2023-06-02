@@ -63,8 +63,7 @@
                             작성자
                         </td>
                         <td>
-                            등록일<fmt:parseDate value="##" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
-                            <fmt:formatDate value="##" pattern="yyyy년 MM월 dd일 HH시 mm분" />
+                            등록일
                         </td>
                     </tr>
                 </c:forEach>
@@ -97,7 +96,7 @@
                     </c:if>
                 </ul>
                 <div class="cbtn">
-                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">글쓰기</button>
+                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/write'">글쓰기</button>
                 </div>
             </nav>
 
@@ -116,14 +115,14 @@
 	
 <!-- 모달 -->
     <div class="modal fade" id="detailModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body row">
-                    <div class="modal-img col-sm-8 col-xs-6" >
-                        <img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
-                    </div>
-                    <div class="modal-con col-sm-4 col-xs-6">
-                        <div class="modal-inner">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-body row">
+					<div class="modal-img col-sm-8 col-xs-6" >
+						<img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
+					</div>
+					<div class="modal-con col-sm-4 col-xs-6">
+						<div class="modal-inner">
                             <div class="profile">
                                 <img src="${pageContext.request.contextPath}/img/profile.png">
                             </div>
@@ -146,19 +145,17 @@
                             <div class="link-inner">
                                 <!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp" %>
 	
 	
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
@@ -169,7 +166,7 @@
 document.getElementById('title').addEventListener('click', (e) => {
     console.log('제목클릭');
     e.preventDefault(); //a의 고유 기능 중지
-    $('#snsModal').modal('show');
+    $('#detailModal').modal('show');
 });
 
 </script>

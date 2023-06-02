@@ -24,7 +24,7 @@
 	<!-- write style -->
     <style>
         .wrapper .section-inner {
-            margin: 2% auto;
+            margin: 1% auto;
         }
 
         .wrapper .section-inner .btn {
@@ -41,18 +41,28 @@
     <div class="wrapper">
 
         <div class="col-xs-12 col-8 section-inner">
-            <form action="${pageContext.request.contextPath}/board/placeboard" method="post">
+            <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
-                    <label class="form-label" disabled>작성자</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" readonly>
+                    <label class="form-label">작성자</label>
+                    <input type="text" class="form-control" name="userId" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
+                </div>
+                <div class="form-group">
+                    <label class="mb-2" for="stationNum">역 번호</label>
+                    <div class="input-group mb-3">
+                        <select name="sno" class="form-control" id="sno">
+                            <c:forEach items="##" var="##">
+                            	<option>200</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">제목</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해주세요.">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="내용을 입력해주세요."></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="5" placeholder="내용을 입력해주세요."></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">주소</label>
@@ -77,7 +87,7 @@
                     <label class="input-group-text" for="file">Upload</label>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-success" id="registBtn">등록하기</button>
+                    <button type="submit" class="btn btn-outline-success" id="registBtn">등록하기</button>
                     <button type="button" class="btn btn-outline-success" id="listBtn" 
                     onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">목록</button>
                 </div>
@@ -86,12 +96,9 @@
 
     </div>
 
-
     <!-- footer -->
     <%@ include file="../../include/footer.jsp" %>
 
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- kakao 주소 API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -117,7 +124,7 @@
     
                 document.getElementById('addrZipNum').value = data.zonecode;
                 document.getElementById('addrBasic').value = addr;
-    
+                document.getElementById('addrDetail').focus();
             }
         }).open();
     
