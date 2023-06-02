@@ -19,7 +19,7 @@ public class PlaceBoardController {
 	@Autowired
 	private IPlaceBoardService placeBoardService;
 	
-	//목록화면
+	//목록화면 열어주는 메서드
 	@GetMapping("/placeboard")
 	public void placeboard() {
 		
