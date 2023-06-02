@@ -63,8 +63,7 @@
                             작성자
                         </td>
                         <td>
-                            등록일<fmt:parseDate value="##" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
-                            <fmt:formatDate value="##" pattern="yyyy년 MM월 dd일 HH시 mm분" />
+                            등록일
                         </td>
                     </tr>
                 </c:forEach>
@@ -97,7 +96,7 @@
                     </c:if>
                 </ul>
                 <div class="cbtn">
-                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">글쓰기</button>
+                    <button type="button" class="btn btn-outline-success right" onclick="location.href='${pageContext.request.contextPath}/board/write'">글쓰기</button>
                 </div>
             </nav>
 
