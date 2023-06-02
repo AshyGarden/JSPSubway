@@ -2,6 +2,10 @@ package com.spring.JspSubway.command;
 
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 /*
 CREATE TABLE placeboard (
     bno INT PRIMARY KEY AUTO_INCREMENT,
@@ -24,6 +28,10 @@ CREATE TABLE placeboard (
     update_date DATETIME DEFAULT NULL
 );
  */
+
+@Getter
+@Setter
+@ToString
 public class PlaceBoardVO {
 	
 	private int bno;
