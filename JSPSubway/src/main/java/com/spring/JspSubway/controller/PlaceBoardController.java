@@ -34,7 +34,7 @@ public class PlaceBoardController {
 	
 	//글 쓰기
 	@PostMapping("/write")
-	public String regist(PlaceBoardVO vo) {
+	public String write(PlaceBoardVO vo) {
 		placeBoardService.write(vo);
 		return "redirect:/board/placeboard"; //placeboard로 재요청
 	}

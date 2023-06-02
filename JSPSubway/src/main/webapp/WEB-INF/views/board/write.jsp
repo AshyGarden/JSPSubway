@@ -41,14 +41,14 @@
     <div class="wrapper">
 
         <div class="col-xs-12 col-8 section-inner">
-            <form action="${pageContext.request.contextPath}/board/placeboard" method="post">
+            <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
                     <label class="form-label" disabled>작성자</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" readonly>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디는 로그인정보에서 받아올거에요">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">제목</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">내용</label>
@@ -77,7 +77,7 @@
                     <label class="input-group-text" for="file">Upload</label>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-success" id="registBtn">등록하기</button>
+                    <button type="submit" class="btn btn-outline-success" id="registBtn">등록하기</button>
                     <button type="button" class="btn btn-outline-success" id="listBtn" 
                     onclick="location.href='${pageContext.request.contextPath}/board/placeboard'">목록</button>
                 </div>
@@ -115,7 +115,7 @@
     
                 document.getElementById('addrZipNum').value = data.zonecode;
                 document.getElementById('addrBasic').value = addr;
-    
+                document.getElementById('addrDetail').focus();
             }
         }).open();
     

@@ -4,11 +4,11 @@
     
 <mapper namespace="com.spring.JspSubway.placeboard.mapper.IPlaceBoardMapper">
 
-	<insert id="regist">
+	<insert id="write">
 		INSERT INTO placeboard
-		(user_id, title, content, addr_zip_num, addr_basic, addr_detail, place_url) )
+		(user_id, title, content, addr_zip_num, addr_basic, adsdr_detail, place_url) )
 		VALUES
-		(#{userId}, #{title}, #{content}, #{addrZipNum}, #{addrDetail}, #{placeUrl})
+		(#{userId}, #{title}, #{content}, #{addrZipNum}, #{addrBasic}, #{addrDetail}, #{placeUrl})
 	</insert>
 
 
