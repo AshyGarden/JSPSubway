@@ -44,15 +44,15 @@
             <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
                     <label class="form-label" disabled>작성자</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디는 로그인정보에서 받아올거에요">
+                    <input type="text" class="form-control" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">제목</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해주세요.">
+                    <input type="text" class="form-control" id="title" placeholder="제목을 입력해주세요.">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="내용을 입력해주세요."></textarea>
+                    <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력해주세요."></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">주소</label>

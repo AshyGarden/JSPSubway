@@ -25,7 +25,6 @@ public class PlaceBoardController {
 		
 	}
 	
-	
 	//글쓰기 페이지 열어주는 메서드
 	@GetMapping("/write")
 	public String write() {
