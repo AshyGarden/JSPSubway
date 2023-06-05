@@ -35,19 +35,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"> <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/"><span class="home">Home</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/userLogin">로그인</a> </li>
-                    <c:if test="true"> <!-- 로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
-                        <li class="nav-item"> <a class="nav-link" href="#">로그아웃</a> </li>
+                    <c:if test="${login == null}"> <!-- 비로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
+                    	<li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/userLogin">로그인</a> </li>
+                    	<a href="${pageContext.request.contextPath}/user/userJoin"><div class="btn btn-dark">회원가입</div></a>
+                    </c:if>
+                    <c:if test="${login != null}"> <!-- 로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/logout">로그아웃</a> </li>
                     </c:if>
                 </ul>
-                <c:if test="true"> <!-- 로그인 상태가 아닐 경우에만 출력 (백핸드 후 수정) -->
-                    <a href="${pageContext.request.contextPath}/user/userJoin"><div class="btn btn-dark">회원가입</div></a>
-                </c:if>
             </div>
         </div>
     </nav>
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserLoginSuccessHandler implements HandlerInterceptor{
 	
-	//preHandleÀº ÄÁÆ®·Ñ·¯·Î ¿äÃ»ÀÌ µé¾î°¡±âÀü Ã³¸®ÇØ¾ßÇÒ ·ÎÁ÷À» ÀÛ¼º
+	//preHandleï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 		throws Exception {
@@ -21,29 +21,29 @@ public class UserLoginSuccessHandler implements HandlerInterceptor{
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}
 		
-	//posthandle´Â ÄÁÆ®·Ñ·¯¸¦ ³ª°¥¶§ °øÅë Ã³¸®ÇØ¾ßÇÒ ³»¿ëÀ» ÀÛ¼º.
-	// /userLoginÀÌ¶ó´Â ¿äÃ»ÀÌ ¸¶¹«¸®µÈÈÄ viewresolver·Î Àü´ÞµÇ±âÀü ·Î±×ÀÎ ¼º°ø/½ÇÆÐ ¿©ºÎ¿¡ µû¶ó Ã³¸®ÇÒ ·ÎÁ÷
+	//posthandleï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½.
+	// /userLoginï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ viewresolverï¿½ï¿½ ï¿½ï¿½ï¿½ÞµÇ±ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		log.info("·Î±×ÀÎ ÀÎÅÍ¼ÁÅÍ µ¿ÀÛ!");
-		log.info("¿äÃ» ¹æ½Ä: "+request.getMethod());
+		log.info("ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
+		log.info("ï¿½ï¿½Ã» ï¿½ï¿½ï¿½: "+request.getMethod());
 			
 		if(request.getMethod().equals("POST")) {
 				
-			ModelMap map = modelAndView.getModelMap(); //¸ðµ¨ °´Ã¼ ²¨³»±â
-			String id = (String) map.get("user"); //¸ðµ¨ ³»¿¡ user¶ó´Â ÀÌ¸§ÀÇ µ¥ÀÌÅÍ ²¨³»±â
-			//log.info("ÀÎÅÍ¼ÁÃ³ ³»ºÎ¿¡¼­ user È®ÀÎ: "+vo.toString()); //null¿À¸é ÀÌÄÚµå ¹ØºÎÅÍ ÄÚµå°¡ Á×À½
+			ModelMap map = modelAndView.getModelMap(); //ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			String id = (String) map.get("user"); //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ userï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			//log.info("ï¿½ï¿½ï¿½Í¼ï¿½Ã³ ï¿½ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ user È®ï¿½ï¿½: "+vo.toString()); //nullï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½Øºï¿½ï¿½ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½
 				
-			if(id != null) { //·Î±×ÀÎ ¼º°ø
+			if(id != null) { //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				log.info("login Success");
-				//login ¼º°øÇÑ È¸¿ø¿¡°Ô session»ý¼ºÈÄ ·Î±×ÀÎ À¯ÁöÇÏ°Ô²û ÇÔ.
+				//login ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ sessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Ô²ï¿½ ï¿½ï¿½.
 				HttpSession session = request.getSession();
 				session.setAttribute("login",id);
 				
-				//posthandler¿¡°Ô ³Ñ¾î°¡±âÀü¿¡ redirect
-				response.sendRedirect(request.getContextPath()+"/"); 
-			} else { //·Î±×ÀÎ ½ÇÆÐ
+				//posthandlerï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ redirect
+				response.sendRedirect(request.getContextPath()+"/station/main"); 
+			} else { //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				modelAndView.addObject("user","loginFail");
 			}
 		}

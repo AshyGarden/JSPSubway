@@ -25,6 +25,7 @@ public class SubwayUserService implements ISubwayUserService {
 	@Override
 	public String login(String id, String pw) {
 		mapper.login(id);
+		log.info("id : " + id);
 		return id;
 	}
 	
