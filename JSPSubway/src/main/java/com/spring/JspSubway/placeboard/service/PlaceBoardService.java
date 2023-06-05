@@ -16,8 +16,8 @@ public class PlaceBoardService implements IPlaceBoardService {
 	private IPlaceBoardMapper mapper;
 	
 	@Override
-	public void regist(PlaceBoardVO vo) {		
-		mapper.regist(vo);
+	public void write(PlaceBoardVO vo) {
+		mapper.write(vo);
 	}
 
 	@Override

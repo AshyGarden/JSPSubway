@@ -7,8 +7,8 @@ import com.spring.JspSubway.util.PageVO;
 
 public interface IPlaceBoardMapper {
 
-	//글 등록
-	void regist(PlaceBoardVO vo);
+	//글 쓰기
+	void write(PlaceBoardVO vo);
 	
 	//총 게시물 수 구하기
 	int getTotal(PageVO vo);

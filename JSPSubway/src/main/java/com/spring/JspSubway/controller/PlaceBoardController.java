@@ -33,15 +33,17 @@ public class PlaceBoardController {
 	
 	//글쓰기 페이지 열어주는 메서드
 	@GetMapping("/write")
-	public String regist() {
+	public String write() {
 		return "board/write";
 	}
 	
-	//글 등록
+	//글 쓰기
 	@PostMapping("/write")
-	public String regist(PlaceBoardVO vo) {
-		placeBoardService.regist(vo);
+	public String write(PlaceBoardVO vo) {
+		log.info("글정보"+vo.toString());
+		placeBoardService.write(vo);
 		return "redirect:/board/placeboard"; //placeboard로 재요청
 	}
+
 	
 }

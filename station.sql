@@ -3,10 +3,10 @@ use jspsubway; #DB Name
 
 /* #역 정보
 CREATE TABLE station (
-    station_name VARCHAR(100) PRIMARY KEY,
+    station_name VARCHAR(100) ,
     station_num INT,
-    FOREIGN KEY (station_num)
-        REFERENCES subwayline2 (station_num)
+    FOREIGN KEY (station_code)subwayline2
+        REFERENCES subwayline2 (station_code)
         ON DELETE CASCADE,
     exit_count INT ,
     watercloset_inout BOOLEAN DEFAULT TRUE, #true = inside
@@ -18,6 +18,17 @@ CREATE TABLE station (
 
 #SELECT * FROM station
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
+CREATE TABLE `station` (
+  `station_name` text,
+  `station_code` int DEFAULT NULL,
+  `exit_count` int DEFAULT NULL,
+  `watercloset_inout` tinyint DEFAULT NULL,
+  `open_doorside` tinyint DEFAULT NULL,
+  `cross_platform` int DEFAULT NULL,
+  `first_subway_time` text,
+  `last_subway_time` text
+) DEFAULT CHARSET=utf8mb4;
+
 SELECT  * FROM station;
 
 ALTER TABLE `jspsubway`.`station` 

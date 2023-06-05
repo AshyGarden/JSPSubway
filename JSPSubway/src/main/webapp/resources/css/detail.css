@@ -2,6 +2,13 @@
 @import url(./setting.css);
 
 
+body{
+    /* 드래그 방지 */
+    webkit-user-select:none;
+    moz-user-select:none;
+    ms-user-select:none;
+    user-select:none
+}
 
 h2{
     font-size: 30px;

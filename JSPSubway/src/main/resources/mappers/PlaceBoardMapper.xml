@@ -4,11 +4,20 @@
     
 <mapper namespace="com.spring.JspSubway.placeboard.mapper.IPlaceBoardMapper">
 
-	<insert id="regist">
+	<resultMap type="place" id="boardMap">
+		<result property="userId" column="user_id" />
+		<result property="sno" column="station_num" />
+		<result property="addrZipNum" column="addr_zip_num" />
+		<result property="addrBasic" column="addr_basic" />
+		<result property="addrDetail" column="addr_detail" />
+		<result property="placeUrl" column="place_url" />
+	</resultMap>
+
+	<insert id="write">
 		INSERT INTO placeboard
-		(user_id, title, content, addr_zip_num, addr_basic, addr_detail, place_url) )
+		(user_id, station_num, title, content, addr_zip_num, addr_basic, addr_detail, place_url)
 		VALUES
-		(#{userId}, #{title}, #{content}, #{addrZipNum}, #{addrDetail}, #{placeUrl})
+		(#{userId}, #{sno}, #{title}, #{content}, #{addrZipNum}, #{addrBasic}, #{addrDetail}, #{placeUrl})
 	</insert>
 
 	<select id="getTotal" resultType="int">

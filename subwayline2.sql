@@ -2,6 +2,17 @@ use jspsubway;
 
 SELECT  * FROM subwayline2 ORDER BY station_code;
 
+CREATE TABLE `subwayline2` (
+  `station_code` bigint DEFAULT NULL,
+  `station_name` text,
+  `station_name_eng` text,
+  `station_name_chn` text,
+  `station_name_jpn` text,
+  `transferline1` int DEFAULT NULL,
+  `transferline2` int DEFAULT NULL,
+  `transferline3` int DEFAULT NULL
+) DEFAULT CHARSET=utf8;
+
 ALTER TABLE `jspsubway`.`subwayline2` 
 CHANGE COLUMN `station_code` `station_code` INT NULL DEFAULT NULL ;
 ALTER TABLE `jspsubway`.`subwayline2` 
