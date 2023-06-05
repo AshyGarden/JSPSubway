@@ -16,13 +16,17 @@
             <h1>로그인</h1>
         </div>
         <br>
-        <div>
+        <div class="login-box">
 	        <form action="${pageContext.request.contextPath}/user/userLogin" method="post" id="loginForm" name="loginForm">
-	        	<input type="text" name="userId" id="id" placeholder="아이디">
-	        	<input type="password" name="userPw" id="pw" placeholder="비밀번호">
-	        	<button type="button" id="loginBtn" class="btn btn-info btn-block" >로그인</button>
+	        	<div class="answer-box">
+                    <input type="text" name="userId" id="id" placeholder="아이디"><br>
+	        	    <input type="password" name="userPw" id="pw" placeholder="비밀번호">
+                </div>
+	        	<button type="button" id="loginBtn" >로그인</button>
 	        </form>
+            <a href="${pageContext.request.contextPath}/user/userJoin"><p id="join-link">계정이 없으신가요?</p></a>
         </div>
+
         
     </div>
 
@@ -39,11 +43,11 @@
 
     document.getElementById('loginBtn').onclick = () => {
         if(document.getElementById('id').value === '') {
-            alert('아이디를 적으세요');
+            alert('아이디를 입력해주세요.');
             return;
         }
         if(document.getElementById('pw').value === '') {
-            alert('비밀번호를 적으세요.');
+            alert('비밀번호를 입력해주세요.');
             return;
         }
         document.loginForm.submit();

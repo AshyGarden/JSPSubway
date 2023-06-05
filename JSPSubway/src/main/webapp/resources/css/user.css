@@ -28,6 +28,9 @@
     justify-content: left;
     align-items: center;
 }
+.wrapper.login{
+    display: block;
+}
 body{
     overflow: scroll; 
 }
@@ -94,61 +97,100 @@ button:active{
     min-width: 700px;
     position: relative;
 }
-.wrapper.login form input[type="submit"]{
+.wrapper.login form input#joinBtn{ /* 회원가입 버튼 */
     background-color: #00A84D;
     width: 100px;
     color: white;
     font-weight: 700;
 }
-.wrapper.login form input[type="submit"]:hover{
+.wrapper.login form input#joinBtn:hover{
     background-color: #156d28;
     box-shadow: 0px 0px 5px #00A84D;
     border: #ffffff;
 }
+
 
 .wrapper.login input,
 .wrapper.user-join input,
 .wrapper.user-join select{
     margin: 30px 0px 8px;
     
-    width: 250px;
+    width: 270px;
     padding: 9px 10px 9px 0;
     border-radius: 5px;
     background-color: #e6e6e6;
 
     text-indent: 15px;
     transition: 0.6s;
+    letter-spacing: 1.5;
 }
-.wrapper.user-join form input[name=userId]{
-    /* 맨 위 인풋에만 마진 적용 줄이기 */
-    margin-top: 15px; 
+.user-join form input[name=userId]{
+    margin-top: 15px;  /* 맨 위 인풋에만 마진 적용 줄이기 */
 }
-.wrapper.user-join input[name="userEmail1"]{
-    width: 230px;
+.user-join input:focus{
+    background-color: #00A84D;
+    width: 350px;
+    color: #ffffff;
 }
+.user-join input:focus::placeholder{
+    color: #ffffff;
+}
+
+.wrapper.user-join input[name="userEmail1"]{  width: 230px;  }
+.wrapper.user-join input[name="userEmail1"]:focus{  width: 270px;  }
+
 .wrapper.user-join select{
     width: 200px;
     border-right: 10px solid #e6e6e6;
 }
+.wrapper.user-join select:focus{
+    background-color: #f3f3f3;
+    border-color: #f3f3f3;
+    width: 230px;
+}
+/* .user-join option{
+    text-indent: 15px;
+    padding: 3px 10px 3px 0;
+    box-sizing: content-box;
+    border-radius: 6px;
+    border: 0px solid gray;
 
-.wrapper.user-join p{
-    font-size: 13px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.user-join option:hover{
+    background-color: #f3f3f3;
+} */
+
+.wrapper.user-join form input.mail-check-input{ /* 인증번호란 */
+    width: 220px;
+    font-size: 13.5px;
+    padding: 7px 3px 7px 0;
+    margin: 15px 0px 8px;
+}
+.wrapper.user-join form input.mail-check-input[disabled="disabled"]{
+    background-color: #f5f5f5;
+    color: #b3b3b3;
+}
+/* .wrapper.user-join form input.mail-check-input:active{
+    width: 230px;
+    background-color: #00A84D;
+} */
+
+
+/* p태그 처리 */
+.user-join p{
+    font-size: 14px;
+    font-weight: 400;
     text-indent: 8px;
     color: #00A84D;
 }
+.user-join p#msgEmail{ opacity: 0; } /* 일부 p태그 숨김처리 */
 
-.wrapper.user-join input:focus{
-    background-color: #00A84D;
-    width: 400px;
-    color: #ffffff;
-}
-.wrapper.user-join input[name="userEmail1"]:focus{
-    width: 280px;
-}
-.wrapper.user-join input:focus::placeholder{
-    color: #ffffff;
-}
-.wrapper.user-join button{
+
+/* 중복확인, 이메일 인증 버튼 */
+.wrapper button{
     color: rgb(78, 78, 78);
     font-size: 15px;
 
@@ -162,8 +204,8 @@ button:active{
     padding: 0 15px;
     transition: 0.1s;
 }
-.wrapper.user-join button:active{
-    background-color: #eeeeee;
+.wrapper button:hover{
+    background-color: #ececec;
 }
 
 
@@ -242,6 +284,77 @@ button:active{
 }
 
 
+/* //////// START 로그인 디자인 */
+.wrapper.login .title h1{
+    margin-top: 60px;
+}
+
+.wrapper.login .login-box{
+    width: fit-content;
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    margin: 100px auto 0;
+    padding: 40px 50px;
+    position: relative;
+
+}
+.wrapper.login .login-box #loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 3px 0 7px;
+}
+.login-box #loginForm .answer-box{ display: block; }
+
+/* 로그인, 비밀번호 */
+.login-box #loginForm input{ margin: 0; }
+.login-box #loginForm .answer-box input{
+    width: 250px;
+    margin: 7px 0;
+    padding: 10px ;
+    padding: 15px 10px 15px 0;
+    text-indent: 20px;
+}
+.login-box #loginForm .answer-box input:focus{ background-color: #c9c9c9; }
+.login-box #loginForm .answer-box input:focus::placeholder{ color: rgb(32, 32, 32); }
+
+
+.wrapper.login #loginBtn{ /* 로그인 버튼 */
+    height: 105px;
+    width: 90px;
+    color: white;
+    background-color: #00A84D;
+    margin-left: 20px;
+    margin-right: 5px;
+
+    box-sizing: border-box;
+    transition: 0.1s;
+    text-align: center;
+}
+.wrapper.login #loginBtn:hover{
+    background-color: #009646;
+    text-shadow: 0 0 7px #ffe815;
+}
+
+.wrapper.login #join-link{ /* 계정이 없으신가요? */
+    font-size: 13px;
+    font-weight: 300;
+    color: gray;
+    text-decoration: underline;
+    
+    position: absolute;
+    bottom: -30px;
+    text-align: left;
+    margin: 20px 12px 0 0;
+
+}
 
 /*/ ////////////////////////////////// */
 
