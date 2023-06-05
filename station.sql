@@ -28,7 +28,6 @@ CREATE TABLE station (
 ) DEFAULT CHARSET=utf8mb4;
 
 #SELECT * FROM station
-<<<<<<< Updated upstream
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
 CREATE TABLE `station` (
   `station_name` text,
@@ -41,9 +40,7 @@ CREATE TABLE `station` (
   `last_subway_time` text
 ) DEFAULT CHARSET=utf8mb4;
 
-=======
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;subwayline2
->>>>>>> Stashed changes
 SELECT  * FROM station;
 
 ALTER TABLE `jspsubway`.`station` 

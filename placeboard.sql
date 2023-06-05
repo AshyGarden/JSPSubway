@@ -34,7 +34,6 @@ CREATE TABLE placeboard (
     place_url VARCHAR(300),
     write_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     update_date DATETIME DEFAULT NULL
->>>>>>> Stashed changes
 ) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE placeboard;

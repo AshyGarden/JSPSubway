@@ -7,20 +7,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 /*
- #
 CREATE TABLE station (
-    station_name VARCHAR(100) PRIMARY KEY,
-    station_num INT,
-    FOREIGN KEY (station_num)
-        REFERENCES subwayline2 (station_num)
-        ON DELETE CASCADE,
-    exit_count INT NOT NULL,
-    watercloset_inout BOOLEAN DEFAULT TRUE, #true = inside
-    open_doorside BOOLEAN DEFAULT TRUE, #true = left
-    cross_platform INT NOT NULL, #�ڷ� ���԰��� 2, ȯ�¿����� ���� 1, �Ұ��� 0
-    first_subway_time DATETIME NOT NULL,
-    last_subway_time DATETIME NOT NULL
-);
+  station_name text,
+  station_code int DEFAULT NULL,
+  exit_count int DEFAULT NULL,
+  watercloset_inout tinyint DEFAULT NULL, #true = inside
+  open_doorside tinyint DEFAULT NULL, #true = left
+  cross_platform int DEFAULT NULL, #자력 출입가능 2, 환승역통해 가능 1, 불가능 0
+  first_subway_time text,
+  last_subway_time text
+) DEFAULT CHARSET=utf8mb4;
 
 
  */
