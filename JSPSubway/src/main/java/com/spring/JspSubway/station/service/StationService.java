@@ -1,10 +1,12 @@
 package com.spring.JspSubway.station.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.station.mapper.IStationMapper;
 
+@Service
 public class StationService implements IStationService {
 
 	@Autowired
