@@ -48,7 +48,7 @@ public class PlaceBoardController {
 	}
 	
 	//글 상세보기(모달)
-	@GetMapping("/content")
+	@GetMapping("/content/{bno}")
 	public PlaceBoardVO getContent(@PathVariable int bno) {
 		return placeBoardService.getContent(bno);
 		

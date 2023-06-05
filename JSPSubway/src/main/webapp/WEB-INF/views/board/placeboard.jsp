@@ -129,7 +129,7 @@
 							<div class="title">
 								<p id="writer">작성자</p>
 								<p id="inner-title">제목</p>
-								<small id="regdate">21시간전</small><br>
+								<small id="writedate">21시간전</small><br>
 							</div>
 							<div class="inner-content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
@@ -140,7 +140,7 @@
 										나오는 칸이야</small></a>
 							</div>
 							<div class="inner-address">
-								<br> <span>주소</span><br> <span id="addrNum"><small>우편번호가
+								<br> <span>주소</span><br> <span id="addrZipNum"><small>우편번호가
 										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
 										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
 										칸이야</small></span>
@@ -182,12 +182,11 @@ window.onload = function() {
 
 
 //상세보기 처리(모달창 열어주기)
-document.getElementById('title').addEventListener('click', (e) => {
+document.getElementById('title').addEventListener('click', e => {
     console.log('제목클릭');
     e.preventDefault(); //a의 고유 기능 중지
-    $('#detailModal').modal('show');
-});
-
+    console.log('target: ' + e.target);
+    
     //글 번호 얻기
     const bno = e.target.dataset.bno;
 	    		console.log('bno: ' + bno);
@@ -200,15 +199,19 @@ document.getElementById('title').addEventListener('click', (e) => {
         // const src = '${pageContext.request.contextPath}/###/###/' + data.fileLoca + '/' + data.fileName;
         // document.getElementById('Img').setAttribute('src', src);
         document.getElementById('writer').textContent = data.writer;
-        document.getElementById('inner-title').textContent = data.innerTitle;
-        document.getElementById('regdate').textContent = data.regDate;
+        document.getElementById('inner-title').textContent = data.title;
+        document.getElementById('writedate').textContent = data.writeDate;
         document.getElementById('inner-content').textContent = data.content;
         document.getElementById('placeurl').textContent = data.placeUrl;
-        document.getElementById('addrNum').textContent = data.addrNum;
+        document.getElementById('addrZipNum').textContent = data.addrZipNum;
         document.getElementById('addrBasic').textContent = data.addrBasic;
         document.getElementById('addrDetail').textContent = data.addrDetail;
 
     });
+        
+    $('#detailModal').modal('show');
+});
+
 
 
 
