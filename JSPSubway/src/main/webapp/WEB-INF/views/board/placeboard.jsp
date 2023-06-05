@@ -57,14 +57,24 @@
                             ${vo.sco}
                         </td>
                         <td>
-                            <a href="##" id="title">제목</a>
+                            <a href="##" id="title">${vo.title}</a>
                         </td>
                         <td>
                             ${vo.userId}
                         </td>
                         <td>
-                            <fmt:parseDate value="${vo.writeDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
-	                        <fmt:formatDate value="${parsedDateTime}" pattern="yyyy년 MM월 dd일 HH시 mm분" />
+                            <c:if test="${vo.writeDate == null}">
+	                         	<p>
+	                            	<fmt:parseDate value="${vo.writeDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
+		                        	<fmt:formatDate value="${parsedDateTime}" pattern="yyyy년 MM월 dd일 HH시 mm분" />
+		                        </p>
+                            </c:if>
+	                        <c:if test="${vo.writeDate != null}">
+	                         	<p>
+	                            	<fmt:parseDate value="${vo.writeDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
+		                        	<fmt:formatDate value="${parsedDateTime}" pattern="yyyy년 MM월 dd일 HH시 mm분" />
+		                        </p>
+                            </c:if>
                         </td>
                     </tr>
                 </c:forEach>
