@@ -14,7 +14,8 @@ CREATE TABLE placeboard (
     station_code INT,
     title VARCHAR(500) NOT NULL,
     content VARCHAR(5000),
-    addr_basic VARCHAR(300),
+    
+	addr_basic VARCHAR(300),
     addr_detail VARCHAR(300),
     addr_zip_num VARCHAR(50),
     place_url VARCHAR(300),
@@ -23,14 +24,12 @@ CREATE TABLE placeboard (
 ) DEFAULT CHARSET=utf8mb4;
  */
 
-@Getter
-@Setter
-@ToString
+@Getter @Setter @ToString
 public class PlaceBoardVO {
 	
 	private int bno;
 	private String userId;
-	private int sno;
+	private int sco;
 	private String title;
 	private String content;
 	private String addrBasic;
