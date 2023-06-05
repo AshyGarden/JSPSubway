@@ -18,6 +18,7 @@ local.properties
 .springBeans
 properties/
 *.properties
+target/
 /MANIFEST.MF
 
 # External tool builders
