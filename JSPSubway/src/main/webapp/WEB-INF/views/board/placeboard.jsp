@@ -80,18 +80,18 @@
                 <ul id="pagination" class="pagination">
                     <c:if test="${pc.prev}"> <!-- true면 이전버튼 보이고 false면 안보임 -->
                         <li class="page-item"> <!-- 이전 버튼-->
-                            <a class="page-link" data-pagenum="${pc.beginPage-1}" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
+                            <a class="page-link" data-pagenum="${pc.beginPage-1}" aria-label="Previous">
+                            &laquo;
                             </a>
                         </li>
                     </c:if>
                     <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
-                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" data-pagenum="${num}" href="#">${num}</a></li>
+                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" data-pagenum="${num}">${num}</a></li>
                     </c:forEach>
                     <c:if test="${pc.next}">
                         <li class="page-item"> <!-- 다음 버튼-->
-                            <a class="page-link" data-pagenum="${pc.endPage+1}" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
+                            <a class="page-link" data-pagenum="${pc.endPage+1}" aria-label="Next">
+                            &raquo;
                             </a>
                         </li>
                     </c:if>

@@ -29,7 +29,6 @@ public class PageCreator {
 		
 		beginPage = endPage - buttonNum + 1; // 시작페이지 = 끝페이지 - 버튼개수(5) + 1
 	
-		log.info("${beginPage}");
 		prev = (beginPage == 1) ? false : true; //시작페이지가 1이면 false, 아니면 true
 		
 		next = articleTotalCount <= (endPage * paging.getCpp()) ? false : true; //총 게시물수 <= 끝페이지 * cpp(10) 면 false
