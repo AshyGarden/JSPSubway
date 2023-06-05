@@ -37,7 +37,7 @@
         <hr>
 
 
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead class="text-center">
                 <tr>
                     <th width=10% class="text-start">글번호</th>
@@ -79,18 +79,18 @@
             <nav aria-label="Page navigation example">
                 <ul id="pagination" class="pagination">
                     <c:if test="${pc.prev}"> <!-- true면 이전버튼 보이고 false면 안보임 -->
-                        <li class="page-item" data-pagenum="${pc.beginPage-1}"> <!-- 이전 버튼-->
-                            <a class="page-link" href="#" aria-label="Previous">
+                        <li class="page-item"> <!-- 이전 버튼-->
+                            <a class="page-link" data-pagenum="${pc.beginPage-1}" href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                     </c:if>
                     <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
-                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" href="#">${num}</a></li>
+                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" data-pagenum="${num}" href="#">${num}</a></li>
                     </c:forEach>
                     <c:if test="${pc.next}">
-                        <li class="page-item" data-pagenum="${pc.endPage+1}"> <!-- 다음 버튼-->
-                            <a class="page-link" data-pagenum="${num}" href="#" aria-label="Next">
+                        <li class="page-item"> <!-- 다음 버튼-->
+                            <a class="page-link" data-pagenum="${pc.endPage+1}" href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
@@ -168,9 +168,9 @@ window.onload = function() {
         if(!e.target.matches('a')) {
             return;
         }
-        e.preventDefault; //a태그 고유기능 중지
+        e.preventDefault(); //a태그 고유기능 중지
 
-        const value = e.target.dataset.pagenum
+        const value = e.target.dataset.pagenum;
 
         document.pageForm.pageNum.value = value;
         document.pageForm.submit();
