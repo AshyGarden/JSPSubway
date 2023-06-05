@@ -79,152 +79,153 @@
 				<!-- 외부노선 -->
 				<div id="map-Kkachisan">
 
-					<div class="overflow-box"> <div class="station outline"> </div> </div>
+					<div><div class="overflow-box"> <div class="station outline"> </div> </div></div>
 					<div id="map-left-out"> 
 						<div class="station">
 							<p class="st-name">까치산</p>
-							<div class="st-circle cross-station" id="sno1"></div>
+							<div class="st-circle cross-station" id="sco2344"></div>
 						</div>
 					</div>
 
 					<div id="map-bottom-out">
 						<div class="station">
-							<div class="st-circle" id="sno5"></div>
+							<div class="st-circle" id="sco2343"></div>
 							<p class="st-name">신정<br>네거리</p>
 						</div>
 						<div class="station">
-							<div class="st-circle" id="sno6"></div>
+							<div class="st-circle" id="sco2342"></div>
 							<p class="st-name">양천구청</p>
 						</div>
 						<div class="station">
-							<div class="st-circle" id="sno7"></div>
+							<div class="st-circle" id="sco2341"></div>
 							<p class="st-name">도림천</p>
 						</div>
 					</div>
 					
 				</div> <!-- map-Kkachisan END -->
 
-
 				<div id="map-Sinseoldong">
-
-					<div class="overflow-box"> <div class="station outline"></div> </div>
+					<div><div class="overflow-box"> <div class="station outline"></div> </div></div>
 					<div id="map-top-out">
 						<div class="station">
 							<p class="st-name">신설동</p>
-							<div class="st-circle cross-station" id="sno1"></div>
+							<div class="st-circle cross-station" id="sco2114"></div>
 						</div>
 						<div class="station">
 							<p class="st-name">용두</p>
-							<div class="st-circle" id="sno2"></div>
+							<div class="st-circle" id="sco2113"></div>
 						</div>
-					</div> <!-- top-out END -->
-					
+					</div> 
+				</div> <!-- map-Sinseoldong END -->
+
+
+				<div id="map-Sindap">
+					<div><div class="overflow-box"> <div class="station outline"></div> </div></div>
 					<div id="map-right-out">
 						<div class="station">
-							<div class="st-circle" id="sno1"></div>
+							<div class="st-circle" id="sco2112"></div>
 							<p class="st-name">신답</p>
 						</div>
 						<div class="station">
-							<div class="st-circle" id="sno2"></div>
+							<div class="st-circle" id="sco2111"></div>
 							<p class="st-name">용답</p>
 						</div>
-					</div> <!-- right-out END -->
-					
-				</div> <!-- map-Sinseoldong END -->
+					</div> 
+				</div> <!-- map-Kkachisan END -->
 
 
 
 				<div id="map-top">
 					<div class="station">
 						<p class="st-name">신촌</p>
-						<div class="st-circle" id="sno1"></div>
+						<div class="st-circle" id="sco1"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">이대</p>
-						<div class="st-circle" id="sno2"></div>
+						<div class="st-circle" id="sco2"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">아현</p>
-						<div class="st-circle" id="sno3"></div>
+						<div class="st-circle" id="sco3"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">충정로</p>
-						<div class="st-circle cross-station" id="sno4"></div>
+						<div class="st-circle cross-station" id="sco4"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">시청</p>
-						<div class="st-circle cross-station" id="sno5"></div>
+						<div class="st-circle cross-station" id="sco5"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">을지로<br>입구</p>
-						<div class="st-circle" id="sno6"></div>
+						<div class="st-circle" id="sco6"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">을지로<br>3가</p>
-						<div class="st-circle cross-station" id="sno7"></div>
+						<div class="st-circle cross-station" id="sco7"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">을지로<br>4가</p>
-						<div class="st-circle cross-station" id="sno8"></div>
+						<div class="st-circle cross-station" id="sco8"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">동대문<br>역사<br>문화공원</p>
-						<div class="st-circle cross-station" id="sno9"></div>
+						<div class="st-circle cross-station" id="sco9"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">신당</p>
-						<div class="st-circle cross-station" id="sno10"></div>
+						<div class="st-circle cross-station" id="sco10"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">상왕십리</p>
-						<div class="st-circle" id="sno11"></div>
+						<div class="st-circle" id="sco11"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">왕십리</p>
-						<div class="st-circle cross-station" id="sno12"></div>
+						<div class="st-circle cross-station" id="sco12"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">한양대</p>
-						<div class="st-circle" id="sno13"></div>
+						<div class="st-circle" id="sco13"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">뚝섬</p>
-						<div class="st-circle" id="sno14"></div>
+						<div class="st-circle" id="sco14"></div>
 					</div>
 				</div>
 
 				
 				<div id="map-right">
 					<div class="station">
-						<div class="st-circle cross-station" id="sno15"></div>
+						<div class="st-circle cross-station" id="sco15"></div>
 						<p class="st-name">성수</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno16"></div>
+						<div class="st-circle cross-station" id="sco16"></div>
 						<p class="st-name">건대입구</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno17"></div>
+						<div class="st-circle" id="sco17"></div>
 						<p class="st-name">구의</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno18"></div>
+						<div class="st-circle" id="sco18"></div>
 						<p class="st-name">강변</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno19"></div>
+						<div class="st-circle" id="sco19"></div>
 						<p class="st-name">잠실나루</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno20"></div>
+						<div class="st-circle cross-station" id="sco20"></div>
 						<p class="st-name">잠실</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno21"></div>
+						<div class="st-circle" id="sco21"></div>
 						<p class="st-name">잠실새내</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno22"></div>
+						<div class="st-circle cross-station" id="sco22"></div>
 						<p class="st-name">종합운동장</p>
 					</div>
 				</div>
@@ -232,59 +233,59 @@
 
 				<div id="map-bottom">
 					<div class="station">
-						<div class="st-circle" id="sno23"></div>
+						<div class="st-circle" id="sco23"></div>
 						<p class="st-name">삼성</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno24"></div>
+						<div class="st-circle cross-station" id="sco24"></div>
 						<p class="st-name">선릉</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno25"></div>
+						<div class="st-circle" id="sco25"></div>
 						<p class="st-name">역삼</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno26"></div>
+						<div class="st-circle cross-station" id="sco26"></div>
 						<p class="st-name">강남</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno27"></div>
+						<div class="st-circle cross-station" id="sco27"></div>
 						<p class="st-name">교대</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno28"></div>
+						<div class="st-circle" id="sco28"></div>
 						<p class="st-name">서초</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno29"></div>
+						<div class="st-circle" id="sco29"></div>
 						<p class="st-name">방배</p>
 					</div>
 					<div class="station">
-						<div class="st-circle cross-station" id="sno30"></div>
+						<div class="st-circle cross-station" id="sco30"></div>
 						<p class="st-name">사당</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno31"></div>
+						<div class="st-circle" id="sco31"></div>
 						<p class="st-name">낙성대</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno32"></div>
+						<div class="st-circle" id="sco32"></div>
 						<p class="st-name">서울대<br>입구</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno33"></div>
+						<div class="st-circle" id="sco33"></div>
 						<p class="st-name">봉천</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno34"></div>
+						<div class="st-circle" id="sco34"></div>
 						<p class="st-name">신림</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno35"></div>
+						<div class="st-circle" id="sco35"></div>
 						<p class="st-name">신대방</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="sno36"></div>
+						<div class="st-circle" id="sco36"></div>
 						<p class="st-name">구로<br>디지털<br>단지</p>
 					</div>
 				</div>
@@ -292,31 +293,31 @@
 				<div id="map-left">
 					<div class="station">
 						<p class="st-name">대림</p>
-						<div class="st-circle cross-station" id="sno38"></div>
+						<div class="st-circle cross-station" id="sco38"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">신도림</p>
-						<div class="st-circle cross-station" id="sno39"></div>
+						<div class="st-circle cross-station" id="sco39"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">문래</p>
-						<div class="st-circle" id="sno40"></div>
+						<div class="st-circle" id="sco40"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">영등포구청</p>
-						<div class="st-circle cross-station" id="sno41"></div>
+						<div class="st-circle cross-station" id="sco41"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">당산</p>
-						<div class="st-circle cross-station" id="sno42"></div>
+						<div class="st-circle cross-station" id="sco42"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">합정</p>
-						<div class="st-circle cross-station" id="sno43"></div>
+						<div class="st-circle cross-station" id="sco43"></div>
 					</div>
 					<div class="station">
 						<p class="st-name">홍대입구</p>
-						<div class="st-circle cross-station" id="sno37"></div>
+						<div class="st-circle cross-station" id="sco37"></div>
 					</div>
 				</div>
 			</div> <!-- map-box END -->
@@ -370,8 +371,9 @@
 					if(c != $selCir){  c.parentNode.classList.add('station-nothover') }
 				})
 				document.querySelector('#map-box').style.borderColor = '#45f095';
-				document.querySelector('#map-box #map-Sinseoldong .outline').style.borderColor = '#45f095';
 				document.querySelector('#map-box #map-Kkachisan .outline').style.borderColor = '#45f095';
+				document.querySelector('#map-box #map-Sinseoldong .outline').style.borderColor = '#45f095';
+				document.querySelector('#map-box #map-Sindap .outline').style.borderColor = '#45f095';
 			})
 
 			/* 마우스 떼면 */
@@ -385,13 +387,31 @@
 					document.querySelector('#map-box').style.borderColor = '#00A84D';
 					document.querySelector('#map-box #map-Kkachisan .outline').style.borderColor = '#00A84D';
 					document.querySelector('#map-box #map-Sinseoldong .outline').style.borderColor = '#00A84D';
+					document.querySelector('#map-box #map-Sindap .outline').style.borderColor = '#00A84D';
 				}
 			})
-		});
+		}); //역 호버시 반응 22
 
-		// fit-content 라서 각 방향에서 가장 긴 이름을 가진 역은 길이가 넘쳐 안으로 들어옴. (margin시 이따구 )
-		// 그거 뺴고 나머지한테 효과 넣으면 된당 nth 사용
+		// 각 방향에서 가장 길이가 긴 역들 안들어오는 문제 수정해주기
 		// 그리고 신정네거리를 위해 까치산쪽 길이 줄이기 신정네거리 안됨
+
+
+
+		//역 클릭시 이동
+		$stCircleList.forEach(($selCir) => { 
+			$selCir.addEventListener('click', function(e){
+				console.log(e.target+'역 클릭!');
+
+				// fetch('${pageContext.request.contextPath}/station/detail/'+$selCir.getAttribute('id'))
+				
+
+			})
+
+
+
+
+
+		});
 
 
 	</script>

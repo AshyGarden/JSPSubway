@@ -22,11 +22,16 @@ public class StationController {
 	public void	detail() {
 		log.info("상세보기 페이지 GET 요청(jsp시험용)");
 	}
+	
 	//메인 페이지로 이동
 	@GetMapping("/main")
 	public void	main() {
 		log.info("메인 페이지 GET 요청(jsp시험용)");
 	}
+	
+	
+	
+	
 	
 	
 }

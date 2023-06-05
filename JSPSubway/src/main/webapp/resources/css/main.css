@@ -167,7 +167,8 @@ section.condition .watercloset-inout > h4{
     color: white;
 }
 
-.lookup{ margin-left: 20px; }  /* 조회하기 버튼 */
+/* 조회하기 버튼 */
+.lookup{ margin-left: 10px; }  
 .lookup div{ 
     color: white;
     padding: 20px 15px 17px;
@@ -265,16 +266,17 @@ section.metro-maps{
     position: relative;
 }
 .metro-maps #map-box .station .st-circle{
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
     background-color: #00A84D;
     border-radius: 50%;
     margin: 0 auto;
+    cursor: pointer;
 }
 .metro-maps #map-box .station .st-circle.cross-station{
     /* 환승 가능 역 강조표시 */
-    width: 26px;
-    height: 26px;
+    width: 27px;
+    height: 27px;
     background-color: rgb(255, 255, 255);
     border: 4px solid #00A84D;
 }
@@ -286,6 +288,8 @@ section.metro-maps{
     font-family: 'GongGothicMedium';
     font-weight: 400;
 }
+
+
 /* 글자역(이름) 위치 조정 (마진) */
 .metro-maps #map-box #map-top .station .st-name,
 .metro-maps #map-box #map-top-out .station .st-name,
@@ -334,7 +338,7 @@ section.metro-maps{
     top: 50%;
     transform: translate(0, -50%);
 }
-.metro-maps #map-box #map-top{ top: -17.7%; align-items: end; }
+.metro-maps #map-box #map-top{ top: -17.7%; align-items: end; position: relative; }
 .metro-maps #map-box #map-bottom{ bottom: -17.6%; flex-flow: row-reverse; align-items: flex-start; }
 .metro-maps #map-box #map-left{ left: -9.4%; flex-flow: column-reverse; align-items: flex-end; }
 .metro-maps #map-box #map-right{ right: -9.5%; flex-flow: column; align-items: flex-start; }
@@ -351,37 +355,47 @@ section.metro-maps{
 #map-box #map-top .station:nth-child(14){ position: relative; right: 10px; bottom: -3px; } 
 #map-box #map-bottom .station:nth-child(1){ position: relative; right: 10px; top: -3px; } 
 #map-box #map-bottom .station:nth-child(14){ position: relative; left: 10px; top: -3px; } 
-#map-box #map-left .station:nth-child(1){ position: relative; left: 6px; bottom:-2px; } 
+#map-box #map-left .station:nth-child(1){ position: relative; left: 8px; bottom:-2px; } 
 #map-box #map-left .station:nth-child(7){ position: relative; left: 6px; top:-2px; }
 #map-box #map-right .station:nth-child(1){ position: relative; right: 2px; top:5px; } /* 성수 */
 #map-box #map-right .station:nth-child(8){ position: relative; right: 11px; bottom:-2px; }
+
 
 /* 외부선로 조정 */
 .metro-maps #map-Kkachisan{
     position: absolute;
     bottom: 95px;
-    left: -118px;
+    left: -123px;
     transform: translate(-50%, 0%);
 }
 .metro-maps #map-Sinseoldong{
     position: absolute;
-    right: -8px;
-    top: 5px;
+    right: -3px;
+    top: -92px;
     transform: translate(0, -50%);
+}
+.metro-maps #map-Sindap{
+    position: absolute;
+    right: -18px;
+    top: -107px;
+    transform: translate(-50%, 0%);
 }
 
 /* 외부선로 역 숨기기 */
-#map-box .overflow-box{ overflow: hidden; position: relative; } 
-#map-Kkachisan .overflow-box{ width: 224px; height: 60px;}
-#map-Sinseoldong .overflow-box{ width: 120px;  height: 210px; }
+#map-box .overflow-box{ 
+    overflow: hidden; position: relative; z-index: -999;} 
+#map-Kkachisan .overflow-box{ width: 213px; height: 50px;}
+#map-Sinseoldong .overflow-box{ width: 120px;  height: 30px; }
+#map-Sindap .overflow-box{ width: 30px;  height: 135px; }
 
 #map-box .outline{
     border-radius: 45px;
     border: 8px solid #00A84D;
     position: absolute;
 }
-#map-Kkachisan .outline{  width: 300px; height: 170px;  bottom: 0; }
+#map-Kkachisan .outline{  width: 258px; height: 140px;  bottom: 0; }
 #map-Sinseoldong .outline{  width: 220px; height: 270px;  right: 0; }
+#map-Sindap .outline{  width: 220px; height: 270px;  right: 0; }
 
 
 
@@ -398,7 +412,7 @@ section.metro-maps{
 #map-box #map-left-out{ /* 까치산 */
     width: fit-content; /* hidden 따라갈 예정 */
     height: fit-content;
-    left: -21px;
+    left: -20px;
     bottom: 38px;
 }
 #map-box #map-bottom-out{ /* 까치산쪽 역x3 */
@@ -413,7 +427,7 @@ section.metro-maps{
     width: fit-content; 
     height: 120px;
     top: -4px;
-    right: -47px;
+    right: -45px;
     flex-flow: column-reverse;
 }
 #map-box #map-top-out{ /* 신설동, +역1 */
@@ -429,25 +443,36 @@ section.metro-maps{
     align-items: center;
 }
 
+#map-box #map-Kkachisan {z-index: 999;}
+#map-box #map-Sinseoldong {z-index: 999;}
+#map-box #map-Sindap {z-index: 999;}
+
+
+
+
 
 /* 애니메이션 */
 .metro-maps #map-box,
 .metro-maps #map-box .station,
 .metro-maps #map-box .station .outline,
-.metro-maps #map-box .station .st-circle,
-.metro-maps #map-box .station .st-name{ transition: 0.3s; }
+.metro-maps #map-box .station .st-name,
+.metro-maps #map-box .station .st-circle{ transition: 0.4s; }
 
 
 .metro-maps #map-box .station.station-hover{
     scale: 1.4;
     text-shadow: 1px 1px 3px rgb(185, 185, 184);
 }
+.metro-maps #map-box .station.station-hover .st-circle.cross-station{
+    border: 6px solid #00A84D;
+}
 
-#map-box #map-top .station:not(:nth-child(9)).station-hover{ margin-bottom: 12px;}
-#map-box #map-bottom .station:nth-child(-n+13).station-hover{ margin-top: 7px;}
+#map-box #map-top .station:not(:nth-child(9)).station-hover,
+#map-box #map-top-out .station.station-hover{ margin-bottom: 12px;}
+#map-box #map-bottom .station:nth-child(-n+13).station-hover,
+#map-box #map-bottom-out .station:nth-child(n+2).station-hover{ margin-top: 7px;}
 #map-box #map-left .station:not(:nth-child(4)).station-hover{ margin-right: 10px;}
 #map-box #map-right .station:nth-child(-n+7).station-hover{ margin-left: 10px;}
-
 
 .metro-maps #map-box .station.station-nothover .st-circle{
     background-color: #45f095;
