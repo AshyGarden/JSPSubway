@@ -16,7 +16,19 @@ CREATE TABLE station (
     last_subway_time DATETIME 
 );*/
 
+CREATE TABLE station (
+  station_name text,
+  station_code int DEFAULT NULL,
+  exit_count int DEFAULT NULL,
+  watercloset_inout tinyint DEFAULT NULL, #true = inside
+  open_doorside tinyint DEFAULT NULL, #true = left
+  cross_platform int DEFAULT NULL, #자력 출입가능 2, 환승역통해 가능 1, 불가능 0
+  first_subway_time text,
+  last_subway_time text
+) DEFAULT CHARSET=utf8mb4;
+
 #SELECT * FROM station
+<<<<<<< Updated upstream
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
 CREATE TABLE `station` (
   `station_name` text,
@@ -29,6 +41,9 @@ CREATE TABLE `station` (
   `last_subway_time` text
 ) DEFAULT CHARSET=utf8mb4;
 
+=======
+#WHERE exit_count = 1 AND WHERE cross_paltform =1;subwayline2
+>>>>>>> Stashed changes
 SELECT  * FROM station;
 
 ALTER TABLE `jspsubway`.`station` 
