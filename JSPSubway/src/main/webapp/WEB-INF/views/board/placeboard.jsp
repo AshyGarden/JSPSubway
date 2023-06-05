@@ -37,33 +37,34 @@
         <hr>
 
 
-        <table class="table">
-            <thead>
+        <table class="table table-hover">
+            <thead class="text-center">
                 <tr>
-                    <th>글번호</th>
-                    <th>제목[댓글수]</th>
-                    <th>역명</th>
-                    <th>작성자</th>
-                    <th>등록일</th>
+                    <th width=10% class="text-start">글번호</th>
+                    <th width=15%>역명</th>
+                    <th width=35%>제목</th>
+                    <th width=15%>작성자</th>
+                    <th width=25%>등록일</th>
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="vo" items="##">
+                <c:forEach var="vo" items="${boardList}">
                     <tr>
                         <td>
-                            번호
+                            ${vo.bno}
+                        </td>
+                        <td class="text-center">
+                            ${vo.sco}
                         </td>
                         <td>
                             <a href="##" id="title">제목</a>
                         </td>
                         <td>
-                            역명
+                            ${vo.userId}
                         </td>
                         <td>
-                            작성자
-                        </td>
-                        <td>
-                            등록일
+                            <fmt:parseDate value="${vo.writeDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parsedDateTime" type="both" />
+	                        <fmt:formatDate value="${parsedDateTime}" pattern="yyyy년 MM월 dd일 HH시 mm분" />
                         </td>
                     </tr>
                 </c:forEach>
@@ -85,7 +86,7 @@
                         </li>
                     </c:if>
                     <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
-                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" href="#">1</a></li>
+                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a class="page-link" href="#">${num}</a></li>
                     </c:forEach>
                     <c:if test="${pc.next}">
                         <li class="page-item" data-pagenum="${pc.endPage+1}"> <!-- 다음 버튼-->
@@ -102,8 +103,6 @@
 
             <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
             <input type="hidden" name="cpp" value="${pc.paging.cpp}">
-            <input type="hidden" name="keyword" value="${pc.paging.keyword}">
-            <input type="hidden" name="condition" value="${pc.paging.condition}">
 
         </form>
         
@@ -160,6 +159,24 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <script>
+
+//페이지네이션
+
+window.onload = function() {
+	
+    document.getElementById('pagination').addEventListener('click', e => {
+        if(!e.target.matches('a')) {
+            return;
+        }
+        e.preventDefault; //a태그 고유기능 중지
+
+        const value = e.target.dataset.pagenum
+
+        document.pageForm.pageNum.value = value;
+        document.pageForm.submit();
+    });
+	
+}
 
 
 //상세보기 처리(모달창 열어주기)
