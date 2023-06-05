@@ -32,16 +32,7 @@ public class PageCreator {
 		next = articleTotalCount <= (endPage * paging.getCpp()) ? false : true; //총 게시물수 <= 끝페이지 * cpp(10) 면 false
 		
 		if(!next) { 
-			endPage = (int) Math.ceil(articleTotalCount / paging.getCpp());   //  총게시물수 / cpp(10)
+			endPage = (int) Math.ceil(articleTotalCount / (double)paging.getCpp());   //  총게시물수 / cpp(10)
 		}
-		
-		
-		
-		
 	}
-
 }
-
-
-
-
