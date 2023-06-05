@@ -1,6 +1,10 @@
-use jspsubway; #DB Name
+use jspsubway; #DB Name;
 
-SELECT  * FROM users;
+SELECT * FROM users;
+
+set sql_safe_updates=0;
+
+delete from users where user_pw= 'rlagudcjf';
 
 #유저 정보
 CREATE TABLE users (

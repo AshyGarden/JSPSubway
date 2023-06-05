@@ -75,7 +75,7 @@
 
         <!-- 페이지 네이션 -->
         
-        <form action="${pageContext.request.contextPath}/###/###" name="pageForm">
+        <form action="${pageContext.request.contextPath}/board/placeboard" name="pageForm">
             <nav aria-label="Page navigation example">
                 <ul id="pagination" class="pagination">
                     <c:if test="${pc.prev}"> <!-- true면 이전버튼 보이고 false면 안보임 -->

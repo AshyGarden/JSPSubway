@@ -11,5 +11,13 @@
 		(#{userId}, #{title}, #{content}, #{addrZipNum}, #{addrDetail}, #{placeUrl})
 	</insert>
 
-
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*) FROM placeboard
+	</select>
+	
+	<select id="getList" resultType="place">
+		SELECT * FROM placeboard
+		ORDER BY bno DESC
+		LIMIT #{pageStart} , #{cpp}
+	</select>
 </mapper>

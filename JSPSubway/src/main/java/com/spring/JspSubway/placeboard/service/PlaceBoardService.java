@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.placeboard.mapper.IPlaceBoardMapper;
+import com.spring.JspSubway.util.PageVO;
 
 @Service
 public class PlaceBoardService implements IPlaceBoardService {
@@ -15,14 +16,18 @@ public class PlaceBoardService implements IPlaceBoardService {
 	private IPlaceBoardMapper mapper;
 	
 	@Override
-	public void regist(PlaceBoardVO vo) {
+	public void regist(PlaceBoardVO vo) {		
 		mapper.regist(vo);
 	}
 
 	@Override
-	public List<PlaceBoardVO> getList() {
-
-		return null;
+	public int getTotal(PageVO vo) {
+		return mapper.getTotal(vo);
+	}
+	
+	@Override
+	public List<PlaceBoardVO> getList(PageVO vo) {
+		return mapper.getList(vo);
 	}
 
 	@Override
