@@ -63,6 +63,12 @@
 					<!-- 사실 검색이 아니라 keyup마다 검색되게 하고싶은데...ㅎㅎ -->
 				</form>
 			</div>
+
+			<div class="lookup">
+				<div>
+					<span class="key-button">조회하기</span>
+				</div>
+			</div>
 		</section>
 
 		<!-- ////////////////////////////////////////// -->
@@ -84,7 +90,7 @@
 					<div id="map-bottom-out">
 						<div class="station">
 							<div class="st-circle" id="sno5"></div>
-							<p class="st-name">도림천</p>
+							<p class="st-name">신정<br>네거리</p>
 						</div>
 						<div class="station">
 							<div class="st-circle" id="sno6"></div>
@@ -92,7 +98,7 @@
 						</div>
 						<div class="station">
 							<div class="st-circle" id="sno7"></div>
-							<p class="st-name">신정<br>네거리</p>
+							<p class="st-name">도림천</p>
 						</div>
 					</div>
 					

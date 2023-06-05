@@ -75,6 +75,7 @@ button{
 /* !!!!!!!!!!!!!!! section 조건창 START */
 section.condition{
     height: fit-content;
+    min-width: 850px;
     width: 80%;
     margin: 40px auto 20px;
 
@@ -137,18 +138,18 @@ section.condition .watercloset-inout > h4{
 
 
 /* 문 열리는 방향 선택
-    개찰구 전 역내 화장실 유무 */
-.open-doorside{
-    font-family: 'HANAMDAUM';
-}
-.open-doorside .key-button{
-    font-size: 17px;
-}
-.watercloset-inout .key-button{
-    font-size: 14px;
-}
+    개찰구 전 역내 화장실 유무
+    조회하기 버튼 */
+.open-doorside{ font-family: 'HANAMDAUM'; min-width: 150px; }  /* 최소사이즈, 폰트사이즈 설정 */
+.watercloset-inout{ min-width: 150px; }
+.open-doorside .key-button{ font-size: 16px; }
+.watercloset-inout .key-button,
+.lookup .key-button{ font-size: 14px; }
+
+
 .open-doorside > div,
-.watercloset-inout > div{
+.watercloset-inout > div,
+.lookup div{
     width: fit-content;
     height: fit-content;
     padding: 3px 6px 2px;
@@ -157,7 +158,7 @@ section.condition .watercloset-inout > h4{
 
     background-color: #f1f1f1;
     box-shadow: -2px 2px 2px gray;
-    transition: 0.15s;
+    transition: 0.1s;
 }
 .watercloset-inout div.wc-select{ /* 버튼이 눌려있는 상태 */
     background-color: #00A84D;
@@ -166,6 +167,19 @@ section.condition .watercloset-inout > h4{
     color: white;
 }
 
+.lookup{ margin-left: 20px; }  /* 조회하기 버튼 */
+.lookup div{ 
+    color: white;
+    padding: 20px 15px 17px;
+    background-color: rgb(145, 145, 145);
+    border: 2px outset rgb(145, 145, 145);
+    cursor: pointer;
+ }
+.lookup div:hover{ 
+    background-color: darkgray; 
+    border-color: darkgray;
+    text-shadow: 1px 1px 6px goldenrod;
+}
 
 .condition .key-button{
     width: fit-content;
@@ -225,13 +239,19 @@ section.condition .watercloset-inout > h4{
 
 
 
-/* ///////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////  */
 
 /* !!!!!!!!!!!!!!! section Map start */
 section.metro-maps{
-    height: 100%;
-    margin-top: 150px;
-    margin-left: 200px;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    margin-left: 100px;
+    margin-top: 90px;
 }
 
 .metro-maps #map-box{
@@ -259,6 +279,8 @@ section.metro-maps{
     border: 4px solid #00A84D;
 }
 .metro-maps #map-box .station .st-name{
+    width: max-content;
+    height: max-content;
     font-size: 16px;
     text-align: center;
     font-family: 'GongGothicMedium';
@@ -267,9 +289,9 @@ section.metro-maps{
 /* 글자역(이름) 위치 조정 (마진) */
 .metro-maps #map-box #map-top .station .st-name,
 .metro-maps #map-box #map-top-out .station .st-name,
-.metro-maps #map-box #map-left-out .station .st-name{ margin-bottom: 8px; }
+.metro-maps #map-box #map-left-out .station .st-name{ margin-bottom: 8px;}
 .metro-maps #map-box #map-bottom .station .st-name,
-.metro-maps #map-box #map-bottom-out .station .st-name{ margin-top: 8px; }
+.metro-maps #map-box #map-bottom-out .station .st-name{ margin-top: 8px;}
 .metro-maps #map-box #map-left .station .st-name{ margin-right: 8px; } 
 .metro-maps #map-box #map-right .station .st-name,
 .metro-maps #map-box #map-right-out .station .st-name{ margin-left: 8px; }
@@ -412,17 +434,20 @@ section.metro-maps{
 .metro-maps #map-box,
 .metro-maps #map-box .station,
 .metro-maps #map-box .station .outline,
-.metro-maps #map-box .station .st-circle{ transition: 0.4s; }
+.metro-maps #map-box .station .st-circle,
+.metro-maps #map-box .station .st-name{ transition: 0.3s; }
 
 
 .metro-maps #map-box .station.station-hover{
     scale: 1.4;
     text-shadow: 1px 1px 3px rgb(185, 185, 184);
 }
-#map-top .station.station-hover{ bottom: 10px; }
-#map-bottom .station:nth-child(-n+13).station-hover{ margin-top: 7px; }
-#map-left .station:nth-child(-n+7).station-hover{ margin-right: 10px; }
-#map-right .station:nth-child(-n+7).station-hover{ left: 10px; }
+
+#map-box #map-top .station:not(:nth-child(9)).station-hover{ margin-bottom: 12px;}
+#map-box #map-bottom .station:nth-child(-n+13).station-hover{ margin-top: 7px;}
+#map-box #map-left .station:not(:nth-child(4)).station-hover{ margin-right: 10px;}
+#map-box #map-right .station:nth-child(-n+7).station-hover{ margin-left: 10px;}
+
 
 .metro-maps #map-box .station.station-nothover .st-circle{
     background-color: #45f095;

@@ -1,21 +1,21 @@
 @import url(./setting.css);
 
 
-/* !!!!!!!!!! 빨간색 견본!!! 후에 삭제해주십셔 */
+
 .red-background{
     background-color: #d84936 !important;
 }
 .red-typo{
     color: #d84936 !important;
 }
-/* !!!!!!!!!! 삭제 잊지말기~~~~~~~~~~~~~~~~~~~~~ */
+
 
 
 
 
 .wrapper{
     width: 80%;
-    height: 100vh;
+    height: 100%;
     min-width: 800px;
     margin: 0 auto;
 
