@@ -23,7 +23,7 @@ public class PageCreator {
 	
 	private void calcDataOfPage() {
 		
-		endPage = (int) Math.ceil(paging.getPageNum() / buttonNum);  //getPageNum:7, 7/5(올림=2)*5= 10(=endpage)
+		endPage = (int) (Math.ceil(paging.getPageNum() / (double) buttonNum) * buttonNum);  //getPageNum:7, 7/5(올림=2)*5= 10(=endpage)
 		
 		beginPage = endPage - buttonNum + 1; // 시작페이지 = 끝페이지 - 버튼개수(5) + 1
 		

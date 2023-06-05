@@ -1,6 +1,7 @@
 package com.spring.JspSubway.command;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,5 +37,13 @@ public class PlaceBoardVO {
 	
 	private LocalDateTime writeDate;
 	private LocalDateTime updateDate;
+	
+	
+	public String getParsedDate() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초");
+		return this.writeDate.format(dtf);
+	}
+	
+	
 
 }
