@@ -5,7 +5,7 @@ import lombok.ToString;
 import lombok.Setter;
 
 /*
- #���� ����
+ #
 CREATE TABLE subUsers (
     user_id VARCHAR(100) PRIMARY KEY,
     user_pw VARCHAR(100) NOT NULL,
