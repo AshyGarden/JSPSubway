@@ -13,6 +13,8 @@ CREATE TABLE station (
     last_subway_time DATETIME 
 );*/
 
+
+
 #SELECT * FROM station
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
 CREATE TABLE `station` (
@@ -31,4 +33,14 @@ SELECT  * FROM station;
 ALTER TABLE `jspsubway`.`station` 
 CHANGE COLUMN `watercloset_inout` `watercloset_inout` TINYINT NULL DEFAULT NULL ,
 CHANGE COLUMN `open_doorside` `open_doorside` TINYINT NULL DEFAULT NULL ;
+
+UPDATE station 
+SET station_code = 2030
+WHERE station_name = '을지로3가';
+
+SET SQL_SAFE_UPDATES = 0;
+
+
+
+
 
