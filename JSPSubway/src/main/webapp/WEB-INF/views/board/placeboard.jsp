@@ -58,7 +58,7 @@
 					<tr>
 						<td>${vo.bno}</td>
 						<td class="text-center">${vo.sco}</td>
-						<td><a href="##" id="title">${vo.title}</a></td>
+						<td><a id="title">${vo.title}</a></td>
 						<td>${vo.userId}</td>
 						<td>
 							${vo.parsedDate}
@@ -128,26 +128,24 @@
 							</div>
 							<div class="title">
 								<p id="writer">작성자</p>
-								<p id="title-inner">제목</p>
+								<p id="inner-title">제목</p>
 								<small id="regdate">21시간전</small><br>
 							</div>
-							<div class="content-inner">
+							<div class="inner-content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
 									consequat.</p>
-								<span>관련링크</span><br> <a id="placeUrl" href=""><small>링크가
+								<span>관련링크</span><br> <a id="placeurl" href=""><small>링크가
 										나오는 칸이야</small></a>
 							</div>
-							<div class="addr-inner">
+							<div class="inner-address">
 								<br> <span>주소</span><br> <span id="addrNum"><small>우편번호가
 										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
 										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
 										칸이야</small></span>
 							</div>
-							<div class="link-inner">
-								<!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -189,6 +187,31 @@ document.getElementById('title').addEventListener('click', (e) => {
     e.preventDefault(); //a의 고유 기능 중지
     $('#detailModal').modal('show');
 });
+
+    //글 번호 얻기
+    const bno = e.target.dataset.bno;
+	    		console.log('bno: ' + bno);
+
+        fetch('${pageContext.request.contextPath}/board/content/' + bno)
+        .then(res => res.json()) //PlaceBoardVO
+        .then(data => {
+        console.log(data);
+
+        // const src = '${pageContext.request.contextPath}/###/###/' + data.fileLoca + '/' + data.fileName;
+        // document.getElementById('Img').setAttribute('src', src);
+        document.getElementById('writer').textContent = data.writer;
+        document.getElementById('inner-title').textContent = data.innerTitle;
+        document.getElementById('regdate').textContent = data.regDate;
+        document.getElementById('inner-content').textContent = data.content;
+        document.getElementById('placeurl').textContent = data.placeUrl;
+        document.getElementById('addrNum').textContent = data.addrNum;
+        document.getElementById('addrBasic').textContent = data.addrBasic;
+        document.getElementById('addrDetail').textContent = data.addrDetail;
+
+    });
+
+
+
 
 //댓글 날짜 변환 함수
 function parseTime(writeDate) {

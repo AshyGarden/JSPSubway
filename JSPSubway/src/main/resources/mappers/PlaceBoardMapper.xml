@@ -29,4 +29,9 @@
 		ORDER BY bno DESC
 		LIMIT #{pageStart} , #{cpp}
 	</select>
+	
+	<select id="getContent" resultType="place">
+		SELECT * FROM placeboard
+		WHERE bno = #{bno}
+	</select>
 </mapper>
