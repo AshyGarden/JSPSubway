@@ -33,7 +33,7 @@ public class PlaceBoardService implements IPlaceBoardService {
 	@Override
 	public PlaceBoardVO getContent(int bno) {
 
-		return null;
+		return mapper.getContent(bno);
 	}
 
 }
