@@ -26,11 +26,11 @@ TINYINT = boolean
 public class StationVO {
 	
 	private String sname;     //Station name
-	private int sno;          //Station code 
+	private int sco;          //Station code 
 	private int ec;           //Exit count 
 	private boolean wcio;     //watercloset inout
 	private boolean ods;      //opendoorside 
-	private int cf;           //crossplatform
+	private int cp;           //crossplatform
 	private LocalDateTime fs; //first subway
 	private LocalDateTime ls; //last subway
 }
