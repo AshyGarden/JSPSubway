@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
 	<title>detail</title>
@@ -18,19 +19,19 @@
 
         <section id="left">
             <div class="left-map serve-map mapL">
-                <div id="serve1-station" class="station">
+                <div id="prevStn" class="station">
                     <h3>233</h3> <!-- station_num-1 -->
                     <h1>대림역</h1>
                 </div>
             </div>
             <div class="left-map">
-                <div id="main-station" class="station">
+                <div id="mainStation" class="station">
                     <h3>234</h3> <!-- station_num -->
                     <h1>신도림역</h1> <!-- station_name -->
                 </div>
             </div>
             <div class="left-map serve-map mapR">
-                <div id="serve2-station" class="station">
+                <div id="nextStn" class="station">
                     <h3>235</h3> <!-- station_num+1 --> 
                     <h1>문래역</h1>
                 </div>
@@ -43,7 +44,7 @@
             <div class="center-details">
 
                 <h2>Details</h2>
-                <div class="main-station">
+                <div class="main-station" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
                     </svg> 
@@ -58,23 +59,25 @@
                 <hr>
 
                 <div class="details">
-                    <div class="cross-platform">
+                    <div class="transferLine" id="tLine">
                         <h5>환승역</h5>
-                        <div class="cross-img">
+                        <div class="transferImg">
                             <!-- 하단 더미데이터 삭제 후, 반복문으로 숫자만 바꿔서
                                 아이콘 추가하기.
                                 반복 :  <i class="fa-solid fa-?"></i> -->
                             <i class="fa-solid fa-1"></i>
                             <i class="fa-solid fa-2"></i>
+                            <i class="fa-solid fa-3"></i>
+                            
                             <p>(or)환승역이 없습니다.</p>
                         </div>
                     </div>
-                    <div class="watercloset-inout">
+                    <div class="watercloset-inout" id="wcio">
                         <h5>개찰구 내부 화장실 유무</h5>
                         <!-- watercloset_inout. 있을 경우 ●. 없을 경우 ○ -->
                         <strong>●</strong>
                     </div>
-                    <div class="exit-count">
+                    <div class="exit-count" id="ec">
                         <h5>출구 개수: <strong>exit_count</strong>개</h5>
                         <p id="show-station-img">역 이미지 보러가기</p>
                     </div>
@@ -163,6 +166,44 @@
 
     </script>
 
+    <!-- <script>
+        document.getElementById('prevStn').onclick = () =>{
+            console.log('prev station btn activate');
+
+            const prevSco = '${station.sco} - 1';
+
+            const reqObj = {
+                method: 'post',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify{
+                    'stationName':sname,
+                    'stationCode':sco,
+                    'exitCount': ec,
+                    'waterclosetinout': wcio
+                }
+            }
+
+            fetch('${pageContext.request.contextPath}/station/detail/'+prevSco)
+            .then(res=>res.json())
+            .then(data => )
+
+
+        };
+
+        document.getElementById('nextStn').onclick = () =>{
+            console.log('next station btn activate');
+
+            const nextSco = '${station.sco} + 1';
+
+           
+
+
+        };
+
+
+    </script> -->
 
 
 </body>

@@ -18,8 +18,26 @@ public class StationService implements IStationService {
 	}
 
 	@Override
-	public void otherStation(int sno) {
-		mapper.otherStation(sno);		
+	public void prevStation(int sno) {
+		mapper.prevStation(sno);
 	}
+
+	@Override
+	public void nextStation(int sno) {
+		mapper.nextStation(sno);
+	}
+
+	@Override
+	public void sindorimStation(int sno) {
+		mapper.sindorimStation(sno);
+		
+	}
+
+	@Override
+	public void seongsuStation(int sno) {
+		mapper.seongsuStation(sno);		
+	}
+
+
 
 }
