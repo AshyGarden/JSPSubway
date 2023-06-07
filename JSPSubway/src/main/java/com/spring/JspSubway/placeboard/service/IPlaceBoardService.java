@@ -3,14 +3,18 @@ package com.spring.JspSubway.placeboard.service;
 import java.util.List;
 
 import com.spring.JspSubway.command.PlaceBoardVO;
+import com.spring.JspSubway.util.PageVO;
 
 public interface IPlaceBoardService {
 		
 	//글 쓰기
 	void write(PlaceBoardVO vo);
 	
+	//총 게시물 수 구하기
+	int getTotal(PageVO vo);
+	
 	//글 목록
-	List<PlaceBoardVO> getList();
+	List<PlaceBoardVO> getList(PageVO vo);
 	
 	//상세보기
 	PlaceBoardVO getContent(int bno);

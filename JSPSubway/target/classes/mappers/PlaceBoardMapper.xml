@@ -6,7 +6,7 @@
 
 	<resultMap type="place" id="boardMap">
 		<result property="userId" column="user_id" />
-		<result property="sno" column="station_num" />
+		<result property="sco" column="station_code" />
 		<result property="addrZipNum" column="addr_zip_num" />
 		<result property="addrBasic" column="addr_basic" />
 		<result property="addrDetail" column="addr_detail" />
@@ -15,10 +15,23 @@
 
 	<insert id="write">
 		INSERT INTO placeboard
-		(user_id, station_num, title, content, addr_zip_num, addr_basic, addr_detail, place_url)
+		(user_id, station_code, title, content, addr_zip_num, addr_basic, addr_detail, place_url)
 		VALUES
-		(#{userId}, #{sno}, #{title}, #{content}, #{addrZipNum}, #{addrBasic}, #{addrDetail}, #{placeUrl})
+		(#{userId}, #{sco}, #{title}, #{content}, #{addrZipNum}, #{addrBasic}, #{addrDetail}, #{placeUrl})
 	</insert>
 
-
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*) FROM placeboard
+	</select>
+	
+	<select id="getList" resultType="place">
+		SELECT * FROM placeboard
+		ORDER BY bno DESC
+		LIMIT #{pageStart} , #{cpp}
+	</select>
+	
+	<select id="getContent" resultType="place">
+		SELECT * FROM placeboard
+		WHERE bno = #{bno}
+	</select>
 </mapper>

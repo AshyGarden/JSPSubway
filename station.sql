@@ -13,8 +13,6 @@ CREATE TABLE station (
     last_subway_time DATETIME 
 );*/
 
-
-
 #SELECT * FROM station
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;
 CREATE TABLE `station` (
@@ -28,6 +26,7 @@ CREATE TABLE `station` (
   `last_subway_time` text
 ) DEFAULT CHARSET=utf8mb4;
 
+#WHERE exit_count = 1 AND WHERE cross_paltform =1;subwayline2
 SELECT  * FROM station;
 
 ALTER TABLE `jspsubway`.`station` 
