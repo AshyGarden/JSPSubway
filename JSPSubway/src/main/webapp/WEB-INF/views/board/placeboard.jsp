@@ -53,12 +53,12 @@
 					<th width=25%>등록일</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="board-list">
 				<c:forEach var="vo" items="${boardList}">
 					<tr>
 						<td>${vo.bno}</td>
 						<td class="text-center">${vo.sco}</td>
-						<td><a id="title">${vo.title}</a></td>
+						<td><a class="title" data-bno="${vo.bno}">${vo.title}</a></td>
 						<td>${vo.userId}</td>
 						<td>
 							${vo.parsedDate}
@@ -131,7 +131,7 @@
 								<p id="inner-title">제목</p>
 								<small id="writedate">21시간전</small><br>
 							</div>
-							<div class="inner-content">
+							<div class="content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
@@ -182,11 +182,16 @@ window.onload = function() {
 
 
 //상세보기 처리(모달창 열어주기)
-document.getElementById('title').addEventListener('click', e => {
-    console.log('제목클릭');
+document.getElementById('board-list').addEventListener('click', e => {
     e.preventDefault(); //a의 고유 기능 중지
-    console.log('target: ' + e.target);
+    console.log(e.target);
     
+	if(e.target.matches('.title') ) {
+				console.log('타이틀클릭');
+				
+			
+
+
     //글 번호 얻기
     const bno = e.target.dataset.bno;
 	    		console.log('bno: ' + bno);
@@ -201,7 +206,7 @@ document.getElementById('title').addEventListener('click', e => {
         document.getElementById('writer').textContent = data.writer;
         document.getElementById('inner-title').textContent = data.title;
         document.getElementById('writedate').textContent = data.writeDate;
-        document.getElementById('inner-content').textContent = data.content;
+        document.getElementById('content').textContent = data.content;
         document.getElementById('placeurl').textContent = data.placeUrl;
         document.getElementById('addrZipNum').textContent = data.addrZipNum;
         document.getElementById('addrBasic').textContent = data.addrBasic;
@@ -210,6 +215,7 @@ document.getElementById('title').addEventListener('click', e => {
     });
         
     $('#detailModal').modal('show');
+	}
 });
 
 
