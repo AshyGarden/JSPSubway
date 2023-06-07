@@ -4,7 +4,7 @@
     
 <mapper namespace="com.spring.JspSubway.station.mapper.IStationMapper">
 	
-	<!-- <resultMap type="station" id="stationMap">
+	<resultMap type="station" id="stationMap">
 		<result property="sname" column="station_name" />
         <result property="sco" column="station_code" />
         <result property="ec" column="exit_count" />
@@ -13,7 +13,7 @@
         <result property="cf" column="cross_platform" />
         <result property="fs" column="first_subway_time" />
         <result property="ls" column="last_subway_time" />
-	</resultMap> -->
+	</resultMap>
 	
 	<sql id="prevStn"><!-- 이전역 -->
 		<choose>
@@ -80,7 +80,7 @@
 	
 	<select id="getStationInfo" resultMap="stationMap"> <!-- 역 정보 가져오기 -->
 		SELECT * FROM station
-		WHERE sco = #{sco}
+		WHERE station_code = #{sno}
 	</select>
 	
 	<select id="prevStation"> <!-- 이전 역이동 -->
