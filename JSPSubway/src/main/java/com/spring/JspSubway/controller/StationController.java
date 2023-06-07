@@ -23,16 +23,15 @@ public class StationController {
 	@GetMapping("/detail/{sco}")
 	public String stationInfo(@PathVariable int sco, Model model) {	
 		model.addAttribute("group", service.getStationInfo(sco));
+		log.info("/detail/{"+sco+"}");
 		return "/station/detail";
 	}
-	
-	
 
-	//상세 보기 페이지로 이동
-	@GetMapping("/detail")
-	public void	detail() {
-		log.info("상세보기 페이지 GET 요청(jsp시험용)");
-	}
+//	//상세 보기 페이지로 이동
+//	@GetMapping("/detail")
+//	public void	detail() {
+//		log.info("상세보기 페이지 GET 요청(jsp시험용)");
+//	}
 	
 	//메인 페이지로 이동
 	@GetMapping("/main")

@@ -20,22 +20,22 @@
         <section id="left">
             <div class="left-map serve-map mapL">
                 <div id="prevStn" class="station">
-                    <h3>233</h3> <!-- station_num-1 -->
-                    <h1>대림역</h1>
+                    <h3>${station.sco}-1</h3> <!-- station_num-1 -->
+                    <h1>이전역</h1>
                 </div>
             </div>
             <div class="arrow" id="arrow-left"><<<</div>
             <div class="left-map">
                 <div id="mainStation" class="station">
-                    <h3>234</h3> <!-- station_num -->
-                    <h1>신도림역</h1> <!-- station_name -->
+                    <h3>${station.sco}</h3> <!-- station_num -->
+                    <h1>${station.sname}</h1> <!-- station_name -->
                 </div>
             </div>
             <div class="arrow" id="arrow-right">>>></div>
             <div class="left-map serve-map mapR">
                 <div id="nextStn" class="station">
-                    <h3>235</h3> <!-- station_num+1 --> 
-                    <h1>문래역</h1>
+                    <h3>${station.sco+1}</h3> <!-- station_num+1 --> 
+                    <h1>다음역</h1>
                 </div>
             </div>
         </section> <!-- END Left -->
@@ -50,10 +50,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
                     </svg> 
-                    <h3>신도림역</h3> <!-- station_name -->
+                    <h3>${station.sname}</h3> <!-- station_name -->
                 </div>
                 <div class="other-name">
-                    <li>영문명 Sindorim station</li>
+                    <li>${station.s} station</li>
                     <li>한자 新道林驛</li>
                     <li>일본어 新道林驛</li>
                 </div>
