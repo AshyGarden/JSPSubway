@@ -13,6 +13,9 @@ CREATE TABLE subwayline2 (
 DROP TABLE subwayline2;
 
 UPDATE jspsubway.subwayline2 SET default charset=utf-8;*/
+
+
+
 CREATE TABLE `subwayline2` (
   `station_code` int DEFAULT NULL,
   `station_name` text,
