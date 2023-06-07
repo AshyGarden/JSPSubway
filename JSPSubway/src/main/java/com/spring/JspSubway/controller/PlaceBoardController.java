@@ -52,7 +52,5 @@ public class PlaceBoardController {
 	public PlaceBoardVO getContent(@PathVariable int bno) {
 		return placeBoardService.getContent(bno);
 		
-	}
-
-	
+	}	
 }

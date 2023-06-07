@@ -19,13 +19,11 @@
 			<ref bean="userLoginSuccessHandler" />
 		</mvc:interceptor>
 		
-		<!-- 로그인 권한 체크 인터셉터 url 매핑 
+		<!-- 로그인 권한 체크 인터셉터 url 매핑 --> 
 		<mvc:interceptor>
-			<mvc:mapping path="/freeboard/regist" />
-			<mvc:mapping path="/user/userMypage" />
-			<mvc:mapping path="/freeboard/content/**" />
+			<mvc:mapping path="/board/write" />
 			<ref bean="userAuth" />
-		</mvc:interceptor>-->
+		</mvc:interceptor>
 	
 	</mvc:interceptors>
 		
