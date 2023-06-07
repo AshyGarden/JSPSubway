@@ -51,7 +51,7 @@
                     <div class="input-group mb-3">
                         <select name="sco" class="form-control" id="sco">
                             <c:forEach items="${scoList}" var="sc">
-                            	<option value="${sc.sco}">${sc.sco} ${sc.sname}</option>
+                            	<option value="${sc.sco}">${sc.sco} / ${sc.sname}</option>
                             </c:forEach>
                         </select>
                     </div>

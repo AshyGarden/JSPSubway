@@ -43,11 +43,11 @@
 		<hr>
 
 
-		<table class="table table-bordered table-hover">
+		<table class="table table-bordered table-hover table-striped">
 			<thead class="text-center">
 				<tr>
-					<th width=10% class="text-start">글번호</th>
-					<th width=15%>역명</th>
+					<th width=7%>글번호</th>
+					<th width=18%>역명</th>
 					<th width=35%>제목</th>
 					<th width=15%>작성자</th>
 					<th width=25%>등록일</th>
@@ -56,11 +56,11 @@
 			<tbody id="board-list">
 				<c:forEach var="vo" items="${boardList}">
 					<tr>
-						<td>${vo.bno}</td>
+						<td class="text-center">${vo.bno}</td>
 						<td class="text-center">${vo.sname}</td>
-						<td><a class="title" data-bno="${vo.bno}">${vo.title}</a></td>
-						<td>${vo.userId}</td>
-						<td>
+						<td><a class="title px-2" data-bno="${vo.bno}">${vo.title}</a></td>
+						<td class="text-center">${vo.userId}</td>
+						<td class="text-center">
 							${vo.parsedDate}
 						</td>
 					</tr>
