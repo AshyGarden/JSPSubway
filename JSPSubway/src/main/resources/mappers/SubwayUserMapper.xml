@@ -10,7 +10,6 @@
 		<result property="userName" column="user_name" />
 		<result property="userEmail1" column="user_email1" />
 		<result property="userEmail2" column="user_email2" />
-		
 	</resultMap>
 
 

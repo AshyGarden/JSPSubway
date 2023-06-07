@@ -44,7 +44,7 @@
             <form action="${pageContext.request.contextPath}/board/write" method="post">
                 <div class="mb-3">
                     <label class="form-label">작성자</label>
-                    <input type="text" class="form-control" name="userId" id="userId" placeholder="아이디는 로그인정보에서 받아올거에요">
+                    <input type="text" class="form-control" name="userId" id="userId"  value="${login}" readonly>
                 </div>
                 <div class="form-group">
                     <label class="mb-2" for="stationNum">역 번호</label>

@@ -98,7 +98,7 @@
 					</c:if>
 				</ul>
 				<div class="cbtn">
-					<button type="button" class="btn btn-outline-success right"
+					<button type="button" name="writeBtn" class="btn btn-outline-success right"
 						onclick="location.href='${pageContext.request.contextPath}/board/write'">글쓰기</button>
 				</div>
 			</nav>
@@ -118,8 +118,7 @@
 			<div class="modal-content">
 				<div class="modal-body row">
 					<div class="modal-img col-sm-8 col-xs-6">
-						<img src="${pageContext.request.contextPath}/img/img_ready.png"
-							id="Img" width="100%">
+						<img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
 					</div>
 					<div class="modal-con col-sm-4 col-xs-6">
 						<div class="modal-inner">
@@ -135,15 +134,16 @@
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
-									consequat.</p>
-								<span>관련링크</span><br> <a id="placeUrl" href=""><small>링크가
-										나오는 칸이야</small></a>
+									consequat.
+								</p>
+								<span>관련링크</span><br>
+								<a id="placeUrl" href=""><small>링크가 나오는 칸이야</small></a>
 							</div>
 							<div class="addr-inner">
-								<br> <span>주소</span><br> <span id="addrNum"><small>우편번호가
-										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
-										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
-										칸이야</small></span>
+								<br> <span>주소</span>
+								<br> <span id="addrNum"><small>우편번호가 나오는 칸이야</small></span>
+								<br> <span id="addrBasic"><small>기본주소가 나오는 칸이야</small></span>
+									 <span id="addrDetail"><small>상세주소가 나오는 칸이야</small></span>
 							</div>
 							<div class="link-inner">
 								<!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
@@ -164,43 +164,47 @@
 
 	<script>
 
-//페이지네이션
-
-window.onload = function() {
+	//페이지네이션
 	
-    document.getElementById('pagination').addEventListener('click', e => {
-        if(!e.target.matches('a')) {
-            return;
-        }
-        e.preventDefault(); //a태그 고유기능 중지
-
-        const value = e.target.dataset.pagenum;
-
-        document.pageForm.pageNum.value = value;
-        document.pageForm.submit();
-    });
+	window.onload = function() {
+		
+	    document.getElementById('pagination').addEventListener('click', e => {
+	        if(!e.target.matches('a')) {
+	            return;
+	        }
+	        e.preventDefault(); //a태그 고유기능 중지
 	
-}
-
-
-//상세보기 처리(모달창 열어주기)
-document.getElementById('title').addEventListener('click', (e) => {
-    console.log('제목클릭');
-    e.preventDefault(); //a의 고유 기능 중지
-    $('#detailModal').modal('show');
-});
-
-//댓글 날짜 변환 함수
-function parseTime(writeDate) {
-    let year, month, day, hour, minute, second;
-
-    if(writeDate.length === 5) {
-    	[year, month, day, hour, minute] = writeDate;
-        second = 0;
-    } else {
-        [year, month, day, hour, minute, second] = writeDate;
-    }
-}
+	        const value = e.target.dataset.pagenum;
+	
+	        document.pageForm.pageNum.value = value;
+	        document.pageForm.submit();
+	    });
+		
+	}
+	
+	//상세보기 처리(모달창 열어주기)
+	document.getElementById('title').addEventListener('click', (e) => {
+	    console.log('제목클릭');
+	    e.preventDefault(); //a의 고유 기능 중지
+	    $('#detailModal').modal('show');
+	});
+	
+	//댓글 날짜 변환 함수
+	function parseTime(writeDate) {
+	    let year, month, day, hour, minute, second;
+	
+	    if(writeDate.length === 5) {
+	    	[year, month, day, hour, minute] = writeDate;
+	        second = 0;
+	    } else {
+	        [year, month, day, hour, minute, second] = writeDate;
+	    }
+	}
+	
+	//로그인 한 유저만 글쓰기 가능
+	document.getElementById('writeBtn').onclick = function() {
+		if()
+	}
 
 </script>
 </body>
