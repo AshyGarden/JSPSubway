@@ -1,11 +1,17 @@
 package com.spring.JspSubway.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.JspSubway.station.service.IStationService;
 
@@ -26,6 +32,15 @@ public class StationController {
 		return "/station/detail";
 	}
 	
+	@ResponseBody
+	@PostMapping("/lookup")
+	public List<String> getLookup(@RequestBody String sqltext) {
+		log.info("가져온 sql문: "+sqltext);
+		
+		List<String> lookupCodes = service.getLookup(sqltext);
+		
+		return lookupCodes;
+	}
 	
 
 	//상세 보기 페이지로 이동

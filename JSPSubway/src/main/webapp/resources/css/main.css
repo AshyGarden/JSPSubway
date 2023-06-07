@@ -357,7 +357,7 @@ section.metro-maps{
 #map-box #map-bottom .station:nth-child(14){ position: relative; left: 10px; top: -3px; } 
 #map-box #map-left .station:nth-child(1){ position: relative; left: 8px; bottom:-2px; } 
 #map-box #map-left .station:nth-child(7){ position: relative; left: 6px; top:-2px; }
-#map-box #map-right .station:nth-child(1){ position: relative; right: 2px; top:5px; } /* 성수 */
+#map-box #map-right .station:nth-child(1){ position: relative; right: 5px; top:5px; } /* 성수 */
 #map-box #map-right .station:nth-child(8){ position: relative; right: 11px; bottom:-2px; }
 
 
@@ -371,13 +371,13 @@ section.metro-maps{
 .metro-maps #map-Sinseoldong{
     position: absolute;
     right: -3px;
-    top: -92px;
+    top: -96px;
     transform: translate(0, -50%);
 }
 .metro-maps #map-Sindap{
     position: absolute;
     right: -18px;
-    top: -107px;
+    top: -111px;
     transform: translate(-50%, 0%);
 }
 
@@ -483,4 +483,10 @@ section.metro-maps{
     color: gray;
 }
 
+
+
+/* lookup으로 선택된 station 효과주기 */
+#map-box .station.lookup-class{
+    background-color: rebeccapurple;
+}
 
