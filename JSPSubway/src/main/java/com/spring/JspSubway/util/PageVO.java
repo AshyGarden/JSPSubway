@@ -17,5 +17,8 @@ public class PageVO {
 		this.cpp = 10;
 	}
 	
+	public int getPageStart() {
+		return (pageNum - 1) * cpp;
+	}
 	
 }
