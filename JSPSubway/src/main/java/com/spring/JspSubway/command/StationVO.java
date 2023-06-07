@@ -31,6 +31,7 @@ public class StationVO {
 	private boolean wcio;     //watercloset inout
 	private boolean ods;      //opendoorside 
 	private int cp;           //crossplatform
-	private LocalDateTime fs; //first subway
-	private LocalDateTime ls; //last subway
+	private String fs; //first subway
+	private String ls; //last subway
+  
 }

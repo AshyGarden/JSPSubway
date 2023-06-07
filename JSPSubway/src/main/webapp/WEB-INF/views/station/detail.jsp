@@ -24,12 +24,14 @@
                     <h1>대림역</h1>
                 </div>
             </div>
+            <div class="arrow" id="arrow-left"><<<</div>
             <div class="left-map">
                 <div id="mainStation" class="station">
                     <h3>234</h3> <!-- station_num -->
                     <h1>신도림역</h1> <!-- station_name -->
                 </div>
             </div>
+            <div class="arrow" id="arrow-right">>>></div>
             <div class="left-map serve-map mapR">
                 <div id="nextStn" class="station">
                     <h3>235</h3> <!-- station_num+1 --> 
