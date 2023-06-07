@@ -10,7 +10,7 @@
         <result property="ec" column="exit_count" />
         <result property="wcio" column="watercloset_inout" />
         <result property="ods" column="open_doorside" />
-        <result property="cf" column="cross_platform" />
+        <result property="cp" column="cross_platform" />
         <result property="fs" column="first_subway_time" />
         <result property="ls" column="last_subway_time" />
 	</resultMap>
@@ -102,5 +102,13 @@
 		SELECT * FROM station
 		<include refid="sinjeongjiLine" />
 	</select> 
+	
+	
+	
+	<!-- main.jsp에서 검색한 역 조회하기 -->
+	<select id="getLookup" parameterType="String" resultType="String">
+		${_parameter}
+	</select>
+	
 	
 </mapper>   
