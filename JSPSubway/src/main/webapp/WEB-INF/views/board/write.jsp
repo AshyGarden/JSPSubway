@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label class="mb-2" for="stationNum">역 번호</label>
                     <div class="input-group mb-3">
-                        <select name="sno" class="form-control" id="sno">
+                        <select name="sco" class="form-control" id="sco">
                             <c:forEach items="##" var="##">
                             	<option>200</option>
                             </c:forEach>
