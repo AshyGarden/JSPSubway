@@ -11,6 +11,18 @@
 		<result property="addrBasic" column="addr_basic" />
 		<result property="addrDetail" column="addr_detail" />
 		<result property="placeUrl" column="place_url" />
+		<result property="sname" column="station_name" />
+	</resultMap>
+	
+	<resultMap type="station" id="stationMap">
+		<result property="sname" column="station_name" />
+        <result property="sco" column="station_code" />
+        <result property="ec" column="exit_count" />
+        <result property="wcio" column="watercloset_inout" />
+        <result property="ods" column="open_doorside" />
+        <result property="cp" column="cross_platform" />
+        <result property="fs" column="first_subway_time" />
+        <result property="ls" column="last_subway_time" />
 	</resultMap>
 
 	<insert id="write">
@@ -25,7 +37,12 @@
 	</select>
 	
 	<select id="getList" resultMap="boardMap">
-		SELECT * FROM placeboard
+		SELECT bno, user_id, p.station_code, title, content, addr_zip_num, addr_basic, addr_detail, place_url, 
+			write_date, update_date,
+			s.station_name 
+		FROM placeboard p
+		LEFT JOIN station s
+		ON p.station_code = s.station_code
 		ORDER BY bno DESC
 		LIMIT #{pageStart} , #{cpp}
 	</select>
@@ -34,4 +51,9 @@
 		SELECT * FROM placeboard
 		WHERE bno = #{bno}
 	</select>
+	
+	<select id="getSco" resultMap="stationMap">
+		SELECT * FROM station
+	</select>
+
 </mapper>

@@ -57,7 +57,7 @@
 				<c:forEach var="vo" items="${boardList}">
 					<tr>
 						<td>${vo.bno}</td>
-						<td class="text-center">${vo.sco}</td>
+						<td class="text-center">${vo.sname}</td>
 						<td><a class="title" data-bno="${vo.bno}">${vo.title}</a></td>
 						<td>${vo.userId}</td>
 						<td>
@@ -136,7 +136,7 @@
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
 									consequat.</p>
-								<span>관련링크</span><br> <a id="placeurl" href=""><small>링크가
+								<span>관련링크</span><br> <a id="placeurl" href="${vo.placeUrl}"><small>링크가
 										나오는 칸이야</small></a>
 							</div>
 							<div class="inner-address">
@@ -232,6 +232,8 @@ function parseTime(writeDate) {
     } else {
         [year, month, day, hour, minute, second] = writeDate;
     }
+    
+    
 }
 
 </script>

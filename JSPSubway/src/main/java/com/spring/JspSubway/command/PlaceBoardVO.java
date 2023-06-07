@@ -41,8 +41,11 @@ public class PlaceBoardVO {
 	private LocalDateTime writeDate;
 	private LocalDateTime updateDate;
 	
+	private String sname;
+	
+	
 	public String getParsedDate() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분");
         return this.writeDate.format(dtf);
     }
 }
