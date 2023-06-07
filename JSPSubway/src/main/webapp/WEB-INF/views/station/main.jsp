@@ -108,11 +108,11 @@
 					<div id="map-top-out">
 						<div class="station">
 							<p class="st-name">신설동</p>
-							<div class="st-circle cross-station" id="sco2114"></div>
+							<div class="st-circle cross-station" id="2114"></div>
 						</div>
 						<div class="station">
 							<p class="st-name">용두</p>
-							<div class="st-circle" id="sco2113"></div>
+							<div class="st-circle" id="2113"></div>
 						</div>
 					</div> 
 				</div> <!-- map-Sinseoldong END -->
@@ -122,11 +122,11 @@
 					<div><div class="overflow-box"> <div class="station outline"></div> </div></div>
 					<div id="map-right-out">
 						<div class="station">
-							<div class="st-circle" id="sco2112"></div>
+							<div class="st-circle" id="2112"></div>
 							<p class="st-name">신답</p>
 						</div>
 						<div class="station">
-							<div class="st-circle" id="sco2111"></div>
+							<div class="st-circle" id="2111"></div>
 							<p class="st-name">용답</p>
 						</div>
 					</div> 
@@ -212,7 +212,7 @@
 						<p class="st-name">강변</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="2050"></div>
+						<div class="st-circle" id="2150"></div>
 						<p class="st-name">잠실나루</p>
 					</div>
 					<div class="station">
@@ -405,11 +405,17 @@
 		
 
 		// ************** 조회하기로 검색하기
-		const $lookupButton = document.querySelector('.lookup .key-button');
+		const $lookupButton = document.querySelector('.lookup > div');
 		$lookupButton.addEventListener('click', function(){
 			//시작 전, 검색 시 검색결과 초기화!!!
-			const selects = document.getElementsByClassName('lookup-class')
-			selects.forEach((sel) => {  sel.classList.remove('lookup-class')  }) 
+			const selects = document.querySelectorAll('.lookup-class')
+			console.log(selects);
+			if(selects.length > 0){
+				for(let sel of selects){
+					console.log('선택 상태였던 클래스: '+sel);
+					sel.classList.remove('lookup-class') 
+				}
+			}
 			
 
 			//환승호선
@@ -426,14 +432,19 @@
 			if(document.querySelector('.watercloset-inout > div').classList.contains('wc-select')){ $selWater = '= 1'; }
 
 			//검색어
-			let $selName = " and station_name LIKE '%"+document.querySelector('.station-search input[name="stationName"]').value+"%'"; 
-			if($selName == '') $selName= '';
-
+			const $stationName = document.querySelector('.station-search input[name="stationName"]').value;
+			let $selName = " and station_name LIKE '%"+$stationName+"%'"; 
+			
 
 			console.log('환승호선: '+$selLine);
 			console.log('문 방향: '+$selDoor);
 			console.log('화장실 유무: '+$selWater);
-			console.log('검색어: '+$selName);
+			console.log('검색어: '+$stationName);
+
+			//체크가 없을 경우 전부 초기화함.
+			if($selLine == '>= 0' && $selDoor == '>= 0'
+				&& $selWater == '>= 0' && $stationName == ''){  $selDoor = '>= 999';  }
+
 
 			let sqltext =  
 				"select station_code from station"+
@@ -459,12 +470,12 @@
 				.then(res => res.json())
 				.then(selCodes => {
 					console.log('선택된 역 번호: '+selCodes);
-					// if(selCodes.size === 0){return;}
-
-					selCodes.forEach((code) => {
+					if(selCodes.length === 0){return;}
+					
+					for(let code of selCodes){
 						const $codeStation = document.getElementById(code).parentNode;
-						$codeStation.classList.add('lookup-class')
-					})
+						$codeStation.classList.add('lookup-class');
+					}
 			})
 
 			

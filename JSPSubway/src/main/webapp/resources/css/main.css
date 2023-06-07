@@ -487,6 +487,14 @@ section.metro-maps{
 
 /* lookup으로 선택된 station 효과주기 */
 #map-box .station.lookup-class{
-    background-color: rebeccapurple;
+   /* scale: 1.2; */
 }
-
+#map-box .station.lookup-class .st-circle{
+    background-color: goldenrod;
+    box-shadow: 1px 1px 1px rgb(255, 206, 83);
+    border-width: 1.2em;
+}
+#map-box .station.lookup-class .st-circle.cross-station{
+    border-color: goldenrod;
+    background-color: goldenrod;
+}
