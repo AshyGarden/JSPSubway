@@ -40,8 +40,8 @@
                     	<a href="${pageContext.request.contextPath}/user/userJoin"><div class="btn btn-dark">회원가입</div></a>
                     </c:if>
                     <c:if test="${login != null}"> <!-- 로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
-                    	<li class="nav-item" style="color: #ffffff; font-size: 13px; line-height: 32px;"> ${login} 님 안녕하세요 </li>
-                        <li class="nav-item"> <a class="nav-link" href="#">로그아웃</a> </li>
+                    	<li class="nav-item" style="color: #ffffff; font-size: 13px; line-height: 32px;"> ${name}(${login}) 님 안녕하세요 </li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/logout">로그아웃</a> </li>
                     </c:if>
                 </ul>
             </div>

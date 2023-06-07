@@ -35,4 +35,11 @@ public class SubwayUserService implements ISubwayUserService {
 		log.info("id : " + id);
 		return mapper.idCheck(id);
 	}
+	
+	// 이름 불러오기
+	@Override
+	public String getUserName(String id) {
+		return mapper.getUserName(id);
+	}
+	
 }

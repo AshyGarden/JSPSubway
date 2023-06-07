@@ -70,6 +70,8 @@ public class SubwayUserController {
 	public void login(String userId, String userPw, Model model) {
 		log.info("나는 SubwayUserController의 login이다!");
 		model.addAttribute("user", userService.login(userId,userPw));
+		log.info("불러온 name : " + userService.getUserName(userId));
+		model.addAttribute("name", userService.getUserName(userId));
 	}
 	
 	// 로그아웃

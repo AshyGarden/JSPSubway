@@ -33,6 +33,8 @@ public class UserLoginSuccessHandler implements HandlerInterceptor{
 				
 			ModelMap map = modelAndView.getModelMap(); //�� ��ü ������
 			String id = (String) map.get("user"); //�� ���� user��� �̸��� ������ ������
+			String name = (String) map.get("name");
+			log.info("맵에 넣을 name : " + name);
 			//log.info("���ͼ�ó ���ο��� user Ȯ��: "+vo.toString()); //null���� ���ڵ� �غ��� �ڵ尡 ����
 				
 			if(id != null) { //�α��� ����
@@ -40,6 +42,7 @@ public class UserLoginSuccessHandler implements HandlerInterceptor{
 				//login ������ ȸ������ session������ �α��� �����ϰԲ� ��.
 				HttpSession session = request.getSession();
 				session.setAttribute("login",id);
+				session.setAttribute("name",name);
 				
 				//posthandler���� �Ѿ������ redirect
 				response.sendRedirect(request.getContextPath()+"/station/main"); 
