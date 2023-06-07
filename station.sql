@@ -26,6 +26,7 @@ CREATE TABLE `station` (
   `last_subway_time` text
 ) DEFAULT CHARSET=utf8mb4;
 
+#WHERE exit_count = 1 AND WHERE cross_paltform =1;subwayline2
 SELECT  * FROM station;
 UPDATE station SET `station_code` = 2030 WHERE `station_name` = `을지로3가`;
 
@@ -33,4 +34,13 @@ ALTER TABLE `jspsubway`.`station`
 CHANGE COLUMN `watercloset_inout` `watercloset_inout` TINYINT NULL DEFAULT NULL ,
 CHANGE COLUMN `open_doorside` `open_doorside` TINYINT NULL DEFAULT NULL ;
 
-alter table station change `station_num` `station_code` int;
+UPDATE station 
+SET station_code = 2030
+WHERE station_name = '을지로3가';
+
+SET SQL_SAFE_UPDATES = 0;
+
+
+
+
+

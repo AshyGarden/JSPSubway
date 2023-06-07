@@ -4,6 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +16,35 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
+<!-- reset.css -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 <!-- reset.css -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 
 <!-- 파비콘 -->
 <link rel="icon" href="#">
+<!-- 파비콘 -->
+<link rel="icon" href="#">
 
 <!-- custom css -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/placeboard.css">
+<!-- custom css -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/placeboard.css">
 
+<!-- bootstrap 5.3.2 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 <!-- bootstrap 5.3.2 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -35,8 +57,14 @@
 	<!-- header -->
 	<%@ include file="../../include/header.jsp"%>
 
+	<%@ include file="../../include/header.jsp"%>
+
 	<div class="wrapper">
 
+		<div class="titlebox">
+			<p>명소 추천 게시판</p>
+		</div>
+		<hr>
 		<div class="titlebox">
 			<p>명소 추천 게시판</p>
 		</div>
@@ -105,7 +133,17 @@
 
 			<input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
 			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
+			<input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
+			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
 
+		</form>
+
+		<div id="contentDiv"></div>
+
+	</div>
+
+	<!-- 모달 -->
+	<div class="modal fade" id="detailModal" role="dialog">
 		</form>
 
 		<div id="contentDiv"></div>
@@ -155,13 +193,20 @@
 		</div>
 	</div>
 
+
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp"%>
 
 
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<%@ include file="../../include/footer.jsp"%>
 
+
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+	<script>
 	<script>
 
 	//페이지네이션
