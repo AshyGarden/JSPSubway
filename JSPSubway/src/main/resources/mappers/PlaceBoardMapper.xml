@@ -24,7 +24,7 @@
 		SELECT COUNT(*) FROM placeboard
 	</select>
 	
-	<select id="getList" resultType="place">
+	<select id="getList" resultMap="boardMap">
 		SELECT * FROM placeboard
 		ORDER BY bno DESC
 		LIMIT #{pageStart} , #{cpp}

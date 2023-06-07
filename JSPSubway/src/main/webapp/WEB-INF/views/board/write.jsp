@@ -52,6 +52,7 @@
                         <select name="sco" class="form-control" id="sco">
                             <c:forEach items="##" var="##">
                             	<option>200</option>
+                            	<option>300</option>
                             </c:forEach>
                         </select>
                     </div>
