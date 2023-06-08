@@ -108,16 +108,6 @@
 			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
 		</form>
 
-		<div id="contentDiv"></div>
-
-	</div>
-
-	<!-- 모달 -->
-	<div class="modal fade" id="detailModal" role="dialog">
-		</form>
-
-		<div id="contentDiv"></div>
-
 	</div>
 
 	<!-- 모달 -->
@@ -135,8 +125,8 @@
 							</div>
 							<div class="title">
 								<p id="writer">작성자</p>
-								<p id="title-inner">제목</p>
-								<small id="regdate">21시간전</small><br>
+								<p id="inner-title">제목</p>
+								<small id="writedate">21시간전</small><br>
 							</div>
 							<div class="content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
@@ -151,9 +141,6 @@
 										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
 										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
 										칸이야</small></span>
-							</div>
-							<div class="link-inner">
-								<!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
 							</div>
 						</div>
 					</div>
