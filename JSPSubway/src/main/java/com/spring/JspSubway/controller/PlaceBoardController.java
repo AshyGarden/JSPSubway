@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.placeboard.service.IPlaceBoardService;
@@ -54,6 +55,7 @@ public class PlaceBoardController {
 		return "redirect:/board/placeboard"; //placeboard로 재요청
 	}
 	
+	
 	//글 상세보기(모달)
 	@ResponseBody
 	@GetMapping("/content/{bno}")
@@ -61,4 +63,5 @@ public class PlaceBoardController {
 		return placeBoardService.getContent(bno);
 		
 	}	
+	
 }
