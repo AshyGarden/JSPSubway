@@ -1,8 +1,23 @@
+@import url(./setting.css);
+
 /* reset */
 a {
     color: inherit;
     text-decoration: none;
 }
+
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html body {
+	 font-family: 'GongGothicMedium';
+	 font-weight: 300;
+}
+
 
 button,
 input {
@@ -10,16 +25,9 @@ input {
     border: none;
 }
 
-/* common style */
-.wrap {
-    font-size: 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
 .hide {
     display: none !important;
 }
-
 
 /* titlebox */
 .wrapper .titlebox {
@@ -35,13 +43,17 @@ input {
 
 
 /* table start */
+.wrapper table,
+.wrapper th,
+.wrapper td {
+	border: 1px solid #acacac;
+}
 
 .wrapper table {
     width : 85%;
     height: 100%;
     margin : 30px auto;
     border-radius: 20px;   
-
 }
 
 .wrapper .table thead {
@@ -60,6 +72,35 @@ input {
 
 /* pagination */
 
+.pagination > li > a
+{
+    background-color: white;
+    color: #00A84D;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #00A84D !Important;
+    border: solid 1px #00A84D !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #00A84D !Important;
+    border: solid 1px #00A84D;
+}
+
 ul.pagination {
     justify-content: center;
 }
@@ -69,6 +110,9 @@ ul.pagination {
     margin-right: 7.5%;
 }
 
-.pagination .btn {
-    background-color: #00A84D;  
+/* modal */
+
+div.modal-header,
+div.modal-footer {
+    background-color: #ECEFF1;  
 }

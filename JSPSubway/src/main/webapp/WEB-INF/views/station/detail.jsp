@@ -166,6 +166,15 @@
             wrapper.style.transform = 'translateX(-'+offset+'px';
         });
 
+
+
+
+
+
+
+
+
+
     </script>
 
     <!-- <script>
@@ -198,12 +207,7 @@
             console.log('next station btn activate');
 
             const nextSco = '${station.sco} + 1';
-
-           
-
-
         };
-
 
     </script> -->
 
