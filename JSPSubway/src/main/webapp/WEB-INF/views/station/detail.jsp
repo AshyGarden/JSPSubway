@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="watercloset-inout" id="wcio">
-                        <h5>화장실 위치: <strong>${station.wcio eq 'true'?'개찰구 내부':'개찰구 외부'}</strong></h5>
+                        <h5>화장실 위치: <strong>${station.wcio ?'개찰구 내부':'개찰구 외부'}</strong></h5>
                         <!-- watercloset_inout. 있을 경우 ●. 없을 경우 ○ -->
                         <!-- <strong>●</strong> -->
                     </div>
@@ -106,16 +106,17 @@
                         <h5>
                             <!-- 선택된 쪽에 .selete class 추가하기 -->
                             <!-- 디자인은 추후 수정될 예정 -->
-                            <span class="left select">LEFT</span>  탑승 위치  <span class="right">RIGHT</span> 
+                            <span class="left ${station.ods == 'true' ? 'select':'' }">LEFT</span>  탑승 위치  <span class="right ${station.ods == 'false' ? 'select':'' }">RIGHT</span> 
                         </h5>
                     </div>
 
                     <div class="cross-platform">
                         <h5>반대편 승강장으로 출입</h5>
-                        <h5>
-                            &nbsp;<span class="able (${station.cp}==2)?'select':'' "> 가능 </span> &nbsp;
-                            &nbsp;<span class="possible (${station.cp}==1)?'select':'' "> 조건부 가능 </span> &nbsp;
-                            &nbsp;<span class="disable (${station.cp}==0)?'select':'' "> 불가능 </span> &nbsp;
+                        <h5> 
+                            <!-- ${pc.paging.pageNum == num ? 'active' : ''} -->
+                            &nbsp;<span class="able ${station.cp == '2' ? 'select':'' }"> 가능 </span> &nbsp;
+                            &nbsp;<span class="possible ${station.cp == '1' ? 'select':'' }"> 조건부 가능 </span> &nbsp;
+                            &nbsp;<span class="disable ${station.cp == '0' ? 'select':'' }"> 불가능 </span> &nbsp;
                         </h5>
                     </div>
 
@@ -138,38 +139,23 @@
         <section id="right">
             <div class="right-board">
                 <h2>추천 명소</h2>
-                <div class="fir">
-                    <a href="fi">
-                        <h1>1</h1> 
-                        <div class="content">
-                            <h4>신도림 최고 맛집</h4>
-                            <h3>작성자</h3>
-                            <p>신도림역에 이런 장소가 있었다니! ...</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="sec">
-                    <a href="#">
-                        <h1>2</h1>
-                        <div class="content">
-                            <h4>title 글 제목</h4>
-                            <h3>user_name 작성자</h3> <!-- user_id로 join해서 name 가져오기... -->
-                            <p>content 글 본문 ...</p>
-                            <!-- 그 외 디자인 등 추가사항은 데이터 넣은 뒤 조정 
-                                (본문이 얼마나 들어가냐에 따라 바꿔야 해서 디자인 생략해둠.) -->
-                        </div>
-                    </a>
-                </div> 
-                <div class="thr">
-                    <a href="#">
-                        <h1>3</h1>
-                        <div class="content">
-                            <h4>[충격] 신도림역에 숨겨진 명소 발견하여... 대중 '환호' </h4>
-                            <h3>작성자</h3>
-                            <p>5월 23일, 산책을 즐기던 A씨(34)는 신도림역에서 특별한 장소가 발견했다고 SNS에 알렸다. 이 장소는...</p>
-                        </div>
-                    </a>
-                </div> 
+               	<c:if test="${board.size()!=0}">
+	                <c:forEach var="i" begin="0" end="${board.size()-1}">
+	                    <div class="board${i+1}">
+	                        <a href="#">
+	                            <h1>🚇</h1> 
+	                            <div class="content">
+	                                <h4>${board[i].title}</h4>
+	                                <h3>작성자: ${board[i].userId}</h3>
+	                                <p>${board[i].content}</p>
+	                            </div>
+	                        </a>
+	                    </div>
+	                </c:forEach>
+                </c:if>
+                <c:if test="${board.size()==0}">
+                		<p>조회된 게시글이 없습니다.</p>
+                </c:if>
             </div>
         </section> <!-- END Right -->
     </div>
@@ -191,11 +177,10 @@
             } else if (offset > 2000 - window.innerWidth) {
                 offset = 2000 - window.innerWidth;
             }
-            
+
             wrapper.style.transform = 'translateX(-'+offset+'px';
         });
 
-        
 
         //역 이용 및 비상대피 안내도
         const $popupImg = document.getElementById('popup-img');
@@ -205,28 +190,14 @@
         $popupImg.addEventListener('click', function(){
             $popupImg.style.display = 'none';
         });
+
+
         
         
 
 
-    </script>
 
-    <script>
-        if(!'${station.ods}'){
-            document.querySelector('.exit-LR .right').classList.toggle('select');
-            document.querySelector('.exit-LR .left').classList.toggle('select');
-        } 
-
-
-        if('${station.cp}==2'){
-            document.querySelector('.cross-platform .able').classList.toggle('select');
-            document.querySelector('.exit-LR .left').classList.toggle('select');
-        } else if('${station.cp}==1'){
-            document.querySelector('.exit-LR .left').classList.toggle('select');
-            document.querySelector('.exit-LR .right').classList.toggle('select');
-        } else{
-
-        }
+        
 
 
     </script>
