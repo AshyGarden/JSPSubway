@@ -128,6 +128,7 @@ section.condition .watercloset-inout > h4{
     text-indent: 3px;
     border-right: 10px solid #f1f1f1;
     transition: 0.6s;
+    cursor: pointer;
 }
 .cross-platform select:focus{
     width: 180px;
@@ -140,11 +141,11 @@ section.condition .watercloset-inout > h4{
 /* 문 열리는 방향 선택
     개찰구 전 역내 화장실 유무
     조회하기 버튼 */
-.open-doorside{ font-family: 'HANAMDAUM'; min-width: 150px; }  /* 최소사이즈, 폰트사이즈 설정 */
+.open-doorside{ font-family: 'HANAMDAUM'; min-width: 150px;}  /* 사이즈, 폰트사이즈 설정 */
 .watercloset-inout{ min-width: 150px; }
 .open-doorside .key-button{ font-size: 16px; }
-.watercloset-inout .key-button,
-.lookup .key-button{ font-size: 14px; }
+.watercloset-inout .key-button{ font-size: 14px; }
+.lookup .key-button{ font-size: 16px; }
 
 
 .open-doorside > div,
@@ -167,34 +168,15 @@ section.condition .watercloset-inout > h4{
     color: white;
 }
 
-/* 조회하기 버튼 */
-.lookup{ margin-left: 10px; }  
-.lookup div{ 
-    color: white;
-    padding: 20px 15px 17px;
-    background-color: rgb(145, 145, 145);
-    border: 2px outset rgb(145, 145, 145);
-    cursor: pointer;
- }
-.lookup div:hover{ 
-    background-color: darkgray; 
-    border-color: darkgray;
-    text-shadow: 1px 1px 6px goldenrod;
-}
-
 .condition .key-button{
-    width: fit-content;
+    min-width: fit-content;
+    max-width: 120px;
     height: 20px;
     border-radius: 10px;
     padding: 0px 5px 0 2px;
 }
-
-.condition label{
-    padding: 2px;
-}
-.condition label:hover{
-    cursor: pointer;
-}
+.condition label{ padding: 2px; }
+.condition label:hover{ cursor: pointer; }
 
 .watercloset-inout > div{
     cursor: pointer;
@@ -203,6 +185,25 @@ section.condition .watercloset-inout > h4{
 .watercloset-inout > div > span{
     line-height: 26px;
 }
+
+/* 조회하기 버튼 */
+.lookup{ margin-left: 10px; }  
+.lookup div{ 
+    color: white;
+    font-weight: 400;
+    padding: 20px 30px 17px;
+    background-color: rgb(145, 145, 145);
+    border: 2px outset rgb(145, 145, 145);
+    text-shadow: 0 0 0 goldenrod;
+    cursor: pointer;
+ }
+.lookup div:hover{ 
+    background-color: darkgray; 
+    border-color: darkgray;
+    text-shadow: 1px 1px 6px goldenrod;
+}
+
+
 
 
 /* 역 이름 검색기능 */
@@ -251,7 +252,7 @@ section.metro-maps{
     top: 50%;
     transform: translate(-50%, -50%);
 
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 90px;
 }
 
@@ -487,14 +488,57 @@ section.metro-maps{
 
 /* lookup으로 선택된 station 효과주기 */
 #map-box .station.lookup-class{
-   /* scale: 1.2; */
+   text-shadow: 0px 0px 1px gold;
 }
 #map-box .station.lookup-class .st-circle{
-    background-color: goldenrod;
+    background-color: gold;
     box-shadow: 1px 1px 1px rgb(255, 206, 83);
-    border-width: 1.2em;
+    border: 3px solid gold;
+    padding: 1px;
 }
 #map-box .station.lookup-class .st-circle.cross-station{
-    border-color: goldenrod;
-    background-color: goldenrod;
+    border: 7px solid gold;
+    background-color: rgb(255, 255, 255);
+    padding: 1px;
+}
+
+/* lookup에서 검색결과가 없을 경우 등장 */
+.wrapper.main #not-select{
+    display: none;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    color: goldenrod;
+    font-family: 'GongGothicMedium';
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+    transition: 0.3s;
+}
+.wrapper.main #not-select.shake {
+    display: block;
+    animation: shake 0.3s linear alternate;
+}
+
+@keyframes shake {
+    0% {
+		transform: translateX(10%);
+	}
+	26% {
+		transform: translateX(-52.27%);
+	}
+	45% {
+		transform: translateX(-32.88%);
+	}
+	69% {
+		transform: translateX(-44.63%);
+	}
+	82% {
+		transform: translateX(-38.36%);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
 }

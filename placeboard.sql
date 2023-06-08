@@ -37,3 +37,4 @@ CREATE TABLE placeboard (
 ) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE placeboard;
+
