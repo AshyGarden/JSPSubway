@@ -142,7 +142,7 @@
                	<c:if test="${board.size()!=0}">
 	                <c:forEach var="i" begin="0" end="${board.size()-1}">
 	                    <div class="board${i+1}">
-	                        <a href="#">
+	                        <a href="${pageContext.request.contextPath}/board/content/board.bno">
 	                            <h1>🚇</h1> 
 	                            <div class="content">
 	                                <h4>${board[i].title}</h4>

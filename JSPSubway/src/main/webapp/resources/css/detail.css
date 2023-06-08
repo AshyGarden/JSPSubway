@@ -239,8 +239,7 @@ section#center .center-details { /*  */
 }
 
 
-section#center .center-details h2,  /* Details 문구 */
-section#right .right-board h2{  /* 추천 명소 문구 */
+section#center .center-details h2{ /* Details 문구 */
     text-align: center;
     font-size: 13px;
 
@@ -384,36 +383,14 @@ section#center .details > * {
 
 
 /* !!!!!!!!!! START RIGHT !!!!!!!!!!*/
-
-/* section#center{
-    box-shadow: 3px 3px 15px #9aa19b;
-    border-radius: 20px;
-    
-    min-width: 420px;
-    width: 600px;
-    min-height: 600px;
-    height: 70%;
-    overflow: hidden;
-    font-family: 'GongGothicMedium';
-    
-    display: flex;
-    align-items: center;
-}
-section#center .center-details { 
-    margin: 20px;
-    width: 100%;
-    padding-bottom: 35px;
-    height: fit-content;
-} */
-
 section#right{
     box-shadow: 3px 3px 15px #9aa19b;
     border-radius: 15px;
     
-    background-color: rgb(231, 244, 248);
+    background-color: #f1f1f1;
     min-width: 500px;
     width: 800px;
-    min-height: 600px;
+    min-height: 650px;
     height: 70%;
 
     overflow: hidden;
@@ -421,53 +398,62 @@ section#right{
 }
 section#right .right-board{
     width: 100%;
-    margin: 10px;
+    margin: 20px 20px 20px 0;
 }
-section#right .right-board h2{
-    text-align: center;
-    margin-bottom: 30px;
-}
-section#right .right-board>div{
-    border: 2px solid #000000;
-    background-color: aliceblue;
-    margin-bottom: 10px;
-    width: 95%;
-    height: 150px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-section#right .right-board>div:nth-last-of-type() {
-    margin-bottom: 0px;
-}
-section#right .right-board > div > a{
-    display: flex;
+#right .right-board h2{ /* 추천 명소 */
+    font-size: 26px;
+    color: #303030;
+
+    width: fit-content;
+    margin: 50px 0 25px 20px;
+    padding: 2px;
 }
 
-section#right .right-board > div > a > h1{
-    background-color: rgb(208, 241, 241);
-    font-size: 40px;
+
+#right .right-board>div{
+    border-top: 2px solid #000000;
+    background-color: white;
+    width: 90%;
+    height: fit-content;
+    padding: 20px 0;
+    margin: 0 auto 20px;
+
+    box-sizing: border-box;
+}
+#right .right-board>div:nth-last-of-type() { margin-bottom: 0px; } /* 맨 하단 마진제거 */
+#right .right-board > div > a{ display: flex; }
+
+section#right .right-board > div > a > h1{ /* 지하철아이콘 */
+    /* background-color: rgb(208, 241, 241); */
+    padding-left: 15px;
+    font-size: 32px;
     font-weight: 700;
 }
-section#right .right-board > div > a > .content{
+
+#right .right-board > div > a > .content{ 
     margin-left: 15px;
+    max-width: 350px;
 }
-section#right .right-board > div > a > .content h4{ /* 제목 */
-    background-color: #d4fae6;
-    font-size: 20px;
+#right .right-board > div > a > .content h4{ /* 제목 */
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     text-indent: 10px;
+    margin-bottom: 5px;
 }
-section#right .right-board > div > a > .content h3{ /* 작성자 */
-    background-color: #f1e0ed;
-    font-size: 15px;
-    text-indent: 5px;
+#right .right-board > div > a > .content h3{ /* 작성자 */
+    font-size: 13px;
+    font-weight: 300;
+    text-indent: 10px;
+    color: #00A84D;
 }
-section#right .right-board > div > a > .content p{ /* 본문 */
-    background-color: rgb(228, 206, 202);
+#right .right-board > div > a > .content p{ /* 본문 */
     margin-top: 10px;
     font-size: 15px;
+    font-weight: 200;
     text-indent: 10px;
+    line-height: 1.2;
+    color: darkgray;
     
 }
 /* END RIGHT */
