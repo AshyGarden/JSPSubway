@@ -2,6 +2,8 @@ package com.spring.JspSubway.placeboard.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.util.PageVO;
@@ -22,4 +24,5 @@ public interface IPlaceBoardService {
 	
 	//모든 역번호 보기
 	List<StationVO> getSco();
+	
 }

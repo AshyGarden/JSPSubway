@@ -52,7 +52,13 @@ public class StationController {
 		return "/station/detail";
 	}
 	
-	
+	@ResponseBody
+	@PostMapping("/lookup")
+	public List<String> getLookup(@RequestBody String sqltext) {
+		log.info("가져온 sql문: "+sqltext);
+		List<String> lookupCodes = service.getLookup(sqltext);
+		return lookupCodes;
+	}
 
 	//상세 보기 페이지로 이동
 	@GetMapping("/detail")

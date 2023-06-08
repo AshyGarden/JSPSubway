@@ -181,6 +181,15 @@
             wrapper.style.transform = 'translateX(-'+offset+'px';
         });
 
+
+
+
+
+
+
+
+
+
     </script>
 
     <script>

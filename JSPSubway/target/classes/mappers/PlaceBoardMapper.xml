@@ -12,6 +12,10 @@
 		<result property="addrDetail" column="addr_detail" />
 		<result property="placeUrl" column="place_url" />
 		<result property="sname" column="station_name" />
+		<result property="uploadPath" column="upload_path" />
+		<result property="fileLoca" column="file_loca" />
+		<result property="fileName" column="file_name" />
+		<result property="fileRealName" column="file_real_name" />
 	</resultMap>
 	
 	<resultMap type="station" id="stationMap">

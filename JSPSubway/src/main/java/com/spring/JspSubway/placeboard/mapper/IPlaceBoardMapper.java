@@ -22,5 +22,5 @@ public interface IPlaceBoardMapper {
 	
 	//모든 역번호 보기
 	List<StationVO> getSco();
-	
+		
 }
