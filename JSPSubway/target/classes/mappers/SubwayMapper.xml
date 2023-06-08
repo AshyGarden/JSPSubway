@@ -4,6 +4,17 @@
     
 <mapper namespace="com.spring.JspSubway.subway.mapper.ISubwayMapper">
 	
+	<resultMap type="subway" id="subwayMap">
+        <result property="sco" column="station_code" />
+		<result property="sname" column="station_name" />	
+		<result property="snameEng" column="station_name_eng" />
+		<result property="snameChn" column="station_name_chn" />
+		<result property="snameJpn" column="station_name_jpn" />
+		<result property="tline1" column="transferline1" />
+		<result property="tline2" column="transferline2" />
+		<result property="tline3" column="transferline3" />
+	</resultMap>
+	
 	<!-- mysql은 CONCAT변수가 가변인수 -->
 	<sql id="search">
 		<if test="condition == 'ec'">
@@ -25,9 +36,9 @@
 		</if>
 	</sql>
 	
-	<select id="getStation">
+	<select id="getSubwayInfo">
 		SELECT * FROM subway
-		WHERE sno = #{sno}
+		WHERE station_code = #{sco}
 	</select>
 
 	<select id="getStations">

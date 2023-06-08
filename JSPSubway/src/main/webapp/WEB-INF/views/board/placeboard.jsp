@@ -29,6 +29,7 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -43,24 +44,24 @@
 		<hr>
 
 
-		<table class="table table-bordered table-hover">
+		<table class="table table-bordered table-hover table-striped">
 			<thead class="text-center">
 				<tr>
-					<th width=10% class="text-start">글번호</th>
-					<th width=15%>역명</th>
+					<th width=7%>글번호</th>
+					<th width=18%>역명</th>
 					<th width=35%>제목</th>
 					<th width=15%>작성자</th>
 					<th width=25%>등록일</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="board-list">
 				<c:forEach var="vo" items="${boardList}">
 					<tr>
-						<td>${vo.bno}</td>
-						<td class="text-center">${vo.sco}</td>
-						<td><a id="title">${vo.title}</a></td>
-						<td>${vo.userId}</td>
-						<td>
+						<td class="text-center">${vo.bno}</td>
+						<td class="text-center">${vo.sname}</td>
+						<td><a class="title px-2" data-bno="${vo.bno}">${vo.title}</a></td>
+						<td class="text-center">${vo.userId}</td>
+						<td class="text-center">
 							${vo.parsedDate}
 						</td>
 					</tr>
@@ -98,17 +99,14 @@
 					</c:if>
 				</ul>
 				<div class="cbtn">
-					<button type="button" class="btn btn-outline-success right"
+					<button type="button" name="writeBtn" class="btn btn-outline-success right"
 						onclick="location.href='${pageContext.request.contextPath}/board/write'">글쓰기</button>
 				</div>
 			</nav>
 
 			<input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
 			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
-
 		</form>
-
-		<div id="contentDiv"></div>
 
 	</div>
 
@@ -118,8 +116,7 @@
 			<div class="modal-content">
 				<div class="modal-body row">
 					<div class="modal-img col-sm-8 col-xs-6">
-						<img src="${pageContext.request.contextPath}/img/img_ready.png"
-							id="Img" width="100%">
+						<img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
 					</div>
 					<div class="modal-con col-sm-4 col-xs-6">
 						<div class="modal-inner">
@@ -131,12 +128,12 @@
 								<p id="inner-title">제목</p>
 								<small id="writedate">21시간전</small><br>
 							</div>
-							<div class="inner-content">
+							<div class="content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
 									consequat.</p>
-								<span>관련링크</span><br> <a id="placeurl" href=""><small>링크가
+								<span>관련링크</span><br> <a id="placeurl" href="${vo.placeUrl}"><small>링크가
 										나오는 칸이야</small></a>
 							</div>
 							<div class="inner-address">
@@ -145,7 +142,6 @@
 										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
 										칸이야</small></span>
 							</div>
-							
 						</div>
 					</div>
 				</div>
@@ -153,40 +149,45 @@
 		</div>
 	</div>
 
+
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp"%>
 
-
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
 	<script>
 
-//페이지네이션
 
-window.onload = function() {
+	//페이지네이션
 	
-    document.getElementById('pagination').addEventListener('click', e => {
-        if(!e.target.matches('a')) {
-            return;
-        }
-        e.preventDefault(); //a태그 고유기능 중지
+	window.onload = function() {
+		
+	    document.getElementById('pagination').addEventListener('click', e => {
+	        if(!e.target.matches('a')) {
+	            return;
+	        }
+	        e.preventDefault(); //a태그 고유기능 중지
+			
+			const value = e.target.dataset.pagenum;
 
-        const value = e.target.dataset.pagenum;
-
-        document.pageForm.pageNum.value = value;
-        document.pageForm.submit();
-    });
+			document.pageForm.pageNum.value = value;
+			document.pageForm.submit();
+		});
 	
-}
+	}
 
 
 //상세보기 처리(모달창 열어주기)
-document.getElementById('title').addEventListener('click', e => {
-    console.log('제목클릭');
+document.getElementById('board-list').addEventListener('click', e => {
     e.preventDefault(); //a의 고유 기능 중지
-    console.log('target: ' + e.target);
+    console.log(e.target);
     
+	if(e.target.matches('.title') ) {
+				console.log('타이틀클릭');
+				
+			
+
+
     //글 번호 얻기
     const bno = e.target.dataset.bno;
 	    		console.log('bno: ' + bno);
@@ -201,7 +202,7 @@ document.getElementById('title').addEventListener('click', e => {
         document.getElementById('writer').textContent = data.writer;
         document.getElementById('inner-title').textContent = data.title;
         document.getElementById('writedate').textContent = data.writeDate;
-        document.getElementById('inner-content').textContent = data.content;
+        document.getElementById('content').textContent = data.content;
         document.getElementById('placeurl').textContent = data.placeUrl;
         document.getElementById('addrZipNum').textContent = data.addrZipNum;
         document.getElementById('addrBasic').textContent = data.addrBasic;
@@ -210,6 +211,7 @@ document.getElementById('title').addEventListener('click', e => {
     });
         
     $('#detailModal').modal('show');
+	}
 });
 
 
@@ -226,7 +228,10 @@ function parseTime(writeDate) {
     } else {
         [year, month, day, hour, minute, second] = writeDate;
     }
+    
+    
 }
+	
 
 </script>
 </body>

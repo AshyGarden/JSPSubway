@@ -10,7 +10,6 @@
 		<result property="userName" column="user_name" />
 		<result property="userEmail1" column="user_email1" />
 		<result property="userEmail2" column="user_email2" />
-		
 	</resultMap>
 
 
@@ -27,8 +26,12 @@
 	
 	<select id="idCheck" resultType="int">
 		SELECT COUNT(*) FROM users
-		
 		WHERE user_id = #{userId}
+	</select>
+	
+	<select id="getUserName" resultType="string">
+		SELECT user_name FROM users
+		WHERE user_id=#{userId}
 	</select>
 	
 </mapper>

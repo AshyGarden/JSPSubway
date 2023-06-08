@@ -27,6 +27,6 @@ public class SubwayVO {
 	private String snameJpn;
 	private int tline1;
 	private int tline2;	
-	private int tline3;	
+	private int tline3;
 	
 }
