@@ -103,4 +103,12 @@
 		<include refid="sinjeongjiLine" />
 	</select> 
 	
+	
+	
+	<!-- main.jsp에서 검색한 역 조회하기 -->
+	<select id="getLookup" parameterType="String" resultType="String">
+		${_parameter}
+	</select>
+	
+	
 </mapper>   

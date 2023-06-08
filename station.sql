@@ -38,7 +38,8 @@ UPDATE station
 SET station_code = 2030
 WHERE station_name = '을지로3가';
 
-SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+
 
 
 

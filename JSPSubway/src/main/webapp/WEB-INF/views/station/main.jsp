@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Main</title>
+	<title>🚇2호선 노선도</title>
 	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
 </head>
 <body>
@@ -16,20 +16,21 @@
 			<div class="cross-platform">
 				<h4>환승호선 선택</h4>
 				<select name="tline" id="cross-select">
-					<option value="line1">1호선</option>
-					<option value="line3">3호선</option>
-					<option value="line4">4호선</option>
-					<option value="line5">5호선</option>
-					<option value="line6">6호선</option>
-					<option value="line7">7호선</option>
-					<option value="line8">8호선</option>
-					<option value="line9">9호선</option>
-					<option value="line10">경의중앙</option>
-					<option value="line11">수인분당</option>
-					<option value="line12">공항철도</option>
-					<option value="line13">신분당</option>
-					<option value="line14">우이신설경전철</option>
-					<option value="line15">신림선</option>
+					<option value="0">환승호선 선택</option>
+					<option value="1">1호선</option>
+					<option value="3">3호선</option>
+					<option value="4">4호선</option>
+					<option value="5">5호선</option>
+					<option value="6">6호선</option>
+					<option value="7">7호선</option>
+					<option value="8">8호선</option>
+					<option value="9">9호선</option>
+					<option value="10">경의중앙</option>
+					<option value="11">수인분당</option>
+					<option value="12">공항철도</option>
+					<option value="13">신분당</option>
+					<option value="14">우이신설경전철</option>
+					<option value="15">신림선</option>
 				</select>
 			</div>
 
@@ -107,11 +108,11 @@
 					<div id="map-top-out">
 						<div class="station">
 							<p class="st-name">신설동</p>
-							<div class="st-circle cross-station" id="sco2114"></div>
+							<div class="st-circle cross-station" id="2114"></div>
 						</div>
 						<div class="station">
 							<p class="st-name">용두</p>
-							<div class="st-circle" id="sco2113"></div>
+							<div class="st-circle" id="2113"></div>
 						</div>
 					</div> 
 				</div> <!-- map-Sinseoldong END -->
@@ -121,11 +122,11 @@
 					<div><div class="overflow-box"> <div class="station outline"></div> </div></div>
 					<div id="map-right-out">
 						<div class="station">
-							<div class="st-circle" id="sco2112"></div>
+							<div class="st-circle" id="2112"></div>
 							<p class="st-name">신답</p>
 						</div>
 						<div class="station">
-							<div class="st-circle" id="sco2111"></div>
+							<div class="st-circle" id="2111"></div>
 							<p class="st-name">용답</p>
 						</div>
 					</div> 
@@ -211,7 +212,7 @@
 						<p class="st-name">강변</p>
 					</div>
 					<div class="station">
-						<div class="st-circle" id="2050"></div>
+						<div class="st-circle" id="2150"></div>
 						<p class="st-name">잠실나루</p>
 					</div>
 					<div class="station">
@@ -388,12 +389,9 @@
 					document.querySelector('#map-box #map-Sindap .outline').style.borderColor = '#00A84D';
 				}
 			})
-		}); //역 호버시 반응 22
+		}); //역 호버시 반응 END
 
-		// 각 방향에서 가장 길이가 긴 역들 안들어오는 문제 수정해주기
-		// 그리고 신정네거리를 위해 까치산쪽 길이 줄이기 신정네거리 안됨
-
-
+	
 
 		//역 클릭시 이동
 		$stCircleList.forEach(($selCir) => { 
@@ -402,6 +400,88 @@
 				console.log(e.target.getAttribute('id'));
 				location.href = '${pageContext.request.contextPath}/station/detail/'+e.target.getAttribute('id');
 			})
+		});
+
+		
+
+		// ************** 조회하기로 검색하기
+		const $lookupButton = document.querySelector('.lookup > div');
+		$lookupButton.addEventListener('click', function(){
+			//시작 전, 검색 시 검색결과 초기화!!!
+			const selects = document.querySelectorAll('.lookup-class')
+			console.log(selects);
+			if(selects.length > 0){
+				for(let sel of selects){
+					console.log('선택 상태였던 클래스: '+sel);
+					sel.classList.remove('lookup-class') 
+				}
+			}
+			
+
+			//환승호선
+			let $selLine = '= '+document.querySelector('#cross-select > option:checked').value;
+			if($selLine === '= 0'){  $selLine = '>= 0';  }
+			
+			//문 방향
+			let $selDoor = '>= 0';
+			if(document.getElementById('radio-L').checked)		$selDoor = '= 1';
+			else if(document.getElementById('radio-R').checked)	$selDoor = '= 0';
+			
+			//화장실 유무
+			let $selWater = '>= 0';
+			if(document.querySelector('.watercloset-inout > div').classList.contains('wc-select')){ $selWater = '= 1'; }
+
+			//검색어
+			const $stationName = document.querySelector('.station-search input[name="stationName"]').value;
+			let $selName = " and station_name LIKE '%"+$stationName+"%'"; 
+			
+
+			console.log('환승호선: '+$selLine);
+			console.log('문 방향: '+$selDoor);
+			console.log('화장실 유무: '+$selWater);
+			console.log('검색어: '+$stationName);
+
+			//체크가 없을 경우 전부 초기화함.
+			if($selLine == '>= 0' && $selDoor == '>= 0'
+				&& $selWater == '>= 0' && $stationName == ''){  $selDoor = '>= 999';  }
+
+
+			let sqltext =  
+				"select station_code from station"+
+				" where station_code >= 0"+
+				" and station_code IN (select station_code from subwayline2"+
+									" where transferline1 "+$selLine+
+									" or transferline2 "+$selLine+
+									" or transferline3 "+$selLine+")"+
+				" and open_doorside "+$selDoor+
+				" and watercloset_inout "+$selWater+
+				$selName;
+
+			console.log('▼ 완성된 sql문 ▼\n'+sqltext);
+
+			//완성된 sql문 mapper로 보내기!!!
+			const req = {
+				method: 'post',
+				headers: { 'Content-type':'text/plain' },
+                body: sqltext
+			};
+
+			fetch('${pageContext.request.contextPath}/station/lookup', req)
+				.then(res => res.json())
+				.then(selCodes => {
+					console.log('선택된 역 번호: '+selCodes);
+					if(selCodes.length === 0){return;}
+					
+					for(let code of selCodes){
+						const $codeStation = document.getElementById(code).parentNode;
+						$codeStation.classList.add('lookup-class');
+					}
+			})
+
+			
+
+
+
 		});
 
 

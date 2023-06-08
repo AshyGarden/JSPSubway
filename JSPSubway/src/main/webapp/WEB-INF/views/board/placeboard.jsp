@@ -11,9 +11,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
 
 <!-- reset.css -->
 <link rel="stylesheet"
@@ -109,9 +106,6 @@
 
 			<input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
 			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
-			<input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
-			<input type="hidden" name="cpp" value="${pc.paging.cpp}">
-
 		</form>
 
 		<div id="contentDiv"></div>
@@ -172,11 +166,8 @@
 	<!-- footer -->
 	<%@ include file="../../include/footer.jsp"%>
 
-
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-	<%@ include file="../../include/footer.jsp"%>
-
 	<script>
 
 
