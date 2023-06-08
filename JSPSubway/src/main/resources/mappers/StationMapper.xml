@@ -4,17 +4,17 @@
     
 <mapper namespace="com.spring.JspSubway.station.mapper.IStationMapper">
 	
-	<resultMap type="station" id="stationMap">
-		<result property="sname" column="station_name" />
-        <result property="sco" column="station_code" />
-        <result property="ec" column="exit_count" />
-        <result property="wcio" column="watercloset_inout" />
-        <result property="ods" column="open_doorside" />
-        <result property="cp" column="cross_platform" />
-        <result property="fs" column="first_subway_time" />
-        <result property="ls" column="last_subway_time" />
-        <collection property="subway" resultMap="subwayMap"/>
-	</resultMap>
+		<resultMap type="station" id="stationMap">
+			<result property="sname" column="station_name" />
+     		<result property="sco" column="station_code" />
+      		<result property="ec" column="exit_count" />
+     	 	<result property="wcio" column="watercloset_inout" />
+	        <result property="ods" column="open_doorside" />
+	        <result property="cp" column="cross_platform" />
+      	    <result property="fs" column="first_subway_time" />
+      	    <result property="ls" column="last_subway_time" />
+      	    <collection property="subway" resultMap="subwayMap"/>
+		</resultMap>
 	
 	 <resultMap type="subway" id="subwayMap">
 		<result property="snameEng" column="station_name_eng" />
@@ -25,7 +25,7 @@
 		<result property="tline3" column="transferline3" />
 	</resultMap> 
 	
-	<resultMap type="station" id="stationMap">
+	<!-- <resultMap type="station" id="stationMap">
 		<result property="sname" column="station_name" />
         <result property="sco" column="station_code" />
 		<result property="snameEng" column="station_name_eng" />
@@ -41,33 +41,7 @@
         <result property="fs" column="first_subway_time" />
         <result property="ls" column="last_subway_time" />
         <collection property="subway" resultMap="subwayMap"/>
-	</resultMap>
-	
-	 <resultMap type="subway" id="subwayMap">
-		<result property="snameEng" column="station_name_eng" />
-		<result property="snameChn" column="station_name_chn" />
-		<result property="snameJpn" column="station_name_jpn" />
-		<result property="tline1" column="transferline1" />
-		<result property="tline2" column="transferline2" />
-		<result property="tline3" column="transferline3" />
-	</resultMap> 
-	
-	<resultMap type="station" id="stationMap">
-		<result property="sname" column="station_name" />
-        <result property="sco" column="station_code" />
-		<result property="snameEng" column="station_name_eng" />
-		<result property="snameChn" column="station_name_chn" />
-		<result property="snameJpn" column="station_name_jpn" />
-		<result property="tline1" column="transferline1" />
-		<result property="tline2" column="transferline2" />
-		<result property="tline3" column="transferline3" />
-        <result property="ec" column="exit_count" />
-        <result property="wcio" column="watercloset_inout" />
-        <result property="ods" column="open_doorside" />
-        <result property="cp" column="cross_platform" />
-        <result property="fs" column="first_subway_time" />
-        <result property="ls" column="last_subway_time" />
-	</resultMap>
+	</resultMap> -->
 	
 	<sql id="prevStn"><!-- 이전역 -->
 		<choose>

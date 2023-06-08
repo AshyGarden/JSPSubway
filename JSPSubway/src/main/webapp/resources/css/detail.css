@@ -21,12 +21,11 @@ html body{
 }
 
 
-
 .wrapper{
     width: 80%;
-    height: 100vh;
+    height: fit-content;
     min-width: 800px;
-    margin: 0 auto;
+    margin: 22px auto;
 
     background-color: rgb(255, 255, 255);
     
@@ -38,20 +37,20 @@ html body{
     align-items: center;
 }
 
+
 .wrapper section{
-    margin-right: 3%;
-    margin-left: 4%;
-    /* background-color: #00A84D; */
+    margin-right: 4%;
+    margin-left: 5%;
 }
 .wrapper section:nth-last-child(){
     margin-right: 0%;
 }
 
-.fixed-gradation{ /* 좌우 검은 */
+/* 좌우 그라데이션 적용 */
+.fixed-gradation{ 
     position: fixed;
     right: 0;
     background-image: url(../img/gradi.png);
-    /* background-color: transparent;  */
     background-size: contain;
 
     background-blend-mode: lighten;
@@ -64,6 +63,41 @@ html body{
     rotate: 180deg;
     right: auto;
     left: 0;
+}
+
+
+/* 역 이미지 보기 (팝업 이미지) */
+article#popup-img{
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+article#popup-img #popup-div{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.5;
+}
+article#popup-img img{
+	width: 720px;
+
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+}
+article#popup-img #popup-close{ 
+    color: white;
+    text-shadow: 1px 1px 4px rgb(77, 77, 77);
+    font-size: 55px;
+    font-family: 'SUITE-Regular';
+    font-weight: 500;
+    
+    position: absolute;
+    top: 10%;
+    left: 69%;
+   
+    cursor: pointer;
 }
 
 
@@ -112,9 +146,12 @@ section#left .arrow{
     font-size: 40px;
     color: rgb(199, 238, 24);
     z-index: 99;
+    text-shadow: 2px 2px 1px rgb(150, 201, 12);
+    cursor: pointer;
 }
 section#left .arrow#arrow-left{ margin-left: 19%; }
-section#left .arrow#arrow-right{ margin-right: 19%; }
+section#left .arrow#arrow-right{ margin-right: 18%; }
+
 
 section#left .left-map{ 
     background-color: white;
@@ -153,21 +190,25 @@ section#left .station{
 
     transform: translate(0, -50%);
     text-align: center;
-    font-size: 30px; 
 }
 
 section#left .station h1{
-    font-size: 38px;
+    /* 역 이름 */
+    font-size: 37px;
     font-weight: 700;
     margin: 5px 0 15px;
 }
-section#left .station h3{
+section#left .station h3{ 
+    /* 역 번호 */
     color: #156d28;
+    font-size: 28px; 
 }
 section#left .serve-map .station h3{
+    /* 옆 역의 역번호 */
     font-size: 20px; 
 }
 section#left .serve-map .station h1{
+    /* 옆 역의 역 이름 */
     font-size: 23px;
     font-weight: 600;
 }
@@ -179,26 +220,26 @@ section#left .serve-map .station h1{
 section#center{
     box-shadow: 3px 3px 15px #9aa19b;
     border-radius: 20px;
-
+    
     min-width: 400px;
     width: 600px;
     min-height: 600px;
     height: 70%;
     overflow: hidden;
-
+    font-family: 'GongGothicMedium';
+    
     display: flex;
     align-items: center;
 }
-
-section#center .center-details {
-    /* background-color: #00A84D; */
+section#center .center-details { /*  */
     margin: 20px;
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
     height: fit-content;
-
 }
-section#center .center-details h2{
+
+
+section#center .center-details h2{ /* Details 문구 */
     text-align: center;
     font-size: 13px;
 
@@ -211,123 +252,131 @@ section#center .center-details h2{
 /* 역이름 */
 section#center .center-details .main-station{ 
     display: flex;
-    margin: 30px 0 35px 10%;
+    margin: 30px 0 27px 10%;
 }
-section#center .center-details .main-station h3{
+section#center .center-details .main-station h3{ /* 역 이름 */
     margin-left: 20px;
     line-height: 0.45;
     font-size: 30px;
     font-weight: 700;
+    letter-spacing: 1.1;
 }
 section#center .center-details .main-station svg{
     scale: 2.0;
 }
 
+
 /* 영문명 한자 일본어 */
 section#center .center-details .other-name{ 
+    font-family: '맑은 고딕';
     font-size: 12px;
     font-style: italic;
     color: rgb(168, 168, 168);
     
     text-align: right;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 20px;
     margin-right: 25px;
 }
 
-/* 기타 등등 */
+/* 역 이미지 보러가기 */
+section#center p#show-station-img{ 
+    color: goldenrod;
+    text-decoration: underline;
+    font-size: 14px;
+    
+    font-weight: 200;
+    text-align: right;
+    margin-top: 8px;
+    margin-right: 25px;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+section#center p#show-station-img:hover{
+    text-shadow: 0 0 2px #d4fae6;
+}
+
+
+
+
+/* detail 정보 시작 */
 section#center .details { 
     margin-top: 30px;
     font-size: 15px;
+    font-weight: 300;
 }
 section#center .details h5{
-    width: 80%;
-    background-color: #e0e7f3;
-    padding: 5px 0;
+    width: fit-content;
     margin: 0 auto;
-
+    padding: 5px 0;
     font-size: 18px;
 }
 section#center .details > * {
-    margin: 30px 0;
+    margin: 25px 0;
     text-align: center;
 }
-section#center .details > * > strong {
-    color: aliceblue;
+
+
+
+/* 환승역 */
+.details .transferLine{ margin: 10px auto; }
+.details .transferLine h5{ margin-bottom: 10px; }
+.details .transferLine .transferImg > i:nth-of-type(n+2) { margin-left: 5%; } /* 환승역 아이콘 간격 조정 */
+
+.details strong { /* 강조하는 글씨 */
+    color: #00A84D;
     font-size: 1.1em;
-    text-shadow: 2px 2px 4px #0c0c0c;
 }
-section#center .cross-platform{
-    margin: 10px auto;
-}
-section#center .cross-platform > *{
-    margin-bottom: 5px;
-}
-section#center .cross-img > i:nth-of-type(n+2) {
-    /* 환승역 아이콘 간격 조정 */
-    margin-left: 5%;
-}
-section#center .exit-LR h5 span{
-    
-    /* box-shadow: 0 0 5px #474747; */
-    background-color: #e3e8f0;
+
+/* 탑승 위치 */
+.details .exit-LR h5 span{
     border-radius: 4px;
-    padding: 1px 11px 1px;
+    padding: 2px 10px;
     margin: 0 6px;
 
-    color: rgb(39, 39, 39);
     font-size: 0.95em;
+    font-weight: 300;
+    color: darkgray;
     opacity: 1;
 }
-section#center .exit-LR h5 span.left{ /* 크기 맞추기 */
-    padding: 1px 18px 1px; 
-}
-section#center .exit-LR h5 span.select{ 
-    background-color: #ffffff;
-    border: 1px groove #ffffff;
-    /* box-shadow: 0 0 5px #808080; */
-    opacity: 1;
+.details .exit-LR h5 span.select,
+.details .cross-platform h5 span.select{ 
+    box-shadow: 0 0 5px aliceblue;
+    background-color: rgb(216, 237, 255);
+    border: 1px groove rgb(216, 237, 255);
+    border-radius: 2px;
 
+    color: #000000;
+    opacity: 1;
+    font-size: 1.05em;
     font-weight: 500;
 }
-section#center .exit-count p#show-station-img{ 
-    /* 역 이미지 보러가기 */
-    color: #00A84D;
-    margin-top: 8px;
-    text-decoration: underline;
-    
+.details .exit-LR h5 span.left{ /* right와 크기 맞추기 */
+    padding: 2px 16px; 
 }
-section#center .cross-platform h5 span{
-    border: 5px solid red;
-    width: 100px;
-    height: 100px;
-}
-section#center .cross-platform h5 span.select{ 
-    background-color: #ffffff;
-    border: 1px groove #ffffff;
-    /* box-shadow: 0 0 5px #808080; */
-    opacity: 1;
 
-    font-weight: 500;
+/* 반대편 승강장 출입 여부 */
+.details .cross-platform h5 span{
+    width: fit-content;
+    height: fit-content;
+    color: darkgray;
+    font-weight: 300;
+    font-size: 0.9em;
 }
 
 
 
 /* 첫차, 막차 조정 */
-section#center .center-details table{ 
+.center-details table{ 
     margin: 0 auto;
     font-size: 18px;
     text-align: center;
 }
-section#center .center-details table tr:nth-of-type(1){ 
-    border-bottom: 1px solid #000000;
-}
-section#center .center-details table tr > *{
-    padding: 5px 10px;
-}
-section#center .center-details table tr th{ 
-    font-weight: 700;
-}
+.center-details table tr:nth-of-type(1){  border-bottom: 1px solid #000000;  }
+.center-details table tr > *{  padding: 5px 10px;  }
+.center-details table tr th{  font-weight: 500; font-size: 0.95em; }
+.center-details table tr td{  color: #00A84D;  }
 /* END Center */
 
 

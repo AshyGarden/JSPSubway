@@ -49,7 +49,7 @@ public class StationService implements IStationService {
 	@Override
 	public List<String> getLookup(String sql) {
 		log.info("서비스 도달");
-		return mapper.getLookup(sql);
+		return stationMapper.getLookup(sql);
 	}
 
 	
