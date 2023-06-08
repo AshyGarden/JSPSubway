@@ -33,5 +33,7 @@ public class StationVO {
 	private int cp;           //crossplatform
 	private String fs; //first subway
 	private String ls; //last subway
+	
+	private SubwayVO subway;
   
 }

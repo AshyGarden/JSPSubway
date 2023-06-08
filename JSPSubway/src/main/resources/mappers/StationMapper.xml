@@ -13,7 +13,34 @@
         <result property="cp" column="cross_platform" />
         <result property="fs" column="first_subway_time" />
         <result property="ls" column="last_subway_time" />
+        <collection property="subway" resultMap="subwayMap"/>
 	</resultMap>
+	
+	 <resultMap type="subway" id="subwayMap">
+		<result property="snameEng" column="station_name_eng" />
+		<result property="snameChn" column="station_name_chn" />
+		<result property="snameJpn" column="station_name_jpn" />
+		<result property="tline1" column="transferline1" />
+		<result property="tline2" column="transferline2" />
+		<result property="tline3" column="transferline3" />
+	</resultMap> 
+	
+	<!-- <resultMap type="station" id="stationMap">
+		<result property="sname" column="station_name" />
+        <result property="sco" column="station_code" />
+		<result property="snameEng" column="station_name_eng" />
+		<result property="snameChn" column="station_name_chn" />
+		<result property="snameJpn" column="station_name_jpn" />
+		<result property="tline1" column="transferline1" />
+		<result property="tline2" column="transferline2" />
+		<result property="tline3" column="transferline3" />
+        <result property="ec" column="exit_count" />
+        <result property="wcio" column="watercloset_inout" />
+        <result property="ods" column="open_doorside" />
+        <result property="cp" column="cross_platform" />
+        <result property="fs" column="first_subway_time" />
+        <result property="ls" column="last_subway_time" />
+	</resultMap> -->
 	
 	<sql id="prevStn"><!-- 이전역 -->
 		<choose>
@@ -21,7 +48,7 @@
 				WHERE sco = #{2470}
 			</when>	
 			<otherwise>
-				WHERE sco = #{sco}-1
+				WHERE sco = #{sco}-10
 			</otherwise>		
 		</choose>
 	</sql>
@@ -32,7 +59,7 @@
 				WHERE sco = #{2010}
 			</when>	
 			<otherwise>
-				WHERE sco = #{sco}+1
+				WHERE sco = #{sco}+10
 			</otherwise>		
 		</choose>		
 	</sql>
@@ -79,28 +106,26 @@
 	
 	
 	<select id="getStationInfo" resultMap="stationMap"> <!-- 역 정보 가져오기 -->
-		SELECT * FROM station
-		WHERE station_code = #{sno}
+		SELECT * FROM station s JOIN subwayline2 sl2
+		WHERE s.station_code = #{sco} AND sl2.station_code = #{sco}
 	</select>
 	
-	
-	
-	<select id="prevStation" resultMap="stationMap"> <!-- 이전역 정보 -->
-		SELECT * FROM station
+	<!-- <select id="prevStation" resultType="station"> 이전역 정보
+		SELECT * FROM station s JOIN subwayline2 sl2
 		<include refid="prevStn" />
-	</select>
+	</select> -->
 	
-	<select id="nextStation" resultMap="stationMap"> <!-- 다음역 정보 -->
-		SELECT * FROM station
+	<!-- <select id="nextStation" resultType="station"> 다음역 정보
+		SELECT * FROM station s JOIN subwayline2 sl2
 		<include refid="nextStn" />
-	</select>
+	</select> -->
 	
-	<select id="sungsuStation"> <!-- 다음 역이동 -->
+	<select id="sungsuStation"> <!-- 성수지선 -->
 		SELECT * FROM station
 		<include refid="sungsuLine" />
 	</select>
 	
-	<select id="sindolimStation"> <!-- 다음 역이동 -->
+	<select id="sindolimStation"> <!-- 신도림선 -->
 		SELECT * FROM station
 		<include refid="sinjeongjiLine" />
 	</select> 

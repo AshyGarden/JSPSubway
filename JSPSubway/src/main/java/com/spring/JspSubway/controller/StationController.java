@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.station.service.IStationService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,25 @@ public class StationController {
 	
 	@GetMapping("/detail/{sco}")
 	public String stationInfo(@PathVariable int sco, Model model) {	
-		model.addAttribute("group", service.getStationInfo(sco));
+		StationVO vo = service.getStationInfo(sco);
+//		StationVO voPrev;
+//		StationVO voNext;
+//		if(sco==2010) {
+//			voPrev = service.getStationInfo(2430);
+//			voNext = service.getStationInfo(sco+10);
+//		} else if(sco==2430) {
+//			voPrev = service.getStationInfo(sco-10);
+//			voNext = service.getStationInfo(2010);
+//		} else {
+//			voPrev = service.getStationInfo(sco-10);
+//			voNext = service.getStationInfo(sco+10);
+//		}
+//			
+		log.info(vo.toString());
+		model.addAttribute("station", vo);	
+//		model.addAttribute("stnPrev", voPrev);	
+//		model.addAttribute("stnNext", voNext);	
+//		log.info(model.getAttribute("station").toString());
 		log.info("/detail/{"+sco+"}");
 		return "/station/detail";
 	}

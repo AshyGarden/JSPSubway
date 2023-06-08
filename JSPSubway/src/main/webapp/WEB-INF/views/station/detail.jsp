@@ -2,16 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="com.spring.JspSubway.command.SubwayVO" %>
+
 <html>
-<head>
+    <head>
 	<title>detail</title>
 	<link href="${pageContext.request.contextPath}/css/detail.css" rel="stylesheet">
 </head>
 <body>
-
-<%@ include file="../../include/header.jsp" %>
-
     
+    <%@ include file="../../include/header.jsp" %>
+    
+    
+    <c:set var="subway" value="${station.subway}" />
     <div class="fixed-gradation fixedR"></div>
     <div class="fixed-gradation fixedL"></div>
     <div class="wrapper">
@@ -20,8 +23,8 @@
         <section id="left">
             <div class="left-map serve-map mapL">
                 <div id="prevStn" class="station">
-                    <h3>${station.sco}-1</h3> <!-- station_num-1 -->
-                    <h1>이전역</h1>
+                    <h3><%-- ${stnPrev.sco} --%></h3> <!-- station_num-1 -->
+                    <h1><%-- ${stnPrev.sname} --%></h1>
                 </div>
             </div>
             <div class="arrow" id="arrow-left"><<<</div>
@@ -34,8 +37,8 @@
             <div class="arrow" id="arrow-right">>>></div>
             <div class="left-map serve-map mapR">
                 <div id="nextStn" class="station">
-                    <h3>${station.sco+1}</h3> <!-- station_num+1 --> 
-                    <h1>다음역</h1>
+                    <h3><%-- ${stnNext.sco} --%></h3> <!-- station_num+1 --> 
+                    <h1><%-- ${stnNExt.sname} --%></h1>
                 </div>
             </div>
         </section> <!-- END Left -->
@@ -53,9 +56,9 @@
                     <h3>${station.sname}</h3> <!-- station_name -->
                 </div>
                 <div class="other-name">
-                    <li>${station.s} station</li>
-                    <li>한자 新道林驛</li>
-                    <li>일본어 新道林驛</li>
+                    <li>영문명: ${subway.snameEng}</li>
+                    <li>중문명: ${subway.snameChn}</li>
+                    <li>일문명: ${subway.snameJpn}</li>
                 </div>
                 
                 <hr>
@@ -67,27 +70,39 @@
                             <!-- 하단 더미데이터 삭제 후, 반복문으로 숫자만 바꿔서
                                 아이콘 추가하기.
                                 반복 :  <i class="fa-solid fa-?"></i> -->
-                            <i class="fa-solid fa-1"></i>
-                            <i class="fa-solid fa-2"></i>
-                            <i class="fa-solid fa-3"></i>
-                            
-                            <p>(or)환승역이 없습니다.</p>
+                                <!-- <i class="fa-solid fa-1"></i>
+                                <i class="fa-solid fa-2"></i>
+                                <i class="fa-solid fa-3"></i> -->                      
+                            <c:if test="${subway.tline1 ne 0}"><i class="fa-solid fa-${subway.tline1}"></i>호선</c:if>
+                            <c:if test="${subway.tline2 ne 0}"><i class="fa-solid fa-${subway.tline2}"></i>호선</c:if>
+                            <c:if test="${subway.tline3 ne 0}"><i class="fa-solid fa-${subway.tline3}"></i>호선</c:if>                          
+                            <c:if test="${subway.tline1 + subway.tline2 + subway.tline3 eq 0}">
+                                <p>환승역이 없습니다.</p>
+                            </c:if>                                                  
                         </div>
                     </div>
                     <div class="watercloset-inout" id="wcio">
-                        <h5>개찰구 내부 화장실 유무</h5>
+                        <h5>${station.wcio eq 'true'?'개찰구 안':'개찰구 밖'}</h5>
                         <!-- watercloset_inout. 있을 경우 ●. 없을 경우 ○ -->
-                        <strong>●</strong>
+                        <!-- <strong>●</strong> -->
                     </div>
                     <div class="exit-count" id="ec">
-                        <h5>출구 개수: <strong>exit_count</strong>개</h5>
-                        <p id="show-station-img">역 이미지 보러가기</p>
+                        <h5>출구 개수: <strong>${station.ec}</strong>개</h5>
+                        <p id="show-station-img" ><img src="" alt="역 이미지 보러가기"></p>
                     </div>
                     <div class="exit-LR">
                         <h5>
                             <!-- 선택된 쪽에 .selete class 추가하기 -->
                             <!-- 디자인은 추후 수정될 예정 -->
-                            <span class="left selete">LEFT</span> 출구 위치 <span class="right">RIGHT</span> 
+                            <span class="left select">LEFT</span> 탑승위치 <span class="right">RIGHT</span> 
+                        </h5>
+                    </div>
+                    <div class="cross-platform">
+                        <h5>반대편 승강장 출입여부</h5>
+                        <h5>
+                            <span class="able (${station.cp}==2)?'select':''">가능</span> 
+                            <span class="possible (${station.cp}==1)?'select':'''">조건부 가능</span> 
+                            <span class="disable (${station.cp}==0)?'select':''">불가능</span> 
                         </h5>
                     </div>
                 </div>
@@ -98,8 +113,8 @@
                         <th>막차</th>
                     </tr>
                     <tr>
-                        <td>06:51</td> <!-- first_subway_time -->
-                        <td>11:55</td> <!-- last_subway_time -->
+                        <td>${station.fs}</td> <!-- first_subway_time -->
+                        <td>${station.ls}</td> <!-- last_subway_time -->
                     </tr>
                 </table>
                 
@@ -168,44 +183,24 @@
 
     </script>
 
-    <!-- <script>
-        document.getElementById('prevStn').onclick = () =>{
-            console.log('prev station btn activate');
+    <script>
+        if(!'${station.ods}'){
+            document.querySelector('.exit-LR .right').classList.toggle('select');
+            document.querySelector('.exit-LR .left').classList.toggle('select');
+        } 
 
-            const prevSco = '${station.sco} - 1';
+        if('${station.cp}==2'){
+            document.querySelector('.cross-paltform .able').classList.toggle('select');
+            document.querySelector('.exit-LR .left').classList.toggle('select');
+        } else if('${station.cp}==1'){
+            document.querySelector('.exit-LR .left').classList.toggle('select');
+            document.querySelector('.exit-LR .right').classList.toggle('select');
+        } else{
 
-            const reqObj = {
-                method: 'post',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify{
-                    'stationName':sname,
-                    'stationCode':sco,
-                    'exitCount': ec,
-                    'waterclosetinout': wcio
-                }
-            }
-
-            fetch('${pageContext.request.contextPath}/station/detail/'+prevSco)
-            .then(res=>res.json())
-            .then(data => )
+        }
 
 
-        };
-
-        document.getElementById('nextStn').onclick = () =>{
-            console.log('next station btn activate');
-
-            const nextSco = '${station.sco} + 1';
-
-           
-
-
-        };
-
-
-    </script> -->
+    </script>
 
 
 </body>
