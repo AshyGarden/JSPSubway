@@ -12,4 +12,8 @@ public interface ISubwayUserService {
 
 	// 아이디 중복 확인
 	int idCheck(String id);
+	
+	// 이름 불러오기
+	String getUserName(String id);
+	
 }
