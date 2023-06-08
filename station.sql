@@ -28,6 +28,7 @@ CREATE TABLE `station` (
 
 #WHERE exit_count = 1 AND WHERE cross_paltform =1;subwayline2
 SELECT  * FROM station;
+UPDATE station SET `station_code` = 2030 WHERE `station_name` = `을지로3가`;
 
 ALTER TABLE `jspsubway`.`station` 
 CHANGE COLUMN `watercloset_inout` `watercloset_inout` TINYINT NULL DEFAULT NULL ,
@@ -37,7 +38,8 @@ UPDATE station
 SET station_code = 2030
 WHERE station_name = '을지로3가';
 
-SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+
 
 
 

@@ -107,7 +107,7 @@ section#left::before{
     z-index: 0;
 }
 
-/* LEFT의 화살표 생성 */
+/* LEFT에서 화살표 생성 */
 section#left .arrow{
     font-size: 40px;
     color: rgb(199, 238, 24);

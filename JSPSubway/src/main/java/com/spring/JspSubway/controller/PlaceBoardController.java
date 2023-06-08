@@ -1,12 +1,17 @@
 package com.spring.JspSubway.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.placeboard.service.IPlaceBoardService;
@@ -35,7 +40,9 @@ public class PlaceBoardController {
 	
 	//글쓰기 페이지 열어주는 메서드
 	@GetMapping("/write")
-	public String write() {
+	public String write(Model model) {
+		model.addAttribute("scoList", placeBoardService.getSco());
+		System.out.println("글쓰기 들어오기");
 		return "board/write";
 	}
 	
@@ -48,11 +55,10 @@ public class PlaceBoardController {
 	}
 	
 	//글 상세보기(모달)
+	@ResponseBody
 	@GetMapping("/content/{bno}")
 	public PlaceBoardVO getContent(@PathVariable int bno) {
 		return placeBoardService.getContent(bno);
 		
-	}
-
-	
+	}	
 }

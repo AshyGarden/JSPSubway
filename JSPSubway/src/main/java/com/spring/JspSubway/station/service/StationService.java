@@ -1,5 +1,7 @@
 package com.spring.JspSubway.station.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,7 @@ public class StationService implements IStationService {
 	@Autowired
 	private IStationMapper stationMapper;
 	
-	//인포 반환하는 서비스
+	//역 정보를 반환하는 서비스
 	@Override
 	public StationVO getStationInfo(int sco) {		
 		log.info(sco+"번 getStationInfo 진행중. 현재 서비스 도달");
@@ -43,7 +45,17 @@ public class StationService implements IStationService {
 		stationMapper.seongsuStation(sco);		
 	}
 
+	
+	@Override
+	public List<String> getLookup(String sql) {
+		log.info("서비스 도달");
+		return mapper.getLookup(sql);
+	}
 
+	
+	
+	
+	
 
 
 

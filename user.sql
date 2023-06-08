@@ -1,4 +1,4 @@
-use jspsubway; #DB Name;
+use jspsubway;
 
 SELECT * FROM users;
 
