@@ -2,12 +2,16 @@ package com.spring.JspSubway.station.mapper;
 
 import java.util.List;
 
+import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.command.StationVO;
 
 public interface IStationMapper {
 	
 	//역정보
 	StationVO getStationInfo(int sco);
+	
+	//게시글정보
+	List<PlaceBoardVO> getBoardInfo(int sco);
 	
 	//이전역
 	void prevStation(int sco);

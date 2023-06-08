@@ -15,6 +15,9 @@ input {
     font-size: 15px;
     font-family: 'Noto Sans KR', sans-serif;
 }
+body{
+    overflow: scroll; 
+}
 
 .hide {
     display: none !important;

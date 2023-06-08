@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.station.service.IStationService;
 
@@ -30,6 +31,8 @@ public class StationController {
 	@GetMapping("/detail/{sco}")
 	public String stationInfo(@PathVariable int sco, Model model) {	
 		StationVO vo = service.getStationInfo(sco);
+		List<PlaceBoardVO> boardVo = service.getBoardInfo(sco);
+		
 //		StationVO voPrev;
 //		StationVO voNext;
 //		if(sco==2010) {
@@ -43,8 +46,11 @@ public class StationController {
 //			voNext = service.getStationInfo(sco+10);
 //		}
 //			
-		log.info(vo.toString());
+		log.info("역 정보: "+vo.toString());
+		log.info("보드 정보: "+boardVo.toString());
 		model.addAttribute("station", vo);	
+		model.addAttribute("board", boardVo);
+		
 //		model.addAttribute("stnPrev", voPrev);	
 //		model.addAttribute("stnNext", voNext);	
 //		log.info(model.getAttribute("station").toString());
@@ -65,6 +71,18 @@ public class StationController {
 	public void	main() {
 		log.info("메인 페이지 GET 요청(jsp시험용)");
 	}
+	
+	
+	@ResponseBody
+    @PostMapping("/lookup")
+    public List<String> getLookup(@RequestBody String sqltext) {
+        log.info("가져온 sql문: "+sqltext);
+        List<String> lookupCodes = service.getLookup(sqltext);
+        return lookupCodes;
+    }
+	
+	
+	
 	
 	
 	

@@ -4,17 +4,17 @@
     
 <mapper namespace="com.spring.JspSubway.station.mapper.IStationMapper">
 	
-		<resultMap type="station" id="stationMap">
-			<result property="sname" column="station_name" />
-     		<result property="sco" column="station_code" />
-      		<result property="ec" column="exit_count" />
-     	 	<result property="wcio" column="watercloset_inout" />
-	        <result property="ods" column="open_doorside" />
-	        <result property="cp" column="cross_platform" />
-      	    <result property="fs" column="first_subway_time" />
-      	    <result property="ls" column="last_subway_time" />
-      	    <collection property="subway" resultMap="subwayMap"/>
-		</resultMap>
+	<resultMap type="station" id="stationMap">
+		<result property="sname" column="station_name" />
+     	<result property="sco" column="station_code" />
+      	<result property="ec" column="exit_count" />
+     	<result property="wcio" column="watercloset_inout" />
+	    <result property="ods" column="open_doorside" />
+	    <result property="cp" column="cross_platform" />
+      	<result property="fs" column="first_subway_time" />
+      	<result property="ls" column="last_subway_time" />
+      	<collection property="subway" resultMap="subwayMap"/>
+	</resultMap>
 	
 	 <resultMap type="subway" id="subwayMap">
 		<result property="snameEng" column="station_name_eng" />
@@ -42,6 +42,7 @@
         <result property="ls" column="last_subway_time" />
         <collection property="subway" resultMap="subwayMap"/>
 	</resultMap> -->
+	
 	
 	<sql id="prevStn"><!-- 이전역 -->
 		<choose>
@@ -109,6 +110,15 @@
 	<select id="getStationInfo" resultMap="stationMap"> <!-- 역 정보 가져오기 -->
 		SELECT * FROM station s JOIN subwayline2 sl2
 		WHERE s.station_code = #{sco} AND sl2.station_code = #{sco}
+	</select>
+	
+	<select id="getBoardInfo" resultType="place"> <!-- 역 정보 가져오기 -->
+		SELECT 
+			bno, user_id, station_code, title, content
+		FROM placeboard
+		WHERE station_code = #{sco}
+		ORDER BY bno DESC
+		LIMIT 1, 3
 	</select>
 	
 	<!-- <select id="prevStation" resultType="station"> 이전역 정보

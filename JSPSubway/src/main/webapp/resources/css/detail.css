@@ -102,7 +102,7 @@ article#popup-img #popup-close{
 
 
 
-    /* !!!!!!! START LEFT !!!!!!! */
+    /* !!!!!!!!!! START LEFT !!!!!!!!!! */
 section#left{
     background-color: #025f16;
     /* ! 이미지는 확인을 위해 임의로 넣음. */
@@ -216,12 +216,12 @@ section#left .serve-map .station h1{
 
 
 
-    /* !!!!!!! START Center !!!!!!! */
+    /* !!!!!!!!!! START Center !!!!!!!!!! */
 section#center{
     box-shadow: 3px 3px 15px #9aa19b;
-    border-radius: 20px;
+    border-radius: 15px;
     
-    min-width: 400px;
+    min-width: 420px;
     width: 600px;
     min-height: 600px;
     height: 70%;
@@ -239,7 +239,8 @@ section#center .center-details { /*  */
 }
 
 
-section#center .center-details h2{ /* Details 문구 */
+section#center .center-details h2,  /* Details 문구 */
+section#right .right-board h2{  /* 추천 명소 문구 */
     text-align: center;
     font-size: 13px;
 
@@ -381,16 +382,42 @@ section#center .details > * {
 
 
 
-    /* !!!!!!! START RIGHT !!!!!!!*/
+
+/* !!!!!!!!!! START RIGHT !!!!!!!!!!*/
+
+/* section#center{
+    box-shadow: 3px 3px 15px #9aa19b;
+    border-radius: 20px;
+    
+    min-width: 420px;
+    width: 600px;
+    min-height: 600px;
+    height: 70%;
+    overflow: hidden;
+    font-family: 'GongGothicMedium';
+    
+    display: flex;
+    align-items: center;
+}
+section#center .center-details { 
+    margin: 20px;
+    width: 100%;
+    padding-bottom: 35px;
+    height: fit-content;
+} */
+
 section#right{
+    box-shadow: 3px 3px 15px #9aa19b;
+    border-radius: 15px;
+    
     background-color: rgb(231, 244, 248);
-    /* width: 24%; */
     min-width: 500px;
     width: 800px;
     min-height: 600px;
     height: 70%;
 
     overflow: hidden;
+    font-family: 'GongGothicMedium';
 }
 section#right .right-board{
     width: 100%;

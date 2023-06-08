@@ -524,19 +524,19 @@ section.metro-maps{
 
 @keyframes shake {
     0% {
-		transform: translateX(50%);
+		transform: translateX(10%);
 	}
 	26% {
-		transform: translateX(-72.27%);
+		transform: translateX(-52.27%);
 	}
 	45% {
-		transform: translateX(-36.88%);
+		transform: translateX(-32.88%);
 	}
 	69% {
-		transform: translateX(-54.63%);
+		transform: translateX(-44.63%);
 	}
 	82% {
-		transform: translateX(-48.36%);
+		transform: translateX(-38.36%);
 	}
 	100% {
 		transform: translateX(-50%);

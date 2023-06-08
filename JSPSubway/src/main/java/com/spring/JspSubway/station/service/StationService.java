@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.command.StationVO;
 import com.spring.JspSubway.station.mapper.IStationMapper;
 
@@ -50,6 +51,11 @@ public class StationService implements IStationService {
 	public List<String> getLookup(String sql) {
 		log.info("서비스 도달");
 		return stationMapper.getLookup(sql);
+	}
+
+	@Override
+	public List<PlaceBoardVO> getBoardInfo(int sco) {
+		return stationMapper.getBoardInfo(sco);
 	}
 
 	

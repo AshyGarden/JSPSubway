@@ -2,12 +2,17 @@ package com.spring.JspSubway.station.service;
 
 import java.util.List;
 
+import com.spring.JspSubway.command.PlaceBoardVO;
 import com.spring.JspSubway.command.StationVO;
 
 public interface IStationService {
 
 	//역정보
 	StationVO getStationInfo(int sco);
+	
+	//게시글정보
+	List<PlaceBoardVO> getBoardInfo(int sco);
+		
 
 	//이전역
 	void prevStation(int sco);
