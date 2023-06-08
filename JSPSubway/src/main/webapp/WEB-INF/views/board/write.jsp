@@ -49,9 +49,9 @@
                 <div class="form-group">
                     <label class="mb-2" for="stationNum">역 번호</label>
                     <div class="input-group mb-3">
-                        <select name="sno" class="form-control" id="sno">
-                            <c:forEach items="##" var="##">
-                            	<option>200</option>
+                        <select name="sco" class="form-control" id="sco">
+                            <c:forEach items="${scoList}" var="sc">
+                            	<option value="${sc.sco}">${sc.sco} / ${sc.sname}</option>
                             </c:forEach>
                         </select>
                     </div>

@@ -29,6 +29,7 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -42,24 +43,25 @@
 		</div>
 		<hr>
 
-		<table class="table table-bordered table-hover">
+
+		<table class="table table-bordered table-hover table-striped">
 			<thead class="text-center">
 				<tr>
-					<th width=10% class="text-start">글번호</th>
-					<th width=15%>역명</th>
+					<th width=7%>글번호</th>
+					<th width=18%>역명</th>
 					<th width=35%>제목</th>
 					<th width=15%>작성자</th>
 					<th width=25%>등록일</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="board-list">
 				<c:forEach var="vo" items="${boardList}">
 					<tr>
-						<td>${vo.bno}</td>
-						<td class="text-center">${vo.sco}</td>
-						<td><a href="##" id="title">${vo.title}</a></td>
-						<td>${vo.userId}</td>
-						<td>
+						<td class="text-center">${vo.bno}</td>
+						<td class="text-center">${vo.sname}</td>
+						<td><a class="title px-2" data-bno="${vo.bno}">${vo.title}</a></td>
+						<td class="text-center">${vo.userId}</td>
+						<td class="text-center">
 							${vo.parsedDate}
 						</td>
 					</tr>
@@ -136,20 +138,19 @@
 								<p id="title-inner">제목</p>
 								<small id="regdate">21시간전</small><br>
 							</div>
-							<div class="content-inner">
+							<div class="content">
 								<p id="content">Lorem ipsum dolor sit amet, consectetur
 									adipiscing elit. Aliquam vulputate elit libero, quis mattis
 									enim tincidunt non. Mauris consequat ante vel urna posuere
-									consequat.
-								</p>
-								<span>관련링크</span><br>
-								<a id="placeUrl" href=""><small>링크가 나오는 칸이야</small></a>
+									consequat.</p>
+								<span>관련링크</span><br> <a id="placeurl" href="${vo.placeUrl}"><small>링크가
+										나오는 칸이야</small></a>
 							</div>
-							<div class="addr-inner">
-								<br> <span>주소</span>
-								<br> <span id="addrNum"><small>우편번호가 나오는 칸이야</small></span>
-								<br> <span id="addrBasic"><small>기본주소가 나오는 칸이야</small></span>
-									 <span id="addrDetail"><small>상세주소가 나오는 칸이야</small></span>
+							<div class="inner-address">
+								<br> <span>주소</span><br> <span id="addrZipNum"><small>우편번호가
+										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
+										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
+										칸이야</small></span>
 							</div>
 							<div class="link-inner">
 								<!-- <a href="##"><i class="glyphicon glyphicon-comment"></i>댓글달기</a>  -->
@@ -169,6 +170,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 
+
 	//페이지네이션
 	
 	window.onload = function() {
@@ -178,33 +180,71 @@
 	            return;
 	        }
 	        e.preventDefault(); //a태그 고유기능 중지
+			
+			const value = e.target.dataset.pagenum;
+
+			document.pageForm.pageNum.value = value;
+			document.pageForm.submit();
+		});
 	
-	        const value = e.target.dataset.pagenum;
-	
-	        document.pageForm.pageNum.value = value;
-	        document.pageForm.submit();
-	    });
-		
 	}
-	
-	//상세보기 처리(모달창 열어주기)
-	document.getElementById('title').addEventListener('click', (e) => {
-	    console.log('제목클릭');
-	    e.preventDefault(); //a의 고유 기능 중지
-	    $('#detailModal').modal('show');
-	});
-	
-	//댓글 날짜 변환 함수
-	function parseTime(writeDate) {
-	    let year, month, day, hour, minute, second;
-	
-	    if(writeDate.length === 5) {
-	    	[year, month, day, hour, minute] = writeDate;
-	        second = 0;
-	    } else {
-	        [year, month, day, hour, minute, second] = writeDate;
-	    }
+
+
+//상세보기 처리(모달창 열어주기)
+document.getElementById('board-list').addEventListener('click', e => {
+    e.preventDefault(); //a의 고유 기능 중지
+    console.log(e.target);
+    
+	if(e.target.matches('.title') ) {
+				console.log('타이틀클릭');
+				
+			
+
+
+    //글 번호 얻기
+    const bno = e.target.dataset.bno;
+	    		console.log('bno: ' + bno);
+
+        fetch('${pageContext.request.contextPath}/board/content/' + bno)
+        .then(res => res.json()) //PlaceBoardVO
+        .then(data => {
+        console.log(data);
+
+        // const src = '${pageContext.request.contextPath}/###/###/' + data.fileLoca + '/' + data.fileName;
+        // document.getElementById('Img').setAttribute('src', src);
+        document.getElementById('writer').textContent = data.writer;
+        document.getElementById('inner-title').textContent = data.title;
+        document.getElementById('writedate').textContent = data.writeDate;
+        document.getElementById('content').textContent = data.content;
+        document.getElementById('placeurl').textContent = data.placeUrl;
+        document.getElementById('addrZipNum').textContent = data.addrZipNum;
+        document.getElementById('addrBasic').textContent = data.addrBasic;
+        document.getElementById('addrDetail').textContent = data.addrDetail;
+
+    });
+        
+    $('#detailModal').modal('show');
 	}
+});
+
+
+
+
+
+//댓글 날짜 변환 함수
+function parseTime(writeDate) {
+    let year, month, day, hour, minute, second;
+
+    if(writeDate.length === 5) {
+    	[year, month, day, hour, minute] = writeDate;
+        second = 0;
+    } else {
+        [year, month, day, hour, minute, second] = writeDate;
+    }
+    
+    
+}
+	
 
 </script>
 </body>

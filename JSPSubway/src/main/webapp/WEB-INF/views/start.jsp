@@ -61,7 +61,7 @@
 				</div>
 
 				<div class="lc-block" id="startbutton">
-					<a class="btn btn-success" href="${pageContext.request.contextPath}/station/main" role="button">시작하기</a>
+					<a class="btn btn-outline-success" href="${pageContext.request.contextPath}/station/main" role="button">시작하기</a>
 				</div><!-- /lc-block -->
 
 			</div>
