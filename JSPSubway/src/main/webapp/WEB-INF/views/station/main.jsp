@@ -65,10 +65,11 @@
 
 			<div class="lookup">
 				<div>
-					<span class="key-button">조회하기</span>
+					<span class="key-button">조회</span>
 				</div>
 			</div>
 		</section>
+		<span id="not-select">해당하는 역을 조회할 수 없습니다.</span>
 
 		<!-- ////////////////////////////////////////// -->
 
@@ -470,13 +471,31 @@
 				.then(res => res.json())
 				.then(selCodes => {
 					console.log('선택된 역 번호: '+selCodes);
-					if(selCodes.length === 0){return;}
+
+					const $notSelect = document.getElementById('not-select');
+					if(selCodes.length === 0){ //조회된 역이 없다면 문구 반복 애니메이션
+						if(!$notSelect.classList.contains('shake')) {
+							$notSelect.classList.add('shake'); 
+						} else {
+							$notSelect.classList.remove('shake');
+							$notSelect.offsetWidth;
+							$notSelect.classList.add('shake');
+						}
+						return;
+					} else {
+						if($notSelect.classList.contains('shake')) {
+							$notSelect.classList.remove('shake'); 
+						}
+					}
 					
 					for(let code of selCodes){
 						const $codeStation = document.getElementById(code).parentNode;
 						$codeStation.classList.add('lookup-class');
 					}
 			})
+			
+
+
 
 			
 
