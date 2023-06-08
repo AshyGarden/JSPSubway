@@ -282,7 +282,7 @@ section#center .exit-LR h5 span{
 section#center .exit-LR h5 span.left{ /* 크기 맞추기 */
     padding: 1px 18px 1px; 
 }
-section#center .exit-LR h5 span.selete{ 
+section#center .exit-LR h5 span.select{ 
     background-color: #ffffff;
     border: 1px groove #ffffff;
     /* box-shadow: 0 0 5px #808080; */
@@ -297,7 +297,19 @@ section#center .exit-count p#show-station-img{
     text-decoration: underline;
     
 }
+section#center .cross-platform h5 span{
+    border: 5px solid red;
+    width: 100px;
+    height: 100px;
+}
+section#center .cross-platform h5 span.select{ 
+    background-color: #ffffff;
+    border: 1px groove #ffffff;
+    /* box-shadow: 0 0 5px #808080; */
+    opacity: 1;
 
+    font-weight: 500;
+}
 
 
 

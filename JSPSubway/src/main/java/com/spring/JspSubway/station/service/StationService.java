@@ -15,34 +15,34 @@ import lombok.extern.slf4j.Slf4j;
 public class StationService implements IStationService {
 
 	@Autowired
-	private IStationMapper mapper;
+	private IStationMapper stationMapper;
 	
 	//역 정보를 반환하는 서비스
 	@Override
-	public StationVO getStationInfo(int sno) {		
-		log.info(sno+"번 getStationInfo 진행중. 현재 서비스 도달");
-		return mapper.getStationInfo(sno);
+	public StationVO getStationInfo(int sco) {		
+		log.info(sco+"번 getStationInfo 진행중. 현재 서비스 도달");
+		return stationMapper.getStationInfo(sco);
 	}
 
 	@Override
-	public void prevStation(int sno) {
-		mapper.prevStation(sno);
+	public void prevStation(int sco) {
+		stationMapper.prevStation(sco);
 	}
 
 	@Override
-	public void nextStation(int sno) {
-		mapper.nextStation(sno);
+	public void nextStation(int sco) {
+		stationMapper.nextStation(sco);
 	}
 
 	@Override
-	public void sindorimStation(int sno) {
-		mapper.sindorimStation(sno);
+	public void sindorimStation(int sco) {
+		stationMapper.sindorimStation(sco);
 		
 	}
 
 	@Override
-	public void seongsuStation(int sno) {
-		mapper.seongsuStation(sno);		
+	public void seongsuStation(int sco) {
+		stationMapper.seongsuStation(sco);		
 	}
 
 	
@@ -56,5 +56,7 @@ public class StationService implements IStationService {
 	
 	
 	
+
+
 
 }
