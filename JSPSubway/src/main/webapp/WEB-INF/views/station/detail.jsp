@@ -39,7 +39,7 @@
             <div class="left-map">
                 <div id="mainStation" class="station">
                     <h3>${station.sco}</h3> <!-- station_num -->
-                    <h1 ${ fn:length(station.sname) gt 5 ? 'style="font-size: 30px;"':'' }>
+                    <h1 ${ fn:length(station.sname) gt 5 ? 'style="font-size: 27px;"':'' }>
                     		${station.sname}
                     </h1> <!-- station_name -->
                 </div>
@@ -72,7 +72,7 @@
                     <li>중문명: ${subway.snameChn}</li>
                     <li>일문명: ${subway.snameJpn}</li>
                 </div>
-                <p id="show-station-img" ><a href="#">역 이미지 보러가기</a></p>
+                <p id="show-station-img" ><a href="#">역 이용 안내도 보러가기</a></p>
                 
                 <hr>
 

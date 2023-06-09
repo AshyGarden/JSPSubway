@@ -49,6 +49,7 @@ body{
 }
 
 .wrapper table {
+	min-width: 1000px;
     width : 85%;
     height: 100%;
     margin : 30px auto;

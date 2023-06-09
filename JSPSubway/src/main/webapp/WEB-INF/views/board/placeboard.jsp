@@ -42,6 +42,9 @@
 			font-style: normal;
 		}
 		html body{
+			overflow: scroll; 
+		}
+		html body .wrapper{
 			font-family: 'GongGothicMedium';
 			font-weight: 300;
 		}
@@ -65,10 +68,10 @@
 			<thead class="text-center">
 				<tr style="color:white;">
 					<th width=9%>글번호</th>
-					<th width=19%>역명</th>
+					<th width=17%>역명</th>
 					<th width=37%>제목</th>
 					<th width=15%>작성자</th>
-					<th width=20%>등록일</th>
+					<th width=22%>등록일</th>
 				</tr>
 			</thead>
 			<tbody id="board-list">

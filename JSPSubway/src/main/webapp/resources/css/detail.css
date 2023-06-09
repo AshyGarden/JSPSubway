@@ -12,7 +12,7 @@ body{
 
 h2{
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 html body{
@@ -86,7 +86,7 @@ article#popup-img img{
     top: 45%;
     transform: translate(-50%, -50%);
 }
-article#popup-img #popup-close{ 
+article#popup-img #popup-close{  /* 역 이미지 보러가기의 X버튼. 현재 사용하지 않음.*/
     color: white;
     text-shadow: 1px 1px 4px rgb(77, 77, 77);
     font-size: 55px;
@@ -387,7 +387,7 @@ section#right{
     min-width: 500px;
     width: 800px;
     min-height: 650px;
-    height: 70%;
+    height: 75%;
 
     overflow: hidden;
     font-family: 'GongGothicMedium';
@@ -433,8 +433,8 @@ section#right .right-board > div > div > h1{ /* 지하철아이콘 */
     max-width: 350px;
 }
 #right .right-board > div > div > .content h4{ /* 제목 */
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 21px;
+    font-weight: 500;
     line-height: 1.2;
     text-indent: 10px;
     margin-bottom: 5px;
@@ -456,6 +456,7 @@ section#right .right-board > div > div > h1{ /* 지하철아이콘 */
 #right .right-board #board-more{ /* 더 많은 게시글 보러가기 */
     color: gray;
     width: 90%;
+    font-size: 15px;
     text-align: right;
     margin: 12px 0px 0 0;
 }

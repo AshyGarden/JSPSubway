@@ -30,9 +30,14 @@
    		 font-style: normal;
 		}
 	
-		html body {
-		font-family: 'GongGothicMedium';	
-		} 
+		html body{
+			overflow: scroll; 
+		}
+		
+		html body .wrapper{
+			font-family: 'GongGothicMedium';
+			font-weight: 300;
+		}
     
         .wrapper .section-inner {
             margin: 2% auto;

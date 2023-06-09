@@ -328,12 +328,13 @@ button:active{
 
 .wrapper.login #loginBtn{ /* 로그인 버튼 */
     height: 105px;
-    width: 90px;
+    width: 100px;
     color: white;
     background-color: #00A84D;
     margin-left: 20px;
     margin-right: 5px;
-
+	
+	font-size: 17px;
     box-sizing: border-box;
     transition: 0.1s;
     text-align: center;
