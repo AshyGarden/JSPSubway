@@ -6,8 +6,9 @@
 
 <html>
     <head>
-	<title>detail</title>
+	<title>2호선 개발중:${station.sname}역</title>
 	<link href="${pageContext.request.contextPath}/css/detail.css" rel="stylesheet">
+	<link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 </head>
 <body>
     
@@ -154,7 +155,7 @@
 	                </c:forEach>
                 </c:if>
                 <c:if test="${board.size()==0}">
-                		<p>조회된 게시글이 없습니다.</p>
+                		<p id="board-empty">게시글이 등록되어있지 않습니다.</p>
                 </c:if>
             </div>
         </section> <!-- END Right -->

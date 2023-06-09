@@ -3,8 +3,9 @@
     
 <html>
 <head>
-	<title>Join</title>
+	<title>2호선 개발중: 회원가입</title>
     <link href="${pageContext.request.contextPath }/css/user.css" rel="stylesheet">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 </head>  
 <body>
 

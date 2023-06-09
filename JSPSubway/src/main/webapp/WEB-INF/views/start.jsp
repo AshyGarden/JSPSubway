@@ -10,13 +10,13 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚇서울 지하철 탐색기</title>
+    <title>2호선 개발중</title>
 
-	    <!-- reset.css -->
+	<!-- reset.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 
     <!-- 파비콘 -->
-    <link rel="icon" href="#">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 
     <!-- bootstrap 5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -51,11 +51,12 @@
 
 				<div class="lc-block mb-4">
 					<div editable="rich">
-						<h2>서울 2호선</h2>
+						<h2>2호선 개발중</h2>
 						<hr class="text-success">
-						<p class="lead">정보랑 명소 볼 수 있어 시작하실?Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit. Nullam tincidunt enim ac augue suscipit rhoncus. Donec ante erat, hendrerit sed
-							eleifend et, dapibus at leo. Mauris bibendum mi ut dui sagittis volutpat. </p>
+						<p class="lead"> 
+							<strong>안전한 도시철도, 편리한 교통 서비스.</strong><br>
+							누구나 안전하고 행복하게 이용할 수 있는 서울지하철 2호선의 모든 것을 알립니다.
+						</p>
 					</div>
 
 				</div>

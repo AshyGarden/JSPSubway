@@ -16,7 +16,7 @@
     	rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	
 	<!-- 파비콘 -->
-	<link rel="icon" href="${pageContext.request.contextPath}/img/Seoul_Metro_Line_2.svg">
+	<link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 	
 	<!-- 아이콘 사이트 fontawesome css: https://fontawesome.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

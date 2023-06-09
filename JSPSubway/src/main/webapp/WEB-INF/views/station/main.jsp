@@ -3,8 +3,9 @@
 
 <html>
 <head>
-	<title>🚇2호선 노선도</title>
+	<title>2호선 개발중</title>
 	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+	<link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 </head>
 <body>
 

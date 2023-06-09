@@ -322,7 +322,7 @@ section#center .details > * {
 /* 환승역 */
 .details .transferLine{ margin: 10px auto; }
 .details .transferLine h5{ margin-bottom: 10px; }
-.details .transferLine .transferImg > i:nth-of-type(n+2) { margin-left: 5%; } /* 환승역 아이콘 간격 조정 */
+.details .transferLine .transferImg > *:nth-of-type(n+2) { margin-left: 5%; } /* 환승역 아이콘 간격 조정 */
 
 .details strong { /* 강조하는 글씨 */
     color: #00A84D;
@@ -399,19 +399,20 @@ section#right{
 section#right .right-board{
     width: 100%;
     margin: 20px 20px 20px 0;
+    position: relative;
 }
 #right .right-board h2{ /* 추천 명소 */
     font-size: 26px;
     color: #303030;
 
     width: fit-content;
-    margin: 50px 0 25px 20px;
+    margin: 50px 0 25px 55px;
     padding: 2px;
 }
 
 
 #right .right-board>div{
-    border-top: 2px solid #000000;
+    border-top: 1.5px solid gray;
     background-color: white;
     width: 90%;
     height: fit-content;
@@ -429,6 +430,7 @@ section#right .right-board > div > a > h1{ /* 지하철아이콘 */
     font-size: 32px;
     font-weight: 700;
 }
+
 
 #right .right-board > div > a > .content{ 
     margin-left: 15px;
@@ -454,7 +456,15 @@ section#right .right-board > div > a > h1{ /* 지하철아이콘 */
     text-indent: 10px;
     line-height: 1.2;
     color: darkgray;
+}
+#right .right-board #board-empty{ /* 조회된 게시글이 없습니다 */
+    color: gray;
+    width: 80%;
     
+    border-top: 1px solid gray;
+    padding-top: 60px;
+    margin: 0 auto;
+    text-align: center;
 }
 /* END RIGHT */
 
