@@ -3,8 +3,9 @@
 
 <html>
 <head>
-	<title>Login</title>
+	<title>2호선 개발중: 로그인</title>
     <link href="${pageContext.request.contextPath }/css/user.css" rel="stylesheet">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/subway-icon.ico">
 </head>
 <body>
     

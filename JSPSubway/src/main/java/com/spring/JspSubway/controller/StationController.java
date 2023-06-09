@@ -79,14 +79,6 @@ public class StationController {
 	}
 	
 	
-	@ResponseBody
-    @PostMapping("/lookup")
-    public List<String> getLookup(@RequestBody String sqltext) {
-        log.info("가져온 sql문: "+sqltext);
-        List<String> lookupCodes = service.getLookup(sqltext);
-        return lookupCodes;
-    }
-	
 	
 	
 	

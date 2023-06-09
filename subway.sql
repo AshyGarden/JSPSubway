@@ -8,13 +8,11 @@ CREATE TABLE subwayline2 (
     station_name ,
     transfer_line1 INT,
     transfer_line2 INT
-);subwayline2
-
-DROP TABLE subwayline2;
+);
 
 UPDATE jspsubway.subwayline2 SET default charset=utf-8;*/
 
-
+DROP TABLE subwayline2;
 
 CREATE TABLE `subwayline2` (
   `station_code` int DEFAULT NULL,
@@ -26,3 +24,12 @@ CREATE TABLE `subwayline2` (
   `transferline2` bigint DEFAULT NULL,
   `transferline3` bigint DEFAULT NULL
 ) default charset=utf8mb4;
+
+update subwayline2
+set transferline1 = 3
+where station_code = 2030;
+
+SET SQL_SAFE_UPDATES = 1;
+
+SHOW TABLES;
+

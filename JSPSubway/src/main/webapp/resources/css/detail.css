@@ -12,7 +12,7 @@ body{
 
 h2{
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 html body{
@@ -86,7 +86,7 @@ article#popup-img img{
     top: 45%;
     transform: translate(-50%, -50%);
 }
-article#popup-img #popup-close{ 
+article#popup-img #popup-close{  /* 역 이미지 보러가기의 X버튼. 현재 사용하지 않음.*/
     color: white;
     text-shadow: 1px 1px 4px rgb(77, 77, 77);
     font-size: 55px;
@@ -112,7 +112,7 @@ section#left{
     background-blend-mode: luminosity;
     
     /* width: 36%; */
-    min-width: 600px;
+    min-width: 520px;
     width: 1000px;
     height: 600px;
     position: relative;
@@ -147,10 +147,10 @@ section#left .arrow{
     color: rgb(199, 238, 24);
     z-index: 99;
     text-shadow: 2px 2px 1px rgb(150, 201, 12);
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
-section#left .arrow#arrow-left{ margin-left: 19%; }
-section#left .arrow#arrow-right{ margin-right: 18%; }
+section#left .arrow#arrow-left{ margin-left: 12%; }
+section#left .arrow#arrow-right{ margin-right: 11%; }
 
 
 section#left .left-map{ 
@@ -176,12 +176,8 @@ section#left .serve-map{
     top: 50%;
     transform: translate(-50%, -50%);
 }
-section#left .mapL{ /* 작은 원 위치조절 */
-    margin-left: -270px;
-}
-section#left .mapR{
-    margin-left: 270px;
-}
+section#left .mapL{ margin-left: -340px; } /*작은 원 위치조절*/
+section#left .mapR{ margin-left: 340px; }
 
 /* 999 ~~역 문구 */
 section#left .station{ 
@@ -194,7 +190,7 @@ section#left .station{
 
 section#left .station h1{
     /* 역 이름 */
-    font-size: 37px;
+    font-size: 36px;
     font-weight: 700;
     margin: 5px 0 15px;
 }
@@ -322,7 +318,7 @@ section#center .details > * {
 /* 환승역 */
 .details .transferLine{ margin: 10px auto; }
 .details .transferLine h5{ margin-bottom: 10px; }
-.details .transferLine .transferImg > i:nth-of-type(n+2) { margin-left: 5%; } /* 환승역 아이콘 간격 조정 */
+.details .transferLine .transferImg > *:nth-of-type(n+2) { margin-left: 5%; } /* 환승역 아이콘 간격 조정 */
 
 .details strong { /* 강조하는 글씨 */
     color: #00A84D;
@@ -391,7 +387,7 @@ section#right{
     min-width: 500px;
     width: 800px;
     min-height: 650px;
-    height: 70%;
+    height: 75%;
 
     overflow: hidden;
     font-family: 'GongGothicMedium';
@@ -399,19 +395,20 @@ section#right{
 section#right .right-board{
     width: 100%;
     margin: 20px 20px 20px 0;
+    position: relative;
 }
 #right .right-board h2{ /* 추천 명소 */
     font-size: 26px;
     color: #303030;
 
     width: fit-content;
-    margin: 50px 0 25px 20px;
+    margin: 50px 0 25px 55px;
     padding: 2px;
 }
 
 
 #right .right-board>div{
-    border-top: 2px solid #000000;
+    border-top: 1.5px solid gray;
     background-color: white;
     width: 90%;
     height: fit-content;
@@ -421,40 +418,56 @@ section#right .right-board{
     box-sizing: border-box;
 }
 #right .right-board>div:nth-last-of-type() { margin-bottom: 0px; } /* 맨 하단 마진제거 */
-#right .right-board > div > a{ display: flex; }
+#right .right-board > div > div{ display: flex; }
 
-section#right .right-board > div > a > h1{ /* 지하철아이콘 */
+section#right .right-board > div > div > h1{ /* 지하철아이콘 */
     /* background-color: rgb(208, 241, 241); */
     padding-left: 15px;
-    font-size: 32px;
+    font-size: 29px;
     font-weight: 700;
 }
 
-#right .right-board > div > a > .content{ 
+
+#right .right-board > div > div > .content{ 
     margin-left: 15px;
     max-width: 350px;
 }
-#right .right-board > div > a > .content h4{ /* 제목 */
-    font-size: 24px;
-    font-weight: 700;
+#right .right-board > div > div > .content h4{ /* 제목 */
+    font-size: 21px;
+    font-weight: 500;
     line-height: 1.2;
     text-indent: 10px;
     margin-bottom: 5px;
 }
-#right .right-board > div > a > .content h3{ /* 작성자 */
+#right .right-board > div > div > .content h3{ /* 작성자 */
     font-size: 13px;
     font-weight: 300;
     text-indent: 10px;
     color: #00A84D;
 }
-#right .right-board > div > a > .content p{ /* 본문 */
+#right .right-board > div > div > .content p{ /* 본문 */
     margin-top: 10px;
     font-size: 15px;
     font-weight: 200;
     text-indent: 10px;
     line-height: 1.2;
     color: darkgray;
+}
+#right .right-board #board-more{ /* 더 많은 게시글 보러가기 */
+    color: gray;
+    width: 90%;
+    font-size: 15px;
+    text-align: right;
+    margin: 12px 0px 0 0;
+}
+#right .right-board #board-empty{ /* 조회된 게시글이 없습니다 */
+    color: gray;
+    width: 80%;
     
+    border-top: 1px solid gray;
+    padding-top: 60px;
+    margin: 0 auto;
+    text-align: center;
 }
 /* END RIGHT */
 

@@ -6,17 +6,6 @@ a {
     text-decoration: none;
 }
 
-@font-face {
-    font-family: 'GongGothicMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-html body {
-	 font-family: 'GongGothicMedium';
-	 font-weight: 300;
-}
 
 
 button,
@@ -60,10 +49,11 @@ body{
 }
 
 .wrapper table {
+	min-width: 1000px;
     width : 85%;
     height: 100%;
     margin : 30px auto;
-    border-radius: 20px;   
+    border-radius: 20px;
 }
 
 .wrapper .table thead {
