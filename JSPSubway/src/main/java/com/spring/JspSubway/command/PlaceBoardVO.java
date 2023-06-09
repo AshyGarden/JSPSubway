@@ -43,7 +43,6 @@ public class PlaceBoardVO {
 	
 	private String sname;
 	
-	
 	public String getParsedDate() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분");
         return this.writeDate.format(dtf);

@@ -114,37 +114,55 @@
 	<div class="modal fade" id="detailModal" role="dialog">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
+				<div class="modal-header">
+                    <h5 class="modal-title px-3">
+                       	글 상세보기
+                    </h5>
+                </div>
 				<div class="modal-body row">
-					<div class="modal-img col-sm-8 col-xs-6">
+					<%-- <div class="modal-img col-sm-8 col-xs-6">
 						<img src="${pageContext.request.contextPath}/img/img_ready.png" id="Img" width="100%">
-					</div>
-					<div class="modal-con col-sm-4 col-xs-6">
+					</div> --%>
+					<div class="modal-con col-sm-12 col-xs-6">
 						<div class="modal-inner">
-							<div class="profile">
-								<img src="${pageContext.request.contextPath}/img/profile.png">
-							</div>
-							<div class="title">
-								<p id="writer">작성자</p>
-								<p id="inner-title">제목</p>
-								<small id="writedate">21시간전</small><br>
-							</div>
-							<div class="content">
-								<p id="content">Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit. Aliquam vulputate elit libero, quis mattis
-									enim tincidunt non. Mauris consequat ante vel urna posuere
-									consequat.</p>
-								<span>관련링크</span><br> <a id="placeurl" href="${vo.placeUrl}"><small>링크가
+							<div class="modal-body">
+								<div class="profile mb-1">
+									<img src="${pageContext.request.contextPath}/img/profile.png">
+								</div>
+								<div class="title">
+									<p id="writer">작성자</p><br>
+									<small id="writedate">작성시간</small>
+									<hr>
+									<h2 class="fs-5">제목</h2><br>
+									<p id="inner-title">제목</p>
+									<hr>
+								</div>
+								<div class="content">
+									<h2 class="fs-5">내용</h2><br>
+									<p id="content">Lorem ipsum dolor sit amet, consectetur
+										adipiscing elit. Aliquam vulputate elit libero, quis mattis
+										enim tincidunt non. Mauris consequat ante vel urna posuere
+										consequat.</p>
+									<hr>
+									<h2 class="fs-5">관련링크</h2><br> <a id="placeurl" href="#"><small>링크가
 										나오는 칸이야</small></a>
-							</div>
-							<div class="inner-address">
-								<br> <span>주소</span><br> <span id="addrZipNum"><small>우편번호가
-										나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
-										나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
-										칸이야</small></span>
+								</div>
+								<hr>
+								<div class="inner-address">
+									<br><h2 class="fs-5">주소</h2><br> <span id="addrZipNum" class="mb-2"><small>우편번호가
+											나오는 칸이야</small></span><br> <span id="addrBasic"><small>기본주소가
+											나오는 칸이야</small></span> <span id="addrDetail"><small>상세주소가 나오는
+											칸이야</small></span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="modal-footer">
+                    <h5>
+                        &nbsp;
+                    </h5>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -159,7 +177,6 @@
 
 
 	//페이지네이션
-	
 	window.onload = function() {
 		
 	    document.getElementById('pagination').addEventListener('click', e => {
@@ -199,9 +216,10 @@ document.getElementById('board-list').addEventListener('click', e => {
 
         // const src = '${pageContext.request.contextPath}/###/###/' + data.fileLoca + '/' + data.fileName;
         // document.getElementById('Img').setAttribute('src', src);
-        document.getElementById('writer').textContent = data.writer;
+        document.getElementById('writer').textContent = data.userId;
         document.getElementById('inner-title').textContent = data.title;
-        document.getElementById('writedate').textContent = data.writeDate;
+        document.getElementById('writedate').textContent = data.writeDate[0]+"년 "+ data.writeDate[1]+"월 "+ data.writeDate[2]+"일 "+ data.writeDate[3]+"시 "+ data.writeDate[4]+"분";
+        console.log(data.writeDate);
         document.getElementById('content').textContent = data.content;
         document.getElementById('placeurl').textContent = data.placeUrl;
         document.getElementById('addrZipNum').textContent = data.addrZipNum;
@@ -228,6 +246,7 @@ function parseTime(writeDate) {
     } else {
         [year, month, day, hour, minute, second] = writeDate;
     }
+    
     
     
 }

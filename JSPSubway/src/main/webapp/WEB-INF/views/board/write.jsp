@@ -23,8 +23,19 @@
 
 	<!-- write style -->
     <style>
+    	@font-face {
+    	font-family: 'GongGothicMedium';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+	   	 font-weight: normal;
+   		 font-style: normal;
+		}
+	
+		html body {
+		font-family: 'GongGothicMedium';	
+		} 
+    
         .wrapper .section-inner {
-            margin: 1% auto;
+            margin: 2% auto;
         }
 
         .wrapper .section-inner .btn {
@@ -42,13 +53,13 @@
 
         <div class="col-xs-12 col-8 section-inner">
             <form action="${pageContext.request.contextPath}/board/write" method="post">
-                <div class="mb-3">
+                <div class="mb-4">
                     <label class="form-label">작성자</label>
                     <input type="text" class="form-control" name="userId" id="userId" value="${login}" readonly>
                 </div>
                 <div class="form-group">
-                    <label class="mb-2" for="stationNum">역 번호</label>
-                    <div class="input-group mb-3">
+                    <label class="mb-3" for="stationNum">역 번호</label>
+                    <div class="input-group mb-4">
                         <select name="sco" class="form-control" id="sco">
                             <c:forEach items="${scoList}" var="sc">
                             	<option value="${sc.sco}">${sc.sco} / ${sc.sname}</option>
@@ -56,36 +67,35 @@
                         </select>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <label class="form-label">제목</label>
                     <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해주세요.">
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="exampleFormControlTextarea1" class="form-label">내용</label>
                     <textarea class="form-control" name="content" id="content" rows="5" placeholder="내용을 입력해주세요."></textarea>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <label class="form-label">주소</label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="addrZipNum" id="addrZipNum" value="" placeholder="우편번호(주소찾기를 클릭하여 검색하세요.)" readonly>
                         <button class="btn btn-outline-secondary" type="button" id="addBtn" onclick="searchAddress()">주소찾기</button>
                     </div>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                     <input class="form-control input-sm add" name="addrBasic" id="addrBasic" value="" placeholder="기본주소" readonly>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <input class="form-control input-sm add" name="addrDetail" id="addrDetail" value="" placeholder="상세주소">
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                     <label class="form-label">관련 링크</label>
-                    <input class="form-control input-sm add" name="placeUrl" id="placeUrl" value="" placeholder="관련 링크를 등록해주세요">
+                    <input class="form-control input-sm add" name="placeUrl" id="placeUrl" value="" placeholder="관련 링크를 등록해주세요.">
                 </div>                                                
-                <label class="form-label">사진등록</label><br>
+                <!-- <label class="form-label">사진등록</label><br>
                 <div class="input-group mb-4">
                     <input type="file" class="form-control" name="file" id="file">
-                    <label class="input-group-text" for="file">Upload</label>
-                </div>
+                </div> -->
                 <div>
                     <button type="submit" class="btn btn-outline-success" id="registBtn">등록하기</button>
                     <button type="button" class="btn btn-outline-success" id="listBtn" 
@@ -99,10 +109,9 @@
     <!-- footer -->
     <%@ include file="../../include/footer.jsp" %>
 
-<!-- kakao 주소 API -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script>
+    // kakao 주소 API 
     function searchAddress() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -129,9 +138,22 @@
         }).open();
     
     }
-        
+    
+    //필수 입력처리(글쓰기 제목)
+    document.getElementById('registBtn').onclick = function () {  // function ()   =  () => 화살표함수
+            if(document.getElementById('title').value === '') {
+                alert('제목은 필수로 입력해야 합니다.');
+                event.preventDefault();
+                document.getElementById('title').focus();
+                return;
+            } 
+        }
+
+
     </script>
 
+<!-- kakao 주소 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 </body>
 </html>

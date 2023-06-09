@@ -58,7 +58,13 @@ public class StationController {
 		return "/station/detail";
 	}
 	
-	
+	@ResponseBody
+	@PostMapping("/lookup")
+	public List<String> getLookup(@RequestBody String sqltext) {
+		log.info("가져온 sql문: "+sqltext);
+		List<String> lookupCodes = service.getLookup(sqltext);
+		return lookupCodes;
+	}
 
 	//상세 보기 페이지로 이동
 	@GetMapping("/detail")
@@ -72,14 +78,6 @@ public class StationController {
 		log.info("메인 페이지 GET 요청(jsp시험용)");
 	}
 	
-	
-	@ResponseBody
-    @PostMapping("/lookup")
-    public List<String> getLookup(@RequestBody String sqltext) {
-        log.info("가져온 sql문: "+sqltext);
-        List<String> lookupCodes = service.getLookup(sqltext);
-        return lookupCodes;
-    }
 	
 	
 	
