@@ -34,13 +34,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/"><span class="home">Home</span></a> </li>
+                    <li class="nav-item" style="line-height: 21px;"> <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/"><span class="home">Home</span></a> </li>
                     <c:if test="${login == null}"> <!-- 비로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
-                    	<li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/userLogin">로그인</a> </li>
+                    	<li class="nav-item" style="line-height: 21px;"> 
+                    		<a class="nav-link" href="${pageContext.request.contextPath}/user/userLogin">로그인</a> 
+                    	</li>
                     	<a href="${pageContext.request.contextPath}/user/userJoin"><div class="btn btn-dark">회원가입</div></a>
                     </c:if>
                     <c:if test="${login != null}"> <!-- 로그인 상태일 경우에만 출력 (백핸드 후 수정) -->
-                    	<li class="nav-item" style="color: #ffffff; font-size: 13px; line-height: 32px;"> ${name}(${login}) 님 안녕하세요 </li>
+                    	<li class="nav-item" style="color: #ffffff; line-height: 37px; text-align: center;"> &nbsp; ${name}(${login}) 님 안녕하세요 &nbsp; </li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/user/logout">로그아웃</a> </li>
                     </c:if>
                 </ul>

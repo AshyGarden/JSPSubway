@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page import="com.spring.JspSubway.command.SubwayVO" %>
 
@@ -38,7 +39,9 @@
             <div class="left-map">
                 <div id="mainStation" class="station">
                     <h3>${station.sco}</h3> <!-- station_num -->
-                    <h1>${station.sname}</h1> <!-- station_name -->
+                    <h1 ${ fn:length(station.sname) gt 5 ? 'style="font-size: 30px;"':'' }>
+                    		${station.sname}
+                    </h1> <!-- station_name -->
                 </div>
             </div>
             <div class="arrow" id="arrow-right">>>></div>
@@ -78,18 +81,49 @@
                     <div class="transferLine" id="tLine">
                         <h5>환승호선</h5>
                         <div class="transferImg">
-                            <!-- 하단 더미데이터 삭제 후, 반복문으로 숫자만 바꿔서
-                                아이콘 추가하기.
-                                반복 :  <i class="fa-solid fa-?"></i> -->
-                                <!-- <i class="fa-solid fa-1"></i>
-                                <i class="fa-solid fa-2"></i>
-                                <i class="fa-solid fa-3"></i> -->                      
-                            <c:if test="${subway.tline1 ne 0}"><i class="fa-solid fa-${subway.tline1}"></i>호선</c:if>
-                            <c:if test="${subway.tline2 ne 0}"><i class="fa-solid fa-${subway.tline2}"></i>호선</c:if>
-                            <c:if test="${subway.tline3 ne 0}"><i class="fa-solid fa-${subway.tline3}"></i>호선</c:if>                          
+                        	<!-- 이게 되나... num = 1, 2, 3으로 가정해서 식을 썼으나 될지는 모르겠음. -->
                             <c:if test="${subway.tline1 + subway.tline2 + subway.tline3 eq 0}">
                                 <p style="color: gray; font-size: 14px;">환승역이 없습니다.</p>
-                            </c:if>                                                  
+                            </c:if>
+	                            <c:choose>
+	                                <c:when test="${subway.tline1 eq 10}">경의중앙선</c:when>
+	                                <c:when test="${subway.tline1 eq 11}">수인분당선</c:when>
+	                                <c:when test="${subway.tline1 eq 12}">공항철도</c:when>
+	                                <c:when test="${subway.tline1 eq 13}">신분당선</c:when>
+	                                <c:when test="${subway.tline1 eq 14}">우이신설경전철</c:when>
+	                                <c:when test="${subway.tline1 eq 14}">신림선</c:when>
+	                                <c:otherwise>
+	                                    <c:if test="${subway.tline1 ne 0}">
+	                                        <i class="fa-solid fa-${subway.tline1}"></i>호선
+	                                    </c:if>
+	                                </c:otherwise>
+	                            </c:choose>
+	                            <c:choose>
+	                                <c:when test="${subway.tline2 eq 10}">경의중앙선</c:when>
+	                                <c:when test="${subway.tline2 eq 11}">수인분당선</c:when>
+	                                <c:when test="${subway.tline2 eq 12}">공항철도</c:when>
+	                                <c:when test="${subway.tline2 eq 13}">신분당선</c:when>
+	                                <c:when test="${subway.tline2 eq 14}">우이신설경전철</c:when>
+	                                <c:when test="${subway.tline2 eq 14}">신림선</c:when>
+	                                <c:otherwise>
+	                                    <c:if test="${subway.tline2 ne 0}">
+	                                        <i class="fa-solid fa-${subway.tline2}"></i>호선
+	                                    </c:if>
+	                                </c:otherwise>
+	                            </c:choose>
+	                            <c:choose>
+	                                <c:when test="${subway.tline3 eq 10}">경의중앙선</c:when>
+	                                <c:when test="${subway.tline3 eq 11}">수인분당선</c:when>
+	                                <c:when test="${subway.tline3 eq 12}">공항철도</c:when>
+	                                <c:when test="${subway.tline3 eq 13}">신분당선</c:when>
+	                                <c:when test="${subway.tline3 eq 14}">우이신설경전철</c:when>
+	                                <c:when test="${subway.tline3 eq 14}">신림선</c:when>
+	                                <c:otherwise>
+	                                    <c:if test="${subway.tline3 ne 0}">
+	                                        <i class="fa-solid fa-${subway.tline3}"></i>호선
+	                                    </c:if>
+	                                </c:otherwise>
+	                            </c:choose>                                   
                         </div>
                     </div>
 
@@ -143,19 +177,22 @@
                	<c:if test="${board.size()!=0}">
 	                <c:forEach var="i" begin="0" end="${board.size()-1}">
 	                    <div class="board${i+1}">
-	                        <a href="${pageContext.request.contextPath}/board/content/board.bno">
+                            <div>
 	                            <h1>🚇</h1> 
 	                            <div class="content">
 	                                <h4>${board[i].title}</h4>
 	                                <h3>작성자: ${board[i].userId}</h3>
 	                                <p>${board[i].content}</p>
 	                            </div>
-	                        </a>
+                            </div>
 	                    </div>
 	                </c:forEach>
+	                <a href="${pageContext.request.contextPath}/board/placeboard">
+                        <p id="board-more">더 많은 게시글 보러가기 >> </p>
+                    </a>
                 </c:if>
                 <c:if test="${board.size()==0}">
-                		<p id="board-empty">게시글이 등록되어있지 않습니다.</p>
+                		<p id="board-empty">${station.sname}역으로 작성된 게시글이 없습니다.</p>
                 </c:if>
             </div>
         </section> <!-- END Right -->
@@ -175,8 +212,8 @@
 
             if (offset < 0) {
                 offset = 0;
-            } else if (offset > 2000 - window.innerWidth) {
-                offset = 2000 - window.innerWidth;
+            } else if (offset > 2200 - window.innerWidth) {
+                offset = 2200 - window.innerWidth;
             }
 
             wrapper.style.transform = 'translateX(-'+offset+'px';

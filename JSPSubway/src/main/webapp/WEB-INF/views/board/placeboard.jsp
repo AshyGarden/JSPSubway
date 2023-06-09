@@ -12,6 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2호선 개발중: 게시판</title>
 
+
+
 <!-- reset.css -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
@@ -31,6 +33,21 @@
 	crossorigin="anonymous">
 
 </head>
+
+	<style>
+		@font-face {
+			font-family: 'GongGothicMedium';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		html body{
+			font-family: 'GongGothicMedium';
+			font-weight: 300;
+		}
+
+	</style>
+
 <body>
 
 	<!-- header -->
@@ -46,12 +63,12 @@
 
 		<table class="table table-bordered table-hover table-striped">
 			<thead class="text-center">
-				<tr>
-					<th width=7%>글번호</th>
-					<th width=18%>역명</th>
-					<th width=35%>제목</th>
+				<tr style="color:white;">
+					<th width=9%>글번호</th>
+					<th width=19%>역명</th>
+					<th width=37%>제목</th>
 					<th width=15%>작성자</th>
-					<th width=25%>등록일</th>
+					<th width=20%>등록일</th>
 				</tr>
 			</thead>
 			<tbody id="board-list">
@@ -59,7 +76,7 @@
 					<tr>
 						<td class="text-center">${vo.bno}</td>
 						<td class="text-center">${vo.sname}</td>
-						<td><a class="title px-2" data-bno="${vo.bno}">${vo.title}</a></td>
+						<td><a class="title px-2" data-bno="${vo.bno}" style="cursor: pointer;">${vo.title}</a></td>
 						<td class="text-center">${vo.userId}</td>
 						<td class="text-center">
 							${vo.parsedDate}
